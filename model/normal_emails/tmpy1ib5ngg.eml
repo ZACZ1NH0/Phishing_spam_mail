@@ -1,0 +1,604 @@
+Delivered-To: nguyenlongvu768@gmail.com
+Received: by 2002:a05:7022:6b8c:b0:9a:f40a:49ab with SMTP id dm12csp2614047dlb;
+        Sun, 1 Jun 2025 21:39:36 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IH7qb/dYSO5Ug+/pcw9scV2EDkkxg0l5S4CmSbUuBxpEujbXJus6vW8YMaHolswnWkz/Axv
+X-Received: by 2002:a05:6000:250a:b0:3a3:7387:3078 with SMTP id ffacd0b85a97d-3a4fe1617bdmr4685348f8f.4.1748839175842;
+        Sun, 01 Jun 2025 21:39:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1748839175; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ZCyDkKezRTixOYulh1SvQRs7yVabGS3EHvrBXYZ/srkUtXfv188j3ekwMwbPbKgm3J
+         B2zJsLy5VIX6MS5WI1YcRZsauFoVcjS3xICtojY+ahmb/octkm6RMDVfv4K3IUyul3wL
+         5WEeX0H2X7VJ44I0Un+pgEZmWaE71GT/PwRB2xRXWqoyGNgI2XDRE+Gn6ZC6Ptn8on5P
+         hZV0NDGxk4QdPCc5qWP3O4LnYqlnWNoGA93AaJznsGq062hx63i82UZbh93/4vVZYV67
+         WberXwkvlgoN7MlKVtjbXcBUdqxNBOLUD8wssJqvD9FAPO1FjaPENotBt01tbvAUAZni
+         DALw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=5gwVZrZ1FFPF5L6tHJ7LBCe+UxpKFtjIKWonC150HT8=;
+        fh=FSKqZnrklSGGJ4GGMPZutcBYfVAzb/qNpIGqOXVmJxU=;
+        b=kia/qRxZ0VTBjMNOAmKFCQt7gkSuoONWzQpCWEgb40qrvvuTi+1ZS/cYmEnhKpkgAQ
+         xaQp0vSD6T+h6YQzCHrFNzENHBU+GezKyVJmIPHrD3DN/zslD63t9yqKykViCUvIGnDx
+         pYCX8vvaCS2Z6BwqpehWhgRBrOYYwIRCoNDCBDXQz6Klh7un5D8+2Ga4Fomt4NUzWz3y
+         NadNvc7lGbVougIVTF1p6+5mlACsNMVrCzFvcDLGrCn2O9PoTGDOkx8fQzPfeSSNCrtt
+         qIjqBhVKHLldDdvOq7Dxq0P8wZxgSByrnRVKXXI2B69zpsoQ5YNCZkP4grDyarRAm1IQ
+         4GPg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cioeu67022.docsity.com header.s=mta header.b="fp4Y4u/q";
+       dkim=pass header.i=@eu.mailgun.org header.s=krs2 header.b=nMUIW+ri;
+       spf=pass (google.com: domain of postmaster@cioeu67022.docsity.com designates 143.55.237.44 as permitted sender) smtp.mailfrom=postmaster@cioeu67022.docsity.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=docsity.com
+Return-Path: <postmaster@cioeu67022.docsity.com>
+Received: from m237-44.eu.mailgun.net (m237-44.eu.mailgun.net. [143.55.237.44])
+        by mx.google.com with UTF8SMTPS id ffacd0b85a97d-3a4f008b4d0si6947216f8f.473.2025.06.01.21.39.35
+        for <nguyenlongvu768@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 01 Jun 2025 21:39:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cioeu67022.docsity.com designates 143.55.237.44 as permitted sender) client-ip=143.55.237.44;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cioeu67022.docsity.com header.s=mta header.b="fp4Y4u/q";
+       dkim=pass header.i=@eu.mailgun.org header.s=krs2 header.b=nMUIW+ri;
+       spf=pass (google.com: domain of postmaster@cioeu67022.docsity.com designates 143.55.237.44 as permitted sender) smtp.mailfrom=postmaster@cioeu67022.docsity.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=docsity.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=cioeu67022.docsity.com; q=dns/txt; s=mta; t=1748839175; x=1748846375;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=5gwVZrZ1FFPF5L6tHJ7LBCe+UxpKFtjIKWonC150HT8=;
+ b=fp4Y4u/qR2lRA1l0QK6cRojQy7b6AeUT0iE+bCzAY8XeGh10gQLX05N1Hc+SmoRu9lrYlkJhRyw5b5+4NXSPb0UPfLFhCeAN7ykh/R65TnuaPYwiDM8JQvQzfF+X29cXTGOdXRhwPVGud72Itp+zUMIjNUTBBiRYbCjRUOqkAhk=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=eu.mailgun.org; q=dns/txt; s=krs2; t=1748839175; x=1748846375;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=5gwVZrZ1FFPF5L6tHJ7LBCe+UxpKFtjIKWonC150HT8=;
+ b=nMUIW+riS9MxnLB/iSk8GZyK5gMXsPLYdsfTA7vqHzfnTkaJ+WoG0zHDvqfVkjBFFdKWX9I9Bg3pgDS+E3wZCEnVPU9YYcXIX7WfyP5BWQuicnbmaSbeNQWt4FuECYFOthRoK1NLSJ0OLXK82eP+ZIiqaug5imotLvgnRZsCllE=
+X-Mailgun-Sid: WyI0NTRiMCIsIm5ndXllbmxvbmd2dTc2OEBnbWFpbC5jb20iLCI3NzRjZSJd
+X-Feedback-Id: postmaster@cioeu67022.docsity.com::60ddcdf00aff440a20ec61ac:mailgun
+Received: by 9a67e08ce541 with HTTP id 683d2b074609252d24d5253c; Mon, 02 Jun 2025
+ 04:39:35 GMT
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sending-Ip: 143.55.237.44
+Date: Mon, 02 Jun 2025 04:39:35 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="d14f395280fae6c4cb048cc8d64ec8c740526039a247562dde4f5515e875"
+Subject: =?UTF-8?q?What=E2=80=99s_it_really_like_to_study_at_Midway=3F?=
+From: Midway University <uni-noreply@docsity.com>
+To: nguyenlongvu768@gmail.com
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+List-Unsubscribe: <mailto:32.MRTVGRLZM5MUCQKQJRUDK53OPA2GKY2KIFNGG5JYIE2WSSRRJNLECZK2OJ5DSRCJNVTT2PI=@unsubscribe-eu.customer.io>,
+ <https://email.docsity.com/unsubscribe/dgSEygYAAPLh5wnx4ecJAZcu8A5iJ1KVAeZrz9DImg==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgSEygYAAPLh5wnx4ecJAZcu8A5iJ1KVAeZrz9DImg==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+X-Mailgun-Variables: {"email_id": "dgSEygYAAPLh5wnx4ecJAZcu8A5iJ1KVAeZrz9DImg=="}
+Message-Id: <20250602043935.ff62602339682127@cioeu67022.docsity.com>
+
+--d14f395280fae6c4cb048cc8d64ec8c740526039a247562dde4f5515e875
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=ascii
+
+( https://masters.docsity.com/midway-study-programs-2025/ )
+
+****************************
+Hear from students like you!
+****************************
+
+****************************************************************************************************************************
+Discover why international students have chosen to start their new academic journey in the Bluegrass region of Kentucky, US.
+****************************************************************************************************************************
+
+DISCOVER THE COURSES ( https://masters.docsity.com/midway-study-programs-2025/ )
+
+****************************
+Hear from students like you!
+****************************
+
+****************************************************************************************************************************
+Discover why international students have chosen to start their new academic journey in the Bluegrass region of Kentucky, US.
+****************************************************************************************************************************
+
+DISCOVER THE COURSES ( https://masters.docsity.com/midway-study-programs-2025/ )
+( https://masters.docsity.com/midway-study-programs-2025/ )
+( https://masters.docsity.com/midway-study-programs-2025/ )( https://masters.docsity.com/midway-study-programs-2025/ )( https://masters.docsity.com/midway-study-programs-2025/ )( https://masters.docsity.com/midway-study-programs-2025/ )
+
+( https://masters.docsity.com/midway-study-programs-2025/ )
+LEARN MORE ( https://masters.docsity.com/midway-study-programs-2025/ )
+https://www.docsity.com/ ( https://www.docsity.com/?utm_source=newsletter&utm_medium=email&utm_content=it&utm_campaign=b2bfooter )Docsity_Instagram ( https://www.instagram.com/docsity_en/ )Docsity_Tiktok ( https://www.tiktok.com/@docsity_en )Docsity_LinkedIn ( https://www.linkedin.com/company/docsity-com/ )You have received this email to nguyenlongvu768@gmail.com because you are registered in Docsity
+
+If you don't want to receive this type of information click here ( http://track.customer.io/unsubscribe/dgSEygYAAPLh5wnx4ecJAZcu8A5iJ1KVAeZrz9DImg== )
+Docsity.com - Via Leonardo da Vinci 16 - Turin, Piedmont - Italy
+--d14f395280fae6c4cb048cc8d64ec8c740526039a247562dde4f5515e875
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/><me=
+ta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"/><!=
+--[if mso]>
+<xml><w:WordDocument xmlns:w=3D"urn:schemas-microsoft-com:office:word"><w:D=
+ontUseAdvancedTypographyReadingMail/></w:WordDocument>
+<o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/=
+></o:OfficeDocumentSettings></xml>
+<![endif]--><!--[if !mso]><!--><link href=3D"https://fonts.googleapis.com/c=
+ss2?family=3DDroid+Serif:wght@400;700&amp;display=3Dswap" rel=3D"stylesheet=
+" type=3D"text/css"/><!--<![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.im=
+age_block img+div{display:none}sub,sup{font-size:75%;line-height:0} @media =
+(max-width:620px){.social_block.desktop_hide .social-table{display:inline-b=
+lock!important}.image_block div.fullWidth{max-width:100%!important}.mobile_=
+hide{display:none}.row-content{width:100%!important}.stack .column{width:10=
+0%;display:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overflo=
+w:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table!import=
+ant;max-height:none!important}.row-4 .column-1 .block-1.heading_block td.pa=
+d{padding:0!important}.row-4 .column-1 .block-2.heading_block td.pad{paddin=
+g:15px 0 20px!important}.row-4 .column-1 .block-3.button_block td.pad{paddi=
+ng:10px 0
+5px!important}.row-4 .column-1 .block-3.button_block a,.row-4 .column-1 .bl=
+ock-3.button_block div,.row-4 .column-1 .block-3.button_block span{line-hei=
+ght:28px!important}.row-6 .column-1 .block-3.image_block td.pad{padding:20p=
+x 0 0!important}.row-8 .column-1 .block-3.text_block td.pad{padding:0 24px =
+32px!important}.row-4 .column-1{padding:45px 19px 35px!important}.row-6 .co=
+lumn-1{padding:10px 12px 20px!important}}
+</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup {=
+ mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]--></hea=
+d><body class=3D"body" style=3D"background-color:#f5f6f7;margin:0;padding:0=
+;-webkit-text-size-adjust:none;text-size-adjust:none"><div style=3D"display=
+: none; max-height: 0px; overflow: hidden; mso-hide:all;">Hear it straight =
+from the students=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=A0</div><table class=3D"nl-container" width=3D=
+"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#f5f6f7"=
+><tbody><tr><td><table class=3D"row row-1" align=3D"center" width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#f7f5f2"><tbody=
+><tr><td><table class=3D"row-content stack" align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0;mso-table-rspace:0;background-color:#f7f5f2;border-radius:0;color=
+:#000;width:600px;margin:0 auto" width=3D"600"><tbody><tr><td class=3D"colu=
+mn column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;=
+font-weight:400;text-align:left;vertical-align:top"><table class=3D"image_b=
+lock block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><t=
+body><tr><td class=3D"pad" style=3D"padding-bottom:32px;padding-top:32px;wi=
+dth:100%;padding-right:0;padding-left:0"><div class=3D"alignment" align=3D"=
+center"><div style=3D"max-width:210px"><img src=3D"https://userimg-assets-e=
+u.customeriomail.com/images/client-env-107780/1740132191424_Risorsa%203_01J=
+MKZC3H59XY4QE0DMBYD8FEK.png" style=3D"display:block;height:auto;border:0;wi=
+dth:100%" width=3D"210" alt=3D"" title=3D"" height=3D"auto"/></div></div></=
+td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table=
+><table class=3D"row row-2" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0;background-color:#f7f5f2"><tbody>
+<tr><td><table class=3D"row-content stack" align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0;background-color:#fff;border-radius:0;color:#00=
+0;width:600px;margin:0 auto" width=3D"600"><tbody><tr><td class=3D"column c=
+olumn-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font=
+-weight:400;text-align:left;padding-bottom:5px;padding-left:24px;padding-ri=
+ght:24px;padding-top:35px;vertical-align:top"><table class=3D"image_block b=
+lock-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><=
+tr><td class=3D"pad" style=3D"width:100%;padding-right:0;padding-left:0"><d=
+iv class=3D"alignment" align=3D"center"><div style=3D"max-width:166px"><a h=
+ref=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bn=
+g0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0dHBzOi8vbWFzdGVycy5kb=
+2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJpbnRlcm5hbCI6Ijg0Y2Ew=
+NmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6f36c00f666c7df5916c29=
+a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"_blank" style=3D"outl=
+ine:none" tabindex=3D"-1"><img src=3D"https://userimg-bee-eu.customeriomail=
+=2Ecom/images/client-env-107780/editor_=
+images/Midway%20Logo_Horizontal_Transp=
+arent_RGB_350px.jpg" style=3D"display:block;height:auto;border:0;width:100%=
+" width=3D"166" alt=3D"" title=3D"" height=3D"auto"/></a></div></div></td><=
+/tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><ta=
+ble class=3D"row row-3 mobile_hide" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;background-color:#f7f5f2"><tbody><tr><=
+td><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0;background-color:#1d4f91;border-left:24px solid #fff=
+;border-right:24px solid #fff;border-top:24px solid #fff;color:#000;width:6=
+00px;margin:0 auto" width=3D"600"><tbody><tr><td class=3D"column column-1" =
+width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:4=
+00;text-align:left;padding-bottom:35px;padding-left:24px;padding-right:24px=
+;padding-top:40px;vertical-align:top"><table class=3D"heading_block block-1=
+" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td=
+ class=3D"pad" style=3D"padding-left:30px;padding-right:30px;text-align:cen=
+ter;width:100%"><h1 style=3D"margin:0;color:#fff;direction:ltr;font-family:=
+&#39;Droid Serif&#39;,Georgia,Times,&#39;Times New Roman&#39;,serif;font-si=
+ze:23px;font-weight:700;letter-spacing:normal;line-height:1.2;text-align:ce=
+nter;margin-top:0;margin-bottom:0;mso-line-height-alt:28px"><span class=3D"=
+tinyMce-placeholder" style=3D"word-break: break-word;">Hear from students l=
+ike you!</span></h1></td></tr></tbody></table><table class=3D"heading_block=
+ block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody=
+><tr><td class=3D"pad" style=3D"padding-bottom:20px;padding-left:15px;paddi=
+ng-right:15px;padding-top:15px;text-align:center;width:100%"><h1 style=3D"m=
+argin:0;color:#fff;direction:ltr;font-family:Arial,&#39;Helvetica Neue&#39;=
+,Helvetica,sans-serif;font-size:16px;font-weight:400;letter-spacing:normal;=
+line-height:1.5;text-align:center;margin-top:0;margin-bottom:0;mso-line-hei=
+ght-alt:24px">
+<span class=3D"tinyMce-placeholder" style=3D"word-break: break-word;">Disco=
+ver why international students have chosen to start their new academic jour=
+ney in the <em><strong>Bluegrass region of Kentucky</strong></em>, US.</spa=
+n></h1></td></tr></tbody></table><table class=3D"button_block block-3" widt=
+h=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=
+=3D"pad" style=3D"padding-bottom:5px;padding-left:60px;padding-right:60px;p=
+adding-top:10px;text-align:center"><div class=3D"alignment" align=3D"center=
+"><!--[if mso]>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://email.docsity.com/e/c/eyJlbWF=
+pbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaH=
+JlZiI6Imh0dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtM=
+jAyNS8iLCJpbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcy=
+MjI2ODR9/6f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" =
+style=3D"height:39px;width:266px;v-text-anchor:middle;" arcsize=3D"11%" str=
+oke=3D"false" fillcolor=3D"#ffc62b">
+<w:anchorlock/>
+<v:textbox inset=3D"0px,0px,0px,0px">
+<center dir=3D"false" style=3D"color:#1d4f91;font-family:Arial, sans-serif;=
+font-size:14px">
+<![endif]-->
+<a class=3D"button" href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0=
+dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJ=
+pbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6=
+f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"=
+_blank" style=3D"background-color:#ffc62b;border-bottom:0px solid transpare=
+nt;border-left:0px solid transparent;border-radius:4px;border-right:0px sol=
+id transparent;border-top:0px solid transparent;color:#1d4f91;display:inlin=
+e-block;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;=
+font-size:14px;font-weight:700;mso-border-alt:none;padding-bottom:5px;paddi=
+ng-top:5px;text-align:center;text-decoration:none;width:auto;word-break:kee=
+p-all;"><span style=3D"word-break: break-word; padding-left: 25px; padding-=
+right: 25px; font-size: 14px; display: inline-block; letter-spacing: 1px;">=
+<span style=3D"word-break: break-word; line-height: 28px;"><strong>DISCOVER=
+ THE COURSES</strong></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table=
+ class=3D"row row-4 desktop_hide" align=3D"center" width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-=
+table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-height:0;ov=
+erflow:hidden;background-color:#f7f5f2"><tbody><tr><td><table class=3D"row-=
+content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+;mso-hide:all;display:none;max-height:0;overflow:hidden;background-color:#1=
+d4f91;border-bottom:12px solid #fff;border-left:12px solid #fff;border-righ=
+t:12px solid #fff;border-top:12px solid #fff;color:#000;width:600px;margin:=
+0 auto" width=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"100=
+%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-alig=
+n:left;padding-bottom:35px;padding-left:24px;padding-right:24px;padding-top=
+:40px;vertical-align:top"><table class=3D"heading_block block-1" width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;m=
+ax-height:0;overflow:hidden"><tbody><tr><td class=3D"pad" style=3D"padding-=
+left:30px;padding-right:50px;text-align:center;width:100%"><h1 style=3D"mar=
+gin:0;color:#fff;direction:ltr;font-family:&#39;Droid Serif&#39;,Georgia,Ti=
+mes,&#39;Times New Roman&#39;,serif;font-size:23px;font-weight:700;letter-s=
+pacing:normal;line-height:1.2;text-align:center;margin-top:0;margin-bottom:=
+0;mso-line-height-alt:28px"><span class=3D"tinyMce-placeholder" style=3D"wo=
+rd-break: break-word;">Hear from students like you!</span></h1></td></tr></=
+tbody></table><table class=3D"heading_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-height:0=
+;overflow:hidden"><tbody><tr><td class=3D"pad" style=3D"padding-bottom:20px=
+;padding-left:40px;padding-right:40px;padding-top:15px;text-align:center;wi=
+dth:100%"><h1 style=3D"margin:0;color:#fff;direction:ltr;font-family:Arial,=
+&#39;Helvetica Neue&#39;,Helvetica,sans-serif;font-size:16px;font-weight:40=
+0;letter-spacing:normal;line-height:1.5;text-align:center;margin-top:0;marg=
+in-bottom:0;mso-line-height-alt:24px">
+<span class=3D"tinyMce-placeholder" style=3D"word-break: break-word;">Disco=
+ver why international students have chosen to start their new academic jour=
+ney in the <em><strong>Bluegrass region of Kentucky</strong></em>, US.</spa=
+n></h1></td></tr></tbody></table><table class=3D"button_block block-3" widt=
+h=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:=
+none;max-height:0;overflow:hidden"><tbody><tr><td class=3D"pad" style=3D"pa=
+dding-bottom:5px;padding-left:60px;padding-right:60px;padding-top:10px;text=
+-align:center"><div class=3D"alignment" align=3D"center"><!--[if mso]>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://email.docsity.com/e/c/eyJlbWF=
+pbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaH=
+JlZiI6Imh0dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtM=
+jAyNS8iLCJpbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcy=
+MjI2ODR9/6f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" =
+style=3D"height:39px;width:256px;v-text-anchor:middle;" arcsize=3D"11%" str=
+oke=3D"false" fillcolor=3D"#ffc62b">
+<w:anchorlock/>
+<v:textbox inset=3D"0px,0px,0px,0px">
+<center dir=3D"false" style=3D"color:#1d4f91;font-family:Arial, sans-serif;=
+font-size:14px">
+<![endif]-->
+<a class=3D"button" href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0=
+dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJ=
+pbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6=
+f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"=
+_blank" style=3D"background-color:#ffc62b;border-bottom:0px solid transpare=
+nt;border-left:0px solid transparent;border-radius:4px;border-right:0px sol=
+id transparent;border-top:0px solid transparent;color:#1d4f91;display:inlin=
+e-block;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;=
+font-size:14px;font-weight:700;mso-border-alt:none;padding-bottom:5px;paddi=
+ng-top:5px;text-align:center;text-decoration:none;width:auto;word-break:kee=
+p-all;"><span style=3D"word-break: break-word; padding-left: 20px; padding-=
+right: 20px; font-size: 14px; display: inline-block; letter-spacing: 1px;">=
+<span style=3D"word-break: break-word; line-height: 28px;"><strong>DISCOVER=
+ THE COURSES</strong></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table=
+ class=3D"row row-5 mobile_hide" align=3D"center" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-t=
+able-lspace:0;mso-table-rspace:0;background-color:#f7f5f2"><tbody><tr><td><=
+table class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;background-color:#fff;border-radius:0;color:#000;width:6=
+00px;margin:0 auto" width=3D"600"><tbody><tr><td class=3D"column column-1" =
+width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:4=
+00;text-align:left;padding-bottom:20px;padding-left:24px;padding-right:24px=
+;padding-top:35px;vertical-align:top"><table class=3D"image_block block-1" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td c=
+lass=3D"pad" style=3D"width:100%;padding-right:0;padding-left:0"><div class=
+=3D"alignment" align=3D"center"><div class=3D"fullWidth" style=3D"max-width=
+:552px"><a href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z1=
+lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0dHBzOi8vb=
+WFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJpbnRlcm5h=
+bCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6f36c00f66=
+6c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"_blank" s=
+tyle=3D"outline:none" tabindex=3D"-1"><img src=3D"https://userimg-assets-eu=
+=2Ecustomeriomail.com/images/client-env=
+-107780/editor_images/Group%209640-01J=
+RJE0AXTJTR17FB9HJMTKHH8.png" style=3D"display:block;height:auto;border:0;wi=
+dth:100%" width=3D"552" alt=3D"" title=3D"" height=3D"auto"/></a></div></di=
+v></td></tr></tbody></table><table class=3D"image_block block-2" width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"pa=
+d" style=3D"padding-top:30px;width:100%;padding-right:0;padding-left:0"><di=
+v class=3D"alignment" align=3D"center"><div class=3D"fullWidth" style=3D"ma=
+x-width:552px">
+<a href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaD=
+V3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0dHBzOi8vbWFzdGVyc=
+y5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJpbnRlcm5hbCI6Ijg0=
+Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6f36c00f666c7df591=
+6c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"_blank" style=3D"=
+outline:none" tabindex=3D"-1"><img src=3D"https://userimg-assets-eu.custome=
+riomail.com/images/client-env-107780/editor_images/Group%209642-01JRJE7FA71=
+3GT17MBJ2C31TN0.png" style=3D"display:block;height:auto;border:0;width:100%=
+" width=3D"552" alt=3D"" title=3D"" height=3D"auto"/></a></div></div></td><=
+/tr></tbody></table><table class=3D"image_block block-3" width=3D"100%" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"pad" sty=
+le=3D"padding-top:30px;width:100%;padding-right:0;padding-left:0"><div clas=
+s=3D"alignment" align=3D"center"><div class=3D"fullWidth" style=3D"max-widt=
+h:552px"><a href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z=
+1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0dHBzOi8v=
+bWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJpbnRlcm5=
+hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6f36c00f6=
+66c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"_blank" =
+style=3D"outline:none" tabindex=3D"-1"><img src=3D"https://userimg-assets-e=
+u.customeriomail.com/images/client-env-107780/editor_images/Group%2096429-0=
+1JRJEAQ54CQYHM0Z66ZCWVED2.png" style=3D"display:block;height:auto;border:0;=
+width:100%" width=3D"552" alt=3D"" title=3D"" height=3D"auto"/></a></div></=
+div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody><=
+/table><table class=3D"row row-6 desktop_hide" align=3D"center" width=3D"10=
+0%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;ma=
+x-height:0;overflow:hidden;background-color:#f7f5f2"><tbody><tr><td><table =
+class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0;mso-hide:all;display:none;max-height:0;overflow:hidden;backgro=
+und-color:#fff;border-radius:0;color:#000;width:600px;margin:0 auto" width=
+=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;paddin=
+g-bottom:20px;padding-left:24px;padding-right:24px;padding-top:35px;vertica=
+l-align:top"><table class=3D"image_block block-1" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-t=
+able-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-height:0;ove=
+rflow:hidden"><tbody><tr><td class=3D"pad" style=3D"width:100%;padding-righ=
+t:0;padding-left:0"><div class=3D"alignment" align=3D"center"><div class=3D=
+"fullWidth" style=3D"max-width:552px"><a href=3D"https://email.docsity.com/=
+e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REl=
+tZz09IiwiaHJlZiI6Imh0dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcH=
+JvZ3JhbXMtMjAyNS8iLCJpbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpb=
+mtfaWQiOjcyMjI2ODR9/6f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8=
+ddef34d48" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img sr=
+c=3D"https://userimg-assets-eu.customeriomail.com/images/client-env-107780/=
+editor_images/Group%209647-01JRJF2NA5XFY96KVBR04N6RCF.png" style=3D"display=
+:block;height:auto;border:0;width:100%" width=3D"552" alt=3D"" title=3D"" h=
+eight=3D"auto"/></a></div></div></td></tr></tbody></table><table class=3D"i=
+mage_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace=
+:0;mso-hide:all;display:none;max-height:0;overflow:hidden"><tbody><tr><td c=
+lass=3D"pad" style=3D"padding-top:30px;width:100%;padding-right:0;padding-l=
+eft:0"><div class=3D"alignment" align=3D"center"><div class=3D"fullWidth" s=
+tyle=3D"max-width:552px"><a href=3D"https://email.docsity.com/e/c/eyJlbWFpb=
+F9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJl=
+ZiI6Imh0dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjA=
+yNS8iLCJpbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMj=
+I2ODR9/6f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" ta=
+rget=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img src=3D"https://=
+userimg-assets-eu.customeriomail.com/images/client-env-107780/editor_images=
+/Group%209646-01JRJF29HVYBW6K3EZKWQ1S1XD.png" style=3D"display:block;height=
+:auto;border:0;width:100%" width=3D"552" alt=3D"" title=3D"" height=3D"auto=
+"/></a>
+</div></div></td></tr></tbody></table><table class=3D"image_block block-3" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;disp=
+lay:none;max-height:0;overflow:hidden"><tbody><tr><td class=3D"pad" style=
+=3D"padding-top:30px;width:100%;padding-right:0;padding-left:0"><div class=
+=3D"alignment" align=3D"center"><div class=3D"fullWidth" style=3D"max-width=
+:552px">
+<a href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaD=
+V3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0dHBzOi8vbWFzdGVyc=
+y5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJpbnRlcm5hbCI6Ijg0=
+Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6f36c00f666c7df591=
+6c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"_blank" style=3D"=
+outline:none" tabindex=3D"-1"><img src=3D"https://userimg-assets-eu.custome=
+riomail.com/images/client-env-107780/editor_images/Group%2096452-01JRJEZH2J=
+YRJHQ4G77R0DN94N.png" style=3D"display:block;height:auto;border:0;width:100=
+%" width=3D"552" alt=3D"" title=3D"" height=3D"auto"/></a></div></div></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><t=
+able class=3D"row row-7" align=3D"center" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lsp=
+ace:0;mso-table-rspace:0;background-color:#f7f5f2"><tbody><tr><td><table cl=
+ass=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tabl=
+e-rspace:0;background-color:#fff;color:#000;width:600px;margin:0 auto" widt=
+h=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;paddi=
+ng-bottom:40px;vertical-align:top"><table class=3D"button_block block-1" wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td cla=
+ss=3D"pad" style=3D"padding-bottom:5px;padding-left:60px;padding-right:60px=
+;padding-top:20px;text-align:center"><div class=3D"alignment" align=3D"cent=
+er"><!--[if mso]>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://email.docsity.com/e/c/eyJlbWF=
+pbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaH=
+JlZiI6Imh0dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtM=
+jAyNS8iLCJpbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcy=
+MjI2ODR9/6f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" =
+style=3D"height:39px;width:163px;v-text-anchor:middle;" arcsize=3D"11%" str=
+oke=3D"false" fillcolor=3D"#ffc62b">
+<w:anchorlock/>
+<v:textbox inset=3D"0px,0px,0px,0px">
+<center dir=3D"false" style=3D"color:#1d4f91;font-family:Arial, sans-serif;=
+font-size:14px">
+<![endif]-->
+<a class=3D"button" href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0=
+dHBzOi8vbWFzdGVycy5kb2NzaXR5LmNvbS9taWR3YXktc3R1ZHktcHJvZ3JhbXMtMjAyNS8iLCJ=
+pbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcyMjI2ODR9/6=
+f36c00f666c7df5916c29a1c608c8f61d66a3c057d9ce9e92f0ec8ddef34d48" target=3D"=
+_blank" style=3D"background-color:#ffc62b;border-bottom:0px solid transpare=
+nt;border-left:0px solid transparent;border-radius:4px;border-right:0px sol=
+id transparent;border-top:0px solid transparent;color:#1d4f91;display:inlin=
+e-block;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;=
+font-size:14px;font-weight:700;mso-border-alt:none;padding-bottom:5px;paddi=
+ng-top:5px;text-align:center;text-decoration:none;width:auto;word-break:kee=
+p-all;"><span style=3D"word-break: break-word; padding-left: 25px; padding-=
+right: 25px; font-size: 14px; display: inline-block; letter-spacing: 1px;">=
+<span style=3D"word-break: break-word; line-height: 28px;"><strong>LEARN MO=
+RE</strong></span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table=
+ class=3D"row row-8" align=3D"center" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;background-color:#f7f5f2"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#f7f5f2;border-radius:0;color:#000;width:600px;mar=
+gin:0 auto" width=3D"600"><tbody><tr><td class=3D"column column-1" width=3D=
+"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-=
+align:left;vertical-align:top"><table class=3D"image_block block-1" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=
+=3D"pad" style=3D"padding-bottom:21px;padding-top:48px;width:100%;padding-r=
+ight:0;padding-left:0"><div class=3D"alignment" align=3D"center"><div style=
+=3D"max-width:90px"><a href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZC=
+I6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6I=
+mh0dHBzOi8vd3d3LmRvY3NpdHkuY29tLz91dG1fc291cmNlPW5ld3NsZXR0ZXJcdTAwMjZ1dG1f=
+bWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NvbnRlbnQ9aXRcdTAwMjZ1dG1fY2FtcGFpZ249YjJiZm9=
+vdGVyIiwiaW50ZXJuYWwiOiI4NGNhMDZhZDA1ODFiZjAxZjJlMWU3MDkiLCJsaW5rX2lkIjo5ND=
+YwNjZ9/bdf169ae620f4f23ec6593aa391a1eedd983665f343d8047a72bb1b762512da3" ta=
+rget=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img src=3D"https://=
+userimg-assets-eu.customeriomail.com/images/client-env-107780/1726641031315=
+_logo_footer_01J81X6K09B23Z8MTNFM2ZKKYF.png" style=3D"display:block;height:=
+auto;border:0;width:100%" width=3D"90" alt=3D"https://www.docsity.com/" tit=
+le=3D"https://www.docsity.com/" height=3D"auto"/></a></div></div></td></tr>=
+</tbody></table><table class=3D"social_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"pad" style=3D=
+"padding-bottom:21px;padding-left:10px;padding-right:10px;text-align:center=
+"><div class=3D"alignment" align=3D"center"><table class=3D"social-table" w=
+idth=3D"156px" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;display:inline-bl=
+ock"><tbody><tr><td style=3D"padding:0 10px 0 10px"><a href=3D"https://emai=
+l.docsity.com/e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKM=
+UtWQWVacno5REltZz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vZG9jc2l0=
+eV9lbi8iLCJpbnRlcm5hbCI6Ijg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjc=
+xNDgwNTh9/0e60598601f28d278a9cd7a431b8060b1d1d1b56b29207997aad8e0768cb774c"=
+ target=3D"_blank"><img src=3D"https://userimg-assets-eu.customeriomail.com=
+/images/client-env-107780/1726643735709_instagram_01J81ZS3C6D6VGJHNYBEJTQ49=
+6.png" width=3D"32" height=3D"auto" alt=3D"Docsity_Instagram" title=3D"Docs=
+ity_Instagram" style=3D"display:block;height:auto;border:0"/></a></td><td s=
+tyle=3D"padding:0 10px 0 10px"><a href=3D"https://email.docsity.com/e/c/eyJ=
+lbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09Ii=
+wiaHJlZiI6Imh0dHBzOi8vd3d3LnRpa3Rvay5jb20vQGRvY3NpdHlfZW4iLCJpbnRlcm5hbCI6I=
+jg0Y2EwNmFkMDU4MWJmMDFmMmUxZTcwOSIsImxpbmtfaWQiOjcxNDgwNzV9/df7ccc8f904bea4=
+2032fb6f654ebb310cf6c6230abde51078bc87fcae16dd8b6" target=3D"_blank"><img s=
+rc=3D"https://userimg-assets-eu.customeriomail.com/images/client-env-107780=
+/1726730432234_tiktok_01J84JEWNHVVA51DQYX49B2DTF.png" width=3D"32" height=
+=3D"auto" alt=3D"Docsity_Tiktok" title=3D"Docsity_Tiktok" style=3D"display:=
+block;height:auto;border:0"/></a></td><td style=3D"padding:0 10px 0 10px"><=
+a href=3D"https://email.docsity.com/e/c/eyJlbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaDV=
+3bng0ZWNKQVpjdThBNWlKMUtWQWVacno5REltZz09IiwiaHJlZiI6Imh0dHBzOi8vd3d3Lmxpbm=
+tlZGluLmNvbS9jb21wYW55L2RvY3NpdHktY29tLyIsImludGVybmFsIjoiODRjYTA2YWQwNTgxY=
+mYwMWYyZTFlNzA5IiwibGlua19pZCI6NTAxMzA4N30/8cdb432f21550054c50f3350cbf915be=
+0c7962ce8be654593cc933c694418369" target=3D"_blank"><img src=3D"https://use=
+rimg-assets-eu.customeriomail.com/images/client-env-107780/1726643736566_li=
+nkedin_01J81ZS46VA8Q9TA12NSKW2PMD.png" width=3D"32" height=3D"auto" alt=3D"=
+Docsity_LinkedIn" title=3D"Docsity_LinkedIn" style=3D"display:block;height:=
+auto;border:0"/></a></td></tr></tbody></table></div></td></tr></tbody></tab=
+le><table class=3D"text_block block-3" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=3D"pad" s=
+tyle=3D"padding-bottom:32px;padding-left:24px;padding-right:24px"><div styl=
+e=3D"font-family:Arial,sans-serif"><div class=3D"" style=3D"font-size:12px;=
+text-align:center;font-family:Arial,&#39;Helvetica Neue&#39;,Helvetica,sans=
+-serif;mso-line-height-alt:21.6px;color:#a8a49e;line-height:1.8"><p style=
+=3D"margin:0;mso-line-height-alt:21.6px">You have received this email to ng=
+uyenlongvu768@gmail.com because you are registered in Docsity<br/>
+If you don&#39;t want to receive this type of information <strong><a href=
+=3D"https://email.docsity.com/unsubscribe/dgSEygYAAPLh5wnx4ecJAZcu8A5iJ1KVA=
+eZrz9DImg=3D=3D" target=3D"_blank" class=3D"" style=3D"text-decoration: und=
+erline; color: #000000;" rel=3D"noopener">click here=C2=A0</a></strong><br/=
+>Docsity.com - Via Leonardo da Vinci 16 - Turin, Piedmont - Italy</p></div>=
+</div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody=
+></table></td></tr></tbody></table><!-- End --><img src=3D"https://email.do=
+csity.com/e/o/eyJlbWFpbF9pZCI6ImRnU0V5Z1lBQVBMaDV3bng0ZWNKQVpjdThBNWlKMUtWQ=
+WVacno5REltZz09In0=3D" style=3D"height: 1px !important; max-height: 1px !im=
+portant; max-width: 1px !important; width: 1px !important; display: none !i=
+mportant;" alt=3D""/></body></html>
+--d14f395280fae6c4cb048cc8d64ec8c740526039a247562dde4f5515e875--

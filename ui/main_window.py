@@ -11,6 +11,7 @@ from services.classification_service import ClassificationService
 from utils.config import APP_NAME, WINDOW_WIDTH, WINDOW_HEIGHT
 import email
 import os
+import tempfile
 
 class EmailLoaderThread(QThread):
     finished = pyqtSignal(list)
@@ -223,6 +224,7 @@ class MainWindow(QMainWindow):
 
     def on_emails_loaded(self, emails):
         self.loading_label.setText("")
+        self._inbox_emails = emails  # Lưu lại danh sách emails để truy xuất raw bytes
         for email in emails:
             item = QListWidgetItem(f"{email['subject']} - {email['from']}")
             item.setData(Qt.UserRole, email)
@@ -297,10 +299,32 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "Lỗi", "Vui lòng chọn một email để phân loại!")
             return
         email = current_item.data(Qt.UserRole)
-        # Ghép subject + body để phân tích rõ hơn
-        content = f"Tiêu đề: {email['subject']}\nNgười gửi: {email['from']}\n\n{email['body']}"
-        self.email_input.setPlainText(content)
+        # Tìm raw bytes của email này trong _inbox_emails
+        email_id = email.get('id')
+        raw_bytes = None
+        for e in getattr(self, '_inbox_emails', []):
+            if e.get('id') == email_id and 'raw_bytes' in e:
+                raw_bytes = e['raw_bytes']
+                break
+        if raw_bytes is None:
+            # Nếu chưa có raw_bytes, cần fetch lại từ IMAP
+            try:
+                raw_bytes = self.fetch_email_raw_bytes(email_id)
+            except Exception as ex:
+                QMessageBox.critical(self, "Lỗi", f"Không thể lấy file .eml: {str(ex)}")
+                return
+        # Lưu file tạm
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.eml') as tmp:
+            tmp.write(raw_bytes)
+            tmp_path = tmp.name
+        self.load_eml_file(tmp_path)
         self.tab_widget.setCurrentIndex(0)  # Chuyển sang tab phân tích
+
+    def fetch_email_raw_bytes(self, email_id):
+        # Lấy raw bytes từ IMAP
+        imap = self.email_service.imap_server
+        typ, msg_data = imap.fetch(email_id.encode(), '(RFC822)')
+        return msg_data[0][1]
 
     def closeEvent(self, event):
         """Xử lý sự kiện đóng cửa sổ"""

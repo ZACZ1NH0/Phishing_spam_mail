@@ -1,0 +1,1081 @@
+Delivered-To: nguyenlongvu768@gmail.com
+Received: by 2002:a05:7022:6b8c:b0:9a:f40a:49ab with SMTP id dm12csp2662559dlb;
+        Sun, 1 Jun 2025 23:57:49 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFq4Mn999w2vGfcl5IgBNKqg4gwUvfd/po+K73xn3qH+OtZDcGaCNUaTr2r/lIQH2WhknOq
+X-Received: by 2002:a05:620a:44d1:b0:7d0:a1c9:65a7 with SMTP id af79cd13be357-7d0a49e7dddmr1868392685a.6.1748847468687;
+        Sun, 01 Jun 2025 23:57:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1748847468; cv=none;
+        d=google.com; s=arc-20240605;
+        b=MdmkO2qo41HIWRemklKwtxMS1XF6e4cIEAhBiAU8JqpVkzy3pW/OxuQ0uubu+pjjDg
+         9/YDQYpxl6a9TjoS0ZkeihvqfXTVfB9hMfwguDaHFxS3stcwttV3rKOqMY/TzHtrSDTb
+         mAQ8ApPm5OhukgkiNj3G2ADO6gfu3cP/dwHenkRid8XwCf5v2Dh+w/+3VnYRc6ujZ6im
+         sUxO7aMSPsL9yopavhHzxARYIxObYijVj3MbDUF1Z9n/vMMS1HawaooqzPeaFf69uEvI
+         EdSCGdZ80ABFI60R7ZquAKw1HDhnzRuJfIcjZeTWoK9Js6sLFLyoL5lYxATiAHV5mnl6
+         yrLQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=require-recipient-valid-since:feedback-id:list-unsubscribe-post
+         :list-unsubscribe:date:to:mime-version:subject:message-id:from
+         :dkim-signature:dkim-signature;
+        bh=I5GVQh+UWiJCPHxvJL7xTMqXeep0w3mfVCG4Vc5AE1A=;
+        fh=wwkrabN8nX8AsnHgfYLn/0HWk6P4Z0iW0QOH8KDPAyY=;
+        b=A+7UBiae+ZM+WOQFE2klXRUOxK3m5W3HEfpbanitLISSOnf5PncHze3Cq01XfBRagj
+         Al2V7foSa4kg5Mo9EvqyEU/ZGO4l2be4XoNwqdhzn/NZGhQbWdSGl+YHWFNNWEfg0CGq
+         0opaGQ5XuKlq7MKGtGelE7oCmlXRXRBIE52He0ttOVM9IiydLohnAEjFV+LtgFQM0vBz
+         r9weVJPoCfUdRu5ttM0ETHccH96CEI0j7wx1A9NHktkLWtJ7m7RijIayXvv5qDTigyPX
+         YFhaqKqYZakEHyO9cDGc0q/AQW5kWFkOynW5bLfnIUKXr44Trch1tox1Y32xDJgczjWN
+         Cijw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@maile.linkedin.com header.s=d2048-202308-0e header.b=SrBc8I3F;
+       dkim=pass header.i=@linkedin.com header.s=d2048-202308-00 header.b=T4Gv+4cf;
+       spf=pass (google.com: domain of s-2kevgv2b5gf7agkio1qa220vh1koectbqqdyvwa6a6dfc288dxk9en3a@bounce.linkedin.com designates 2620:109:c006:104::193 as permitted sender) smtp.mailfrom=s-2kevgv2b5gf7agkio1qa220vh1koectbqqdyvwa6a6dfc288dxk9en3a@bounce.linkedin.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=linkedin.com
+Return-Path: <s-2kevgv2b5gf7agkio1qa220vh1koectbqqdyvwa6a6dfc288dxk9en3a@bounce.linkedin.com>
+Received: from maile-aa.linkedin.com (maile-aa.linkedin.com. [2620:109:c006:104::193])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6fac6e59a94si94973356d6.197.2025.06.01.23.57.48
+        for <nguyenlongvu768@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 01 Jun 2025 23:57:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of s-2kevgv2b5gf7agkio1qa220vh1koectbqqdyvwa6a6dfc288dxk9en3a@bounce.linkedin.com designates 2620:109:c006:104::193 as permitted sender) client-ip=2620:109:c006:104::193;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@maile.linkedin.com header.s=d2048-202308-0e header.b=SrBc8I3F;
+       dkim=pass header.i=@linkedin.com header.s=d2048-202308-00 header.b=T4Gv+4cf;
+       spf=pass (google.com: domain of s-2kevgv2b5gf7agkio1qa220vh1koectbqqdyvwa6a6dfc288dxk9en3a@bounce.linkedin.com designates 2620:109:c006:104::193 as permitted sender) smtp.mailfrom=s-2kevgv2b5gf7agkio1qa220vh1koectbqqdyvwa6a6dfc288dxk9en3a@bounce.linkedin.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=linkedin.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maile.linkedin.com;
+	s=d2048-202308-0e; t=1748847468;
+	bh=I5GVQh+UWiJCPHxvJL7xTMqXeep0w3mfVCG4Vc5AE1A=;
+	h=From:Subject:MIME-Version:Content-Type:To:Date:X-LinkedIn-Class:
+	 X-LinkedIn-Template:X-LinkedIn-fbl;
+	b=SrBc8I3FxkV7ihDSlaCdnz3uiHdopbAePI06+/4ra6lhegYOMZfYS7vzGva4UAyJ3
+	 91qLn6Txsnz1vZlJAqELEQeiAL8rn8kIAmaY8cTUb4jvowG+oPwzSShdfSkIru80tf
+	 FuZbxZFyKH78iXkTnrkTMnaXnupT0ehN2KkMkwwI32f2j+Q1VKgXLOW6svRPAHzm2e
+	 uiZsVt+X+VhyiDmSW3VmrCN7En/rvgaypJA8UztTJU3M1jdpt25sxXG13gRpwzJ0Vz
+	 +Ev0IotPOmRqX4OqWZArA9QiuGuNolFgvvpF7wpvVlRR3YQ+Qu2fUZXuacol1sysVO
+	 SAH4rt88jsJGw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linkedin.com;
+	s=d2048-202308-00; t=1748847468;
+	bh=I5GVQh+UWiJCPHxvJL7xTMqXeep0w3mfVCG4Vc5AE1A=;
+	h=From:Subject:MIME-Version:Content-Type:To:Date:X-LinkedIn-Class:
+	 X-LinkedIn-Template:X-LinkedIn-fbl;
+	b=T4Gv+4cfseY+Z+aVdXsP2nmnbmm+h5yag0MDgtMJerN9G1Q3LP5tkypQnAMs5gkBU
+	 dIjeWTvvVKVUtXR8ypFnJiGSCr+lG42CjUimFFmKEt2VcVxPUclp3xj66F7Kgf0+yW
+	 kuXHCTgXqAoNUyC6Z/6oOxabTdpPTetkgrY8h7wtWVk0zi4Qad3vetAvveaosqhexi
+	 IBAVCIX2oB1jf3fhaJrJSk6ME2GPzLWImWm8SB9tXqzUO1StxQ5HtvLDZDsAC1sp3Y
+	 1YnKLRAVd8DAvXrWim1d0kV60kRdMlV92CyRMI81c59sSF3x/FsX7mycc9TpGNHeI9
+	 1e2wL/sg1noKQ==
+From: VietnamWorks via LinkedIn <newsletters-noreply@linkedin.com>
+Message-ID: <1594243937.9196054.1748847468463@lva1-app84901.prod.linkedin.com>
+Subject: =?UTF-8?Q?Trust_Issue_n=C6=A1i_c=C3=B4ng_s=E1=BB=9F:_c=C3=A0ng_=C4=91?=
+ =?UTF-8?Q?=E1=BB=81_ph=C3=B2ng,_c=C3=A0ng_c?=
+ =?UTF-8?Q?=C3=B4_l=E1=BA=ADp_ch=C3=ADnh_m=C3=ACnh?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9196048_1732716.1748847468459"
+To: =?UTF-8?Q?Long_V=C5=A9_Nguy=E1=BB=85n?= <nguyenlongvu768@gmail.com>
+Date: Mon, 2 Jun 2025 06:57:48 +0000 (UTC)
+X-LinkedIn-Class: EMAIL-DEFAULT
+X-LinkedIn-Template: email_series_follow_newsletter_01
+X-LinkedIn-fbl: m2-aszyxkrpk6qxlyn7sxersvwy0gyrbtfwszuo5dao5vmrjw6nph0xox2lhsyimfkl5616x26shienjmiphh2pp538iup3spi30ibtdm
+X-LinkedIn-Id: lijrs5-mbeqmcto-8e
+List-Unsubscribe: <https://www.linkedin.com/series-notifications/?action=unsubscribe&memberToken=ADoAAE2K2WUBPbi49kSWr7_Q7TngAg4JjzeSf5s&newsletterId=7145967892788879361&newsletterTitle=VietnamWorks HR Insider &lipi=urn%3Ali%3Apage%3Aemail_email_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&midToken=AQHbK6-LNIBt_w&midSig=2yS8PkXbF1MrM1&ek=email_series_follow_newsletter_01&e=lijrs5-mbeqmcto-8e&eid=lijrs5-mbeqmcto-8e&m=unsub&ts=unsub&li=0&t=plh>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: email_series_follow_newsletter_01:linkedin
+Require-Recipient-Valid-Since: nguyenlongvu768@gmail.com; Thu, 11 Apr 2024 03:31:11 +0000
+
+------=_Part_9196048_1732716.1748847468459
+Content-Type: text/plain;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: text-body
+
+VietnamWorks HR Insider=20
+
+By VietnamWorks
+
+
+By VietnamWorks
+
+   =20
+   =20
+    Read this article on LinkedIn to join the conversation
+Read on LinkedIn
+https://www.linkedin.com/comm/pulse/trust-issue-n%C6%A1i-c%C3%B4ng-s%E1%BB%=
+9F-c%C3%A0ng-%C4%91%E1%BB%81-ph%C3%B2ng-c%C3%B4-l%E1%BA%ADp-ch%C3%ADnh-m%C3=
+%ACnh-bp7wc?lipi=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newsletter_0=
+1%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&midToken=3DAQHbK6-LNIBt_w&midSig=3D2yS8P=
+kXbF1MrM1&trk=3Deml-email_series_follow_newsletter_01-null-0-read_more_bann=
+er_cta_&trkEmail=3Deml-email_series_follow_newsletter_01-null-0-read_more_b=
+anner_cta_-null-lijrs5~mbeqmcto~8e-null-null&eid=3Dlijrs5-mbeqmcto-8e&otpTo=
+ken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZ=
+jA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgw=
+OTYzYmYxOWRkNDIzLDEsMQ%3D%3D
+ =20
+Xem th=C3=AAm: C=E1=BB=A9 ng=E1=BB=A1 m=C3=ACnh gi=E1=BB=8Fi, ho=C3=A1 ra =
+=C4=91ang m=E1=BA=AFc "b=E1=BA=ABy n=C4=83ng l=E1=BB=B1c trung b=C3=ACnh" =
+=E2=80=94 HR Insider=E2=80=94 VietnamWorks =E2=80=93 Website tuy=E1=BB=83n =
+d=E1=BB=A5ng tr=E1=BB=B1c tuy=E1=BA=BFn s=E1=BB=91 1 Vi=E1=BB=87t Nam Lo l=
+=E1=BA=AFng b=E1=BB=8B ph=E1=BA=A3n b=E1=BB=99i, kh=C3=B3 tin t=C6=B0=E1=BB=
+=9Fng v=C3=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c,=E2=80=A6 l=C3=A0 nh=E1=BB=AFng=
+ d=E1=BA=A5u hi=E1=BB=87u cho th=E1=BA=A5y b=E1=BA=A1n =C4=91ang c=C3=B3 kh=
+=E1=BA=A3 n=C4=83ng m=E1=BA=AFc ph=E1=BA=A3i h=E1=BB=99i ch=E1=BB=A9ng Trus=
+t issue. V=E1=BA=ADy=C2=A0Trust issue l=C3=A0 g=C3=AC? N=C3=B3 =E1=BA=A3nh =
+h=C6=B0=E1=BB=9Fng nh=C6=B0 th=E1=BA=BF n=C3=A0o =C4=91=E1=BA=BFn cu=E1=BB=
+=99c s=E1=BB=91ng c=E1=BB=A7a ch=C3=BAng ta? Trust issue l=C3=A0 g=C3=AC? T=
+rust issue (h=E1=BB=99i ch=E1=BB=A9ng m=E1=BA=A5t l=C3=B2ng tin) l=C3=A0 t=
+=C3=ACnh tr=E1=BA=A1ng t=C3=A2m l=C3=BD khi=E1=BA=BFn ch=C3=BAng ta g=E1=BA=
+=B7p kh=C3=B3 kh=C4=83n trong vi=E1=BB=87c =C4=91=E1=BA=B7t ni=E1=BB=81m ti=
+n v=C3=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c. H=E1=BB=99i ch=E1=BB=A9ng n=C3=A0y=
+ th=C6=B0=E1=BB=9Dng xu=E1=BA=A5t ph=C3=A1t t=E1=BB=AB nh=E1=BB=AFng tr=E1=
+=BA=A3i nghi=E1=BB=87m ti=C3=AAu c=E1=BB=B1c di=E1=BB=85n ra trong qu=C3=A1=
+ kh=E1=BB=A9, v=C3=AD d=E1=BB=A5 nh=C6=B0 b=E1=BB=8B l=E1=BB=ABa d=E1=BB=91=
+i, ph=E1=BA=A3n b=E1=BB=99i hay t=E1=BB=95n th=C6=B0=C6=A1ng trong c=C3=A1c=
+ m=E1=BB=91i quan h=E1=BB=87. Ng=C6=B0=E1=BB=9Di g=E1=BA=B7p ph=E1=BA=A3i h=
+=E1=BB=99i ch=E1=BB=A9ng m=E1=BA=A5t l=C3=B2ng tin th=C6=B0=E1=BB=9Dng c=C3=
+=B3 c=E1=BA=A3m gi=C3=A1c nghi ng=E1=BB=9D, lo l=E1=BA=AFng ho=E1=BA=B7c th=
+i=E1=BA=BFu tin t=C6=B0=E1=BB=9Fng v=C3=A0o s=E1=BB=B1 ch=C3=A2n th=C3=A0nh=
+ c=E1=BB=A7a ng=C6=B0=E1=BB=9Di kh=C3=A1c, =C4=91i=E1=BB=81u n=C3=A0y g=C3=
+=A2y kh=C3=B3 kh=C4=83n trong vi=E1=BB=87c x=C3=A2y d=E1=BB=B1ng v=C3=A0 du=
+y tr=C3=AC c=C3=A1c m=E1=BB=91i quan h=E1=BB=87 c=C3=A1 nh=C3=A2n c=C5=A9ng=
+ nh=C6=B0 trong c=C3=B4ng vi=E1=BB=87c. H=E1=BB=99i ch=E1=BB=A9ng Trust iss=
+ue ng=C3=A0y c=C3=A0ng tr=E1=BB=9F n=C3=AAn ph=E1=BB=95 bi=E1=BA=BFn Nguy=
+=C3=AAn nh=C3=A2n d=E1=BA=ABn =C4=91=E1=BA=BFn h=E1=BB=99i ch=E1=BB=A9ng Tr=
+ust issue l=C3=A0 g=C3=AC? Nh=C6=B0 =C4=91=C3=A3 n=C3=B3i =E1=BB=9F tr=C3=
+=AAn h=E1=BB=99i ch=E1=BB=A9ng Trust issue kh=C3=B4ng ph=E1=BA=A3i t=E1=BB=
+=B1 nhi=C3=AAn m=C3=A0 c=C3=B3, n=C3=B3 th=C6=B0=E1=BB=9Dng xu=E1=BA=A5t ph=
+=C3=A1t t=E1=BB=AB nh=E1=BB=AFng tr=E1=BA=A3i nghi=E1=BB=87m trong qu=C3=A1=
+ kh=E1=BB=A9. =C4=90i=E1=BB=83n h=C3=ACnh nh=C6=B0: Tr=E1=BA=A3i nghi=E1=BB=
+=87m ti=C3=AAu c=E1=BB=B1c trong qu=C3=A1 kh=E1=BB=A9: B=E1=BB=8B ph=E1=BA=
+=A3n b=E1=BB=99i, l=E1=BB=ABa d=E1=BB=91i, t=E1=BB=95n th=C6=B0=C6=A1ng tro=
+ng c=C3=A1c m=E1=BB=91i quan h=E1=BB=87 khi=E1=BA=BFn h=E1=BB=8D m=E1=BA=A5=
+t l=C3=B2ng tin v=C3=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c. S=E1=BB=91ng trong g=
+ia =C4=91=C3=ACnh ph=E1=BB=A9c t=E1=BA=A1p: Th=C6=B0=E1=BB=9Dng xuy=C3=AAn =
+x=E1=BA=A3y ra m=C3=A2u thu=E1=BA=ABn, thi=E1=BA=BFu tin t=C6=B0=E1=BB=9Fng=
+ ho=E1=BA=B7c s=E1=BB=B1 ph=E1=BA=A3n b=E1=BB=99i gi=E1=BB=AFa c=C3=A1c th=
+=C3=A0nh vi=C3=AAn. Ch=C3=ADnh =C4=91i=E1=BB=81u n=C3=A0y =C4=91=C3=A3 h=C3=
+=ACnh th=C3=A0nh n=C3=AAn c=E1=BA=A3m gi=C3=A1c nghi ng=E1=BB=9D, thi=E1=BA=
+=BFu tin t=C6=B0=E1=BB=9Fng ngay t=E1=BB=AB nh=E1=BB=8F. T=C3=ADnh c=C3=A1c=
+h nh=E1=BA=A1y c=E1=BA=A3m: Nh=E1=BB=AFng ng=C6=B0=E1=BB=9Di c=C3=B3 t=C3=
+=ADnh qu=C3=A1 nh=E1=BA=A1y c=E1=BA=A3m c=C5=A9ng r=E1=BA=A5t d=E1=BB=85 r=
+=C6=A1i v=C3=A0o tr=E1=BA=A1ng th=C3=A1i nghi ng=E1=BB=9D, thi=E1=BA=BFu l=
+=C3=B2ng tin. B=E1=BA=A1n th=C6=B0=E1=BB=9Dng xuy=C3=AAn c=E1=BA=A3m th=E1=
+=BA=A5y lo l=E1=BA=AFng, nghi ng=E1=BB=9D v=E1=BB=81 s=E1=BB=B1 ch=C3=A2n t=
+h=C3=A0nh c=E1=BB=A7a =C4=91=E1=BB=91i ph=C6=B0=C6=A1ng. X=E1=BB=AD l=C3=BD=
+ xung =C4=91=E1=BB=99t sai c=C3=A1ch: C=C3=A1ch gi=E1=BA=A3i quy=E1=BA=BFt =
+xung =C4=91=E1=BB=99t kh=C3=B4ng l=C3=A0nh m=E1=BA=A1nh d=E1=BA=ABn =C4=91=
+=E1=BA=BFn nh=E1=BB=AFng nghi ng=E1=BB=9D, m=E1=BA=A5t l=C3=B2ng tin v=C3=
+=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c. Nguy=C3=AAn nh=C3=A2n d=E1=BA=ABn =C4=91=
+=E1=BA=BFn h=E1=BB=99i ch=E1=BB=A9ng Trust issue l=C3=A0 g=C3=AC? Thi=E1=BA=
+=BFu trung th=E1=BB=B1c trong c=C3=A1c m=E1=BB=91i quan h=E1=BB=87 x=C3=A3 =
+h=E1=BB=99i ho=E1=BA=B7c c=C3=B4ng vi=E1=BB=87c: S=E1=BB=B1 kh=C3=B4ng =C4=
+=91=C3=A1ng tin c=E1=BA=ADy v=C3=A0 ph=E1=BA=A3n b=E1=BB=99i trong c=C3=A1c=
+ m=E1=BB=91i quan h=E1=BB=87 n=C3=A0y c=C3=B3 th=E1=BB=83 c=E1=BB=A7ng c=E1=
+=BB=91 c=E1=BA=A3m gi=C3=A1c nghi ng=E1=BB=9D v=C3=A0 m=E1=BA=A5t l=C3=B2ng=
+ tin. R=E1=BB=91i lo=E1=BA=A1n t=C3=A2m l=C3=BD: C=C3=A1c v=E1=BA=A5n =C4=
+=91=E1=BB=81 nh=C6=B0 lo =C3=A2u, m=E1=BA=B7c c=E1=BA=A3m ho=E1=BA=B7c t=E1=
+=BB=B1 ti c=C3=B3 th=E1=BB=83 l=C3=A0m gia t=C4=83ng s=E1=BB=B1 thi=E1=BA=
+=BFu l=C3=B2ng tin v=C3=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c. D=E1=BA=A5u hi=E1=
+=BB=87u nh=E1=BA=ADn bi=E1=BA=BFt b=E1=BB=8B Trust issue? N=E1=BA=BFu nghi =
+ng=E1=BB=9D b=E1=BA=A3n th=C3=A2n ho=E1=BA=B7c ng=C6=B0=E1=BB=9Di th=C3=A2n=
+ c=E1=BB=A7a m=C3=ACnh m=E1=BA=AFc h=E1=BB=99i ch=E1=BB=A9ng Trust issue, b=
+=E1=BA=A1n h=C3=A3y th=E1=BB=AD quan s=C3=A1t xem b=E1=BA=A3n th=C3=A2n ho=
+=E1=BA=B7c ng=C6=B0=E1=BB=9Di =C4=91=C3=B3 c=C3=B3 =C4=91ang g=E1=BA=B7p ph=
+=E1=BA=A3i m=E1=BB=99t trong nh=E1=BB=AFng tri=E1=BB=87u ch=E1=BB=A9ng sau =
+=C4=91=C3=A2y kh=C3=B4ng nh=C3=A9. Th=C6=B0=E1=BB=9Dng xuy=C3=AAn nghi ng=
+=E1=BB=9D ng=C6=B0=E1=BB=9Di kh=C3=A1c:=C2=A0Ng=C6=B0=E1=BB=9Di m=E1=BA=AFc=
+ h=E1=BB=99i ch=E1=BB=A9ng Trust issue lu=C3=B4n =E1=BB=9F trong tr=E1=BA=
+=A1ng th=C3=A1i nghi ng=E1=BB=9D, lo s=E1=BB=A3 ng=C6=B0=E1=BB=9Di kh=C3=A1=
+c ph=E1=BA=A3n b=E1=BB=99i m=C3=ACnh. Trong khi th=E1=BB=B1c t=E1=BA=BF, ng=
+=C6=B0=E1=BB=9Di =C4=91=C3=B3 kh=C3=B4ng h=E1=BB=81 l=C3=A0m b=E1=BA=A5t c=
+=E1=BB=A9 =C4=91i=E1=BB=81u g=C3=AC c=C3=B3 l=E1=BB=97i v=E1=BB=9Bi b=E1=BA=
+=A1n. Ng=E1=BA=A1i giao ti=E1=BA=BFp v=E1=BB=9Bi ng=C6=B0=E1=BB=9Di xung qu=
+anh:=C2=A0H=E1=BB=99i ch=E1=BB=A9ng Trust issue g=C3=A2y n=C3=AAn t=C3=ACnh=
+ tr=E1=BA=A1ng kh=C3=B3 kh=C4=83n trong giao ti=E1=BA=BFp, b=E1=BB=9Fi kh=
+=C3=B4ng c=C3=B3 ai =C4=91=E1=BB=83 tin t=C6=B0=E1=BB=9Fng. =C4=90=C3=B3 c=
+=C5=A9ng ch=C3=ADnh l=C3=A0 l=C3=BD do m=C3=A0 h=E1=BB=8D l=E1=BB=B1a ch=E1=
+=BB=8Dn xa c=C3=A1ch v=E1=BB=9Bi nh=E1=BB=AFng m=E1=BB=91i quan h=E1=BB=87 =
+xung quanh, tr=C3=A1nh nguy c=C6=A1 b=E1=BB=8B ph=E1=BA=A3n b=E1=BB=99i tro=
+ng t=C6=B0=C6=A1ng lai. Lo l=E1=BA=AFng v=E1=BB=81 t=E1=BB=95n th=C6=B0=C6=
+=A1ng: Lu=C3=B4n c=E1=BA=A3m th=E1=BA=A5y lo =C3=A2u v=E1=BB=81 kh=E1=BA=A3=
+ n=C4=83ng b=E1=BB=8B ng=C6=B0=E1=BB=9Di kh=C3=A1c l=C3=A0m t=E1=BB=95n th=
+=C6=B0=C6=A1ng ho=E1=BA=B7c b=E1=BB=8F r=C6=A1i, d=C3=B9 kh=C3=B4ng c=C3=B3=
+ d=E1=BA=A5u hi=E1=BB=87u c=E1=BB=A5 th=E1=BB=83 n=C3=A0o cho th=E1=BA=A5y =
+s=E1=BB=B1 ph=E1=BA=A3n b=E1=BB=99i. Kh=C3=B4ng tin t=C6=B0=E1=BB=9Fng v=C3=
+=A0o ch=C3=ADnh m=C3=ACnh:=C2=A0Nh=E1=BB=AFng ng=C6=B0=E1=BB=9Di m=E1=BA=AF=
+c Trust issue th=C6=B0=E1=BB=9Dng mu=E1=BB=91n =C4=91=C6=B0=E1=BB=A3c ng=C6=
+=B0=E1=BB=9Di kh=C3=A1c c=C3=B4ng nh=E1=BA=ADn h=C6=A1n l=C3=A0 tin v=C3=A0=
+o ch=C3=ADnh m=C3=ACnh. N=C3=A9 tr=C3=A1nh t=C3=ACnh hu=E1=BB=91ng ph=E1=BA=
+=A3i cam k=E1=BA=BFt:=C2=A0H=E1=BB=8D s=E1=BA=BD kh=C3=B4ng c=C3=B3 =C4=91=
+=E1=BB=A7 ni=E1=BB=81m tin =C4=91=E1=BB=83 m=E1=BB=9F l=C3=B2ng, cam k=E1=
+=BA=BFt ho=E1=BA=B7c tho=E1=BA=A3 thu=E1=BA=ADn v=E1=BB=81 b=E1=BA=A5t c=E1=
+=BB=A9 =C4=91i=E1=BB=81u g=C3=AC. Kh=C3=B3 ch=E1=BA=A5p nh=E1=BA=ADn h=C3=
+=A0nh =C4=91=E1=BB=99ng c=E1=BB=A7a ng=C6=B0=E1=BB=9Di kh=C3=A1c: Kh=C3=B3 =
+l=C3=B2ng ch=E1=BA=A5p nh=E1=BA=ADn s=E1=BB=B1 th=E1=BA=ADt v=E1=BB=81 h=C3=
+=A0nh =C4=91=E1=BB=99ng c=E1=BB=A7a ng=C6=B0=E1=BB=9Di kh=C3=A1c, lu=C3=B4n=
+ t=C3=ACm ki=E1=BA=BFm l=C3=BD do ho=E1=BA=B7c s=E1=BB=B1 bi=E1=BB=87n minh=
+ cho nh=E1=BB=AFng nghi ng=E1=BB=9D c=E1=BB=A7a b=E1=BA=A3n th=C3=A2n. Lu=
+=C3=B4n c=E1=BA=A3m th=E1=BA=A5y ch=C3=A1n n=E1=BA=A3n, c=C3=B4 =C4=91=C6=
+=A1n, th=E1=BA=ADm ch=C3=AD b=E1=BB=8B tr=E1=BA=A7m c=E1=BA=A3m:=C2=A0Do kh=
+=C3=B4ng giao ti=E1=BA=BFp v=E1=BB=9Bi x=C3=A3 h=E1=BB=99i, h=E1=BB=8D d=E1=
+=BB=85 r=C6=A1i v=C3=A0o tr=E1=BA=A1ng th=C3=A1i c=C3=B4 =C4=91=C6=A1n, c=
+=C3=B4 l=E1=BA=ADp v=C3=A0 bu=E1=BB=93n ch=C3=A1n. Nh=E1=BA=ADn bi=E1=BA=BF=
+t Trust issue qua c=C3=A1c bi=E1=BB=83u hi=E1=BB=87n Trust issue c=C3=B3 ph=
+=E1=BA=A3i b=E1=BB=87nh t=C3=A2m th=E1=BA=A7n kh=C3=B4ng? Trust Issue, hay =
+h=E1=BB=99i ch=E1=BB=A9ng m=E1=BA=A5t l=C3=B2ng tin, th=C6=B0=E1=BB=9Dng kh=
+=C3=B4ng =C4=91=C6=B0=E1=BB=A3c xem l=C3=A0 m=E1=BB=99t b=E1=BB=87nh t=C3=
+=A2m th=E1=BA=A7n theo c=C3=A1c ti=C3=AAu chu=E1=BA=A9n ch=E1=BA=A9n =C4=91=
+o=C3=A1n c=E1=BB=A7a c=C3=A1c h=E1=BB=87 th=E1=BB=91ng y t=E1=BA=BF nh=C6=
+=B0 DSM-5 (H=C6=B0=E1=BB=9Bng d=E1=BA=ABn Ch=E1=BA=A9n =C4=91o=C3=A1n v=C3=
+=A0 Th=E1=BB=91ng k=C3=AA C=C3=A1c R=E1=BB=91i lo=E1=BA=A1n T=C3=A2m th=E1=
+=BA=A7n) ho=E1=BA=B7c ICD-10 (Ph=C3=A2n lo=E1=BA=A1i Qu=E1=BB=91c t=E1=BA=
+=BF v=E1=BB=81 C=C3=A1c B=E1=BB=87nh T=C3=A2m th=E1=BA=A7n v=C3=A0 C=C3=A1c=
+ V=E1=BA=A5n =C4=91=E1=BB=81 S=E1=BB=A9c kh=E1=BB=8Fe Tinh th=E1=BA=A7n). T=
+hay v=C3=A0o =C4=91=C3=B3, Trust Issue th=C6=B0=E1=BB=9Dng =C4=91=C6=B0=E1=
+=BB=A3c coi l=C3=A0 m=E1=BB=99t v=E1=BA=A5n =C4=91=E1=BB=81 c=E1=BA=A3m x=
+=C3=BAc ho=E1=BA=B7c h=C3=A0nh vi li=C3=AAn quan =C4=91=E1=BA=BFn s=E1=BB=
+=B1 m=E1=BA=A5t l=C3=B2ng tin trong c=C3=A1c m=E1=BB=91i quan h=E1=BB=87 c=
+=C3=A1 nh=C3=A2n ho=E1=BA=B7c c=C3=B4ng vi=E1=BB=87c, h=C6=A1n l=C3=A0 m=E1=
+=BB=99t b=E1=BB=87nh l=C3=BD t=C3=A2m th=E1=BA=A7n c=E1=BB=A5 th=E1=BB=83. =
+Tuy nhi=C3=AAn, h=E1=BB=99i ch=E1=BB=A9ng n=C3=A0y c=C3=B3 th=E1=BB=83 l=C3=
+=A0 d=E1=BA=A5u hi=E1=BB=87u c=E1=BB=A7a c=C3=A1c r=E1=BB=91i lo=E1=BA=A1n =
+t=C3=A2m l=C3=BD kh=C3=A1c nh=C6=B0 r=E1=BB=91i lo=E1=BA=A1n lo =C3=A2u, r=
+=E1=BB=91i lo=E1=BA=A1n nh=C3=A2n c=C3=A1ch ho=E1=BA=B7c tr=E1=BA=A7m c=E1=
+=BA=A3m. Nh=E1=BB=AFng v=E1=BA=A5n =C4=91=E1=BB=81 n=C3=A0y c=C3=B3 th=E1=
+=BB=83 =C4=91=C6=B0=E1=BB=A3c c=E1=BA=A3i thi=E1=BB=87n th=C3=B4ng qua c=C3=
+=A1c ph=C6=B0=C6=A1ng ph=C3=A1p can thi=E1=BB=87p t=C3=A2m l=C3=BD th=C3=AD=
+ch h=E1=BB=A3p. Trust issue nguy hi=E1=BB=83m nh=C6=B0 th=E1=BA=BF n=C3=A0o=
+? Kh=C3=B4ng ch=E1=BB=89 th=E1=BA=AFc m=E1=BA=AFc Trust issue l=C3=A0 g=C3=
+=AC? M=E1=BB=A9c =C4=91=E1=BB=99 nguy hi=E1=BB=83m c=E1=BB=A7a h=E1=BB=99i =
+ch=E1=BB=A9ng n=C3=A0y ra sao c=C5=A9ng l=C3=A0 v=E1=BA=A5n =C4=91=E1=BB=81=
+ =C4=91=C6=B0=E1=BB=A3c nhi=E1=BB=81u ng=C6=B0=E1=BB=9Di quan t=C3=A2m. The=
+o =C4=91=C3=B3, c=C3=A1c chuy=C3=AAn gia y t=E1=BA=BF cho bi=E1=BA=BFt, Tru=
+st issue c=C3=B3 th=E1=BB=83 g=C3=A2y =E1=BA=A3nh h=C6=B0=E1=BB=9Fng nghi=
+=C3=AAm tr=E1=BB=8Dng =C4=91=E1=BA=BFn s=E1=BB=A9c kh=E1=BB=8Fe tinh th=E1=
+=BA=A7n, c=C5=A9ng nh=C6=B0 l=C3=A0m t=E1=BB=95n h=E1=BA=A1i =C4=91=E1=BA=
+=BFn c=C3=A1c m=E1=BB=91i quan h=E1=BB=87 trong x=C3=A3 h=E1=BB=99i. Ch=C6=
+=B0a h=E1=BA=BFt, ng=C6=B0=E1=BB=9Di m=E1=BA=AFc h=E1=BB=99i ch=E1=BB=A9ng =
+n=C3=A0y c=C3=B2n g=E1=BA=B7p r=E1=BA=A5t nhi=E1=BB=81u kh=C3=B3 kh=C4=83n =
+trong vi=E1=BB=87c x=C3=A2y d=E1=BB=B1ng ni=E1=BB=81m tin v=E1=BB=9Bi ng=C6=
+=B0=E1=BB=9Di kh=C3=A1c, =C4=91=C3=B3 c=C5=A9ng ch=C3=ADnh l=C3=A0 l=C3=BD =
+do m=C3=A0 h=E1=BB=8D th=C6=B0=E1=BB=9Dng xuy=C3=AAn c=E1=BA=A3m th=E1=BA=
+=A5y c=C3=B4 =C4=91=C6=A1n v=C3=A0 kh=C3=B4ng h=E1=BA=A1nh ph=C3=BAc. M=E1=
+=BB=91i nguy hi=E1=BB=83m c=E1=BB=A7a h=E1=BB=99i ch=E1=BB=A9ng Trust issue=
+ l=C3=A0 g=C3=AC? L=C3=A0m th=E1=BA=BF n=C3=A0o =C4=91=E1=BB=83 v=C6=B0=E1=
+=BB=A3t qua h=E1=BB=99i ch=E1=BB=A9ng Trust issue? =C4=90=E1=BB=83 c=E1=BA=
+=A3i thi=E1=BB=87n t=C3=ACnh tr=E1=BA=A1ng Trust issue, b=E1=BA=A1n c=C3=B3=
+ th=E1=BB=83 =C3=A1p d=E1=BB=A5ng m=E1=BB=99t s=E1=BB=91 c=C3=A1ch d=C6=B0=
+=E1=BB=9Bi =C4=91=C3=A2y: =C4=90=E1=BB=91i m=E1=BA=B7t, th=E1=BB=ABa nh=E1=
+=BA=ADn v=E1=BA=A5n =C4=91=E1=BB=81 B=C6=B0=E1=BB=9Bc =C4=91=E1=BA=A7u ti=
+=C3=AAn =C4=91=E1=BB=83 ch=C3=BAng ta v=C6=B0=E1=BB=A3t qua Trust issue l=
+=C3=A0 g=C3=AC? H=C3=A3y d=C5=A9ng c=E1=BA=A3m =C4=91=E1=BB=91i m=E1=BA=B7t=
+ v=C3=A0 th=E1=BB=ABa nh=E1=BA=ADn r=E1=BA=B1ng b=E1=BA=A1n =C4=91ang g=E1=
+=BA=B7p v=E1=BA=A5n =C4=91=E1=BB=81 b=E1=BA=A5t th=C6=B0=E1=BB=9Dng v=E1=BB=
+=81 l=C3=B2ng tin. V=C3=AD d=E1=BB=A5, n=E1=BA=BFu b=E1=BA=A1n =C4=91ang ng=
+hi ng=E1=BB=9D khi ng=C6=B0=E1=BB=9Di y=C3=AAu l=C3=A2u tr=E1=BA=A3 l=E1=BB=
+=9Di tin nh=E1=BA=AFn, h=C3=A3y =C4=91=E1=BB=91i m=E1=BA=B7t c=E1=BA=A3m gi=
+=C3=A1c n=C3=A0y, thay v=C3=AC c=E1=BB=A9 m=E1=BB=99t m=E1=BB=B1c ph=E1=BB=
+=A7 nh=E1=BA=ADn n=C3=B3. Ho=E1=BA=A1t =C4=91=E1=BB=99ng t=C3=ADch c=E1=BB=
+=B1c =C4=91=E1=BB=83 c=E1=BA=A3i thi=E1=BB=87n tinh th=E1=BA=A7n Ng=C6=B0=
+=E1=BB=9Di m=E1=BA=AFc h=E1=BB=99i ch=E1=BB=A9ng n=C3=A0y n=C3=AAn t=C3=ACm=
+ nh=E1=BB=AFng ho=E1=BA=A1t =C4=91=E1=BB=99ng t=C3=ADch c=E1=BB=B1c, l=C3=
+=A0nh m=E1=BA=A1nh =C4=91=E1=BB=83 c=E1=BA=A3m th=E1=BA=A5y vui v=E1=BA=BB,=
+ y=C3=AAu =C4=91=E1=BB=9Di. Kh=C3=B4ng nh=E1=BB=AFng gi=C3=BAp b=E1=BA=A1n =
+gi=E1=BA=A3m stress, c=C3=A1c ho=E1=BA=A1t =C4=91=E1=BB=99ng n=C3=A0y c=C3=
+=B2n gi=C3=BAp ph=C3=A1t tri=E1=BB=83n c=C3=A1c m=E1=BB=91i quan h=E1=BB=87=
+ xung quanh. H=E1=BB=8Dc c=C3=A1ch ch=E1=BA=A5p nh=E1=BA=ADn r=E1=BB=A7i ro=
+ Trong cu=E1=BB=99c s=E1=BB=91ng, nh=E1=BB=AFng r=E1=BB=A7i ro b=E1=BA=A5t =
+ng=E1=BB=9D x=E1=BA=A3y =C4=91=E1=BA=BFn l=C3=A0 =C4=91i=E1=BB=81u kh=C3=B4=
+ng th=E1=BB=83 tr=C3=A1nh kh=E1=BB=8Fi. H=C3=A3y ch=E1=BA=A5p nh=E1=BA=ADn =
+r=E1=BA=B1ng, cu=E1=BB=99c =C4=91=E1=BB=9Di kh=C3=B4ng ph=E1=BA=A3i l=C3=BA=
+c n=C3=A0o c=C5=A9ng su=C3=B4n s=E1=BA=BB, thay v=C3=AC th=E1=BA=A5t v=E1=
+=BB=8Dng, h=C3=A3y h=E1=BB=8Dc c=C3=A1ch nh=C3=ACn nh=E1=BA=ADn v=C3=A0 c=
+=E1=BB=91 g=E1=BA=AFng v=C6=B0=E1=BB=A3t qua. X=C3=A2y d=E1=BB=B1ng ni=E1=
+=BB=81m tin cho b=E1=BA=A3n th=C3=A2n Vi=E1=BB=87c tin t=C6=B0=E1=BB=9Fng v=
+=C3=A0o ch=C3=ADnh m=C3=ACnh l=C3=A0 =C4=91i=E1=BB=81u h=E1=BA=BFt s=E1=BB=
+=A9c quan tr=E1=BB=8Dng. B=E1=BA=A1n c=E1=BA=A7n ph=C3=A1t tri=E1=BB=83n s=
+=E1=BB=B1 t=E1=BB=B1 tin v=C3=A0 t=E1=BB=B1 nh=E1=BA=ADn th=E1=BB=A9c, =C4=
+=91i=E1=BB=81u n=C3=A0y s=E1=BA=BD gi=C3=BAp b=E1=BA=A3n th=C3=A2n =C4=91=
+=C6=B0a ra =C4=91=C6=B0=E1=BB=A3c nh=E1=BB=AFng quy=E1=BA=BFt =C4=91=E1=BB=
+=8Bnh =C4=91=C3=BAng =C4=91=E1=BA=AFn h=C6=A1n trong c=C3=A1c m=E1=BB=91i q=
+uan h=E1=BB=87. V=C6=B0=E1=BB=A3t qua kh=E1=BB=A7ng ho=E1=BA=A3ng Trust iss=
+ue b=E1=BA=B1ng c=C3=A1ch n=C3=A0o? =C4=90=C6=B0a ra quy=E1=BA=BFt =C4=91=
+=E1=BB=8Bnh d=E1=BB=B1a tr=C3=AAn nh=E1=BB=AFng b=C3=A0i h=E1=BB=8Dc trong =
+qu=C3=A1 kh=E1=BB=A9 M=E1=BB=97i th=E1=BA=A5t b=E1=BA=A1i hay r=E1=BB=A7i r=
+o =C4=91=E1=BB=81u d=E1=BA=A1y ta nh=E1=BB=AFng b=C3=A0i h=E1=BB=8Dc kinh n=
+ghi=E1=BB=87m. Vi=E1=BB=87c =C3=A1p d=E1=BB=A5ng nh=E1=BB=AFng b=C3=A0i h=
+=E1=BB=8Dc n=C3=A0y v=C3=A0o t=C3=ACnh hu=E1=BB=91ng hi=E1=BB=87n t=E1=BA=
+=A1i c=C3=B3 th=E1=BB=83 gi=C3=BAp ch=C3=ADnh b=E1=BA=A3n th=C3=A2n x=C3=A2=
+y d=E1=BB=B1ng ni=E1=BB=81m tin m=E1=BB=99t c=C3=A1ch v=E1=BB=AFng v=C3=A0n=
+g h=C6=A1n. T=C3=ACm chuy=C3=AAn gia gi=C3=BAp =C4=91=E1=BB=A1 S=E1=BB=B1 g=
+i=C3=BAp =C4=91=E1=BB=A1 c=E1=BB=A7a c=C3=A1c chuy=C3=AAn gia t=C3=A2m l=C3=
+=BD l=C3=A0 b=C6=B0=E1=BB=9Bc kh=E1=BB=9Fi =C4=91=E1=BA=A7u c=E1=BA=A7n thi=
+=E1=BA=BFt, gi=C3=BAp b=E1=BA=A1n v=C6=B0=E1=BB=A3t qua Trust issue. H=E1=
+=BB=8D s=E1=BA=BD gi=C3=BAp b=E1=BA=A1n hi=E1=BB=83u r=C3=B5 h=C6=A1n v=E1=
+=BB=81 nguy=C3=AAn nh=C3=A2n g=C3=A2y ra h=E1=BB=99i ch=E1=BB=A9ng n=C3=A0y=
+, =C4=91=E1=BB=93ng th=E1=BB=9Di =C4=91=C6=B0a ra nh=E1=BB=AFng gi=E1=BA=A3=
+i ph=C3=A1p gi=C3=BAp b=E1=BA=A1n c=E1=BA=A3i thi=E1=BB=87n t=C3=ACnh tr=E1=
+=BA=A1ng. H=C3=A3y tha th=E1=BB=A9 Tr=C6=B0=E1=BB=9Dng h=E1=BB=A3p b=E1=BA=
+=A1n =C4=91ang gi=E1=BB=AF m=E1=BB=91i h=E1=BA=ADn th=C3=B9 v=E1=BB=9Bi =C4=
+=91=E1=BB=93ng nghi=E1=BB=87p c=C5=A9. Do trong qu=C3=A1 kh=E1=BB=A9 h=E1=
+=BB=8D =C4=91=C3=A3 n=C3=B3i x=E1=BA=A5u b=E1=BA=A1n v=E1=BB=9Bi c=E1=BA=A5=
+p tr=C3=AAn. =C4=90=E1=BB=ABng m=C3=A3i ch=E1=BA=A5p ni=E1=BB=87m =C4=91i=
+=E1=BB=81u n=C3=A0y, h=C3=A3y c=E1=BB=91 g=E1=BA=AFng m=E1=BB=9F l=C3=B2ng =
+tha th=E1=BB=A9 cho h=E1=BB=8D, =C4=91i=E1=BB=81u n=C3=A0y s=E1=BA=BD gi=C3=
+=BAp ch=C3=ADnh b=E1=BA=A3n th=C3=A2n m=C3=ACnh gi=E1=BA=A3i ph=C3=B3ng c=
+=E1=BA=A3m x=C3=BAc ti=C3=AAu c=E1=BB=B1c. X=C3=A2y d=E1=BB=B1ng m=E1=BB=91=
+i quan h=E1=BB=87 t=C3=ADch c=E1=BB=B1c H=C3=A3y x=C3=A2y d=E1=BB=B1ng cho =
+m=C3=ACnh nh=E1=BB=AFng m=E1=BB=91i quan h=E1=BB=87 t=C3=ADch c=E1=BB=B1c. =
+=C4=90i=E1=BB=81u n=C3=A0y s=E1=BA=BD gi=C3=BAp b=E1=BA=A1n l=E1=BA=A5y l=
+=E1=BA=A1i =C4=91=C6=B0=E1=BB=A3c l=C3=B2ng tin, c=C5=A9ng nh=C6=B0 c=E1=BA=
+=A3m th=E1=BA=A5y an to=C3=A0n, tho=E1=BA=A3i m=C3=A1i h=C6=A1n trong c=C3=
+=A1c m=E1=BB=91i quan h=E1=BB=87 kh=C3=A1c. C=E1=BB=91 g=E1=BA=AFng t=C3=AC=
+m ki=E1=BA=BFm nh=E1=BB=AFng ng=C6=B0=E1=BB=9Di b=E1=BA=A1n =C4=91=C3=A1ng =
+tin c=E1=BA=ADy, mang l=E1=BA=A1i ni=E1=BB=81m vui v=C3=A0 gi=C3=BAp =C4=91=
+=E1=BB=A1 b=E1=BA=A1n trong cu=E1=BB=99c s=E1=BB=91ng. =C4=90=E1=BB=83 v=C6=
+=B0=E1=BB=A3t qua =C4=91=C6=B0=E1=BB=A3c h=E1=BB=99i ch=E1=BB=A9ng Trust is=
+sue kh=C3=B4ng ph=E1=BA=A3i l=C3=A0 =C4=91i=E1=BB=81u d=E1=BB=85 d=C3=A0ng.=
+ Tuy nhi=C3=AAn, n=E1=BA=BFu th=E1=BB=B1c s=E1=BB=B1 ki=C3=AAn nh=E1=BA=ABn=
+ v=C3=A0 th=E1=BB=B1c hi=E1=BB=87n c=C3=A1c ph=C6=B0=C6=A1ng ph=C3=A1p tr=
+=C3=AAn th=C3=AC b=E1=BA=A1n ho=C3=A0n to=C3=A0n c=C3=B3 th=E1=BB=83 c=E1=
+=BA=A3i thi=E1=BB=87n =C4=91=C6=B0=E1=BB=A3c l=C3=B2ng tin c=E1=BB=A7a ch=
+=C3=ADnh m=C3=ACnh. =C4=90=E1=BB=ABng bao gi=E1=BB=9D b=E1=BB=8F cu=E1=BB=
+=99c!
+Keep reading on LinkedIn
+https://www.linkedin.com/comm/pulse/trust-issue-n%C6%A1i-c%C3%B4ng-s%E1%BB%=
+9F-c%C3%A0ng-%C4%91%E1%BB%81-ph%C3%B2ng-c%C3%B4-l%E1%BA%ADp-ch%C3%ADnh-m%C3=
+%ACnh-bp7wc?lipi=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newsletter_0=
+1%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&midToken=3DAQHbK6-LNIBt_w&midSig=3D2yS8P=
+kXbF1MrM1&trk=3Deml-email_series_follow_newsletter_01-newsletter_content_pr=
+eview_text-0-readmore_button_&trkEmail=3Deml-email_series_follow_newsletter=
+_01-newsletter_content_preview_text-0-readmore_button_-null-lijrs5~mbeqmcto=
+~8e-null-null&eid=3Dlijrs5-mbeqmcto-8e&otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxM=
+mQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFm=
+MWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D
+ =20
+     =20
+
+----------------------------------------
+
+This email was intended for Long V=C5=A9 Nguy=E1=BB=85n (Student at Hanoi U=
+niversity of Industry)
+Learn why we included this: https://www.linkedin.com/help/linkedin/answer/4=
+788?lang=3Den&lipi=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newsletter=
+_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&midToken=3DAQHbK6-LNIBt_w&midSig=3D2yS=
+8PkXbF1MrM1&trk=3Deml-email_series_follow_newsletter_01-SecurityHelp-0-text=
+footerglimmer&trkEmail=3Deml-email_series_follow_newsletter_01-SecurityHelp=
+-0-textfooterglimmer-null-lijrs5~mbeqmcto~8e-null-null&eid=3Dlijrs5-mbeqmct=
+o-8e&otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY=
+4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0ND=
+JhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D
+You are receiving LinkedIn notification emails. Others can see that you are=
+ a subscriber.
+
+Unsubscribe: https://www.linkedin.com/series-notifications/?action=3Dunsubs=
+cribe&memberToken=3DADoAAE2K2WUBPbi49kSWr7_Q7TngAg4JjzeSf5s&newsletterId=3D=
+7145967892788879361&newsletterTitle=3DVietnamWorks HR Insider &lipi=3Durn%3=
+Ali%3Apage%3Aemail_email_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz7=
+9NXw%3D%3D&midToken=3DAQHbK6-LNIBt_w&midSig=3D2yS8PkXbF1MrM1&ek=3Demail_ser=
+ies_follow_newsletter_01&e=3Dlijrs5-mbeqmcto-8e&eid=3Dlijrs5-mbeqmcto-8e&m=
+=3Dunsubscribe&ts=3DfooterGlimmer&li=3D0&t=3Dplh  =C2=A0=C2=A0=C2=B7=C2=A0=
+=C2=A0Help: https://www.linkedin.com/help/linkedin/answer/67?lang=3Den&lipi=
+=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newsletter_01%3BA4u7%2BfKwSI=
+WMp2scz79NXw%3D%3D&midToken=3DAQHbK6-LNIBt_w&midSig=3D2yS8PkXbF1MrM1&trk=3D=
+eml-email_series_follow_newsletter_01-help-0-textfooterglimmer&trkEmail=3De=
+ml-email_series_follow_newsletter_01-help-0-textfooterglimmer-null-lijrs5~m=
+beqmcto~8e-null-null&eid=3Dlijrs5-mbeqmcto-8e&otpToken=3DMTMwNjFlZTAxYjJhY2=
+NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkN=
+mU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3=
+D%3D
+
+=C2=A9 2025 LinkedIn Corporation, 1zwnj000 West Maude Avenue, Sunnyvale, CA=
+ 94085.
+LinkedIn and the LinkedIn logo are registered trademarks of LinkedIn.
+------=_Part_9196048_1732716.1748847468459
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: html-body
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml" lang=3D"en" xml:lang=3D"en"> <=
+head> <meta http-equiv=3D"Content-Type" content=3D"text/html;charset=3Dutf-=
+8"> <meta name=3D"HandheldFriendly" content=3D"true"> <meta name=3D"viewpor=
+t" content=3D"width=3Ddevice-width; initial-scale=3D0.666667; user-scalable=
+=3D0"> <meta name=3D"viewport" content=3D"width=3Ddevice-width"> <title></t=
+itle> <style>
+              @media (max-width: 512px) { .mercado-container { width: 100% =
+!important; } }
+            </style> <style>
+            @media (max-width: 480px) { .inline-button, .inline-button tabl=
+e { display: none !important; }
+            .full-width-button, .full-width-button table { display: table !=
+important; } }
+          </style> <style>body {font-family: -apple-system, system-ui, Blin=
+kMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+            'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid S=
+ans', 'Apple Color Emoji', 'Segoe UI Emoji',
+            'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica=
+, Arial, sans-serif;}</style> <!--[if mso]><style type=3D"text/css"> </styl=
+e><![endif]--> <!--[if IE]><style type=3D"text/css"> </style><![endif]--> <=
+/head> <body dir=3D"ltr" class=3D"font-sans bg-color-background-canvas w-fu=
+ll m-0 p-0 pt-1" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adj=
+ust: 100%; margin: 0px; width: 100%; background-color: #f3f2f0; padding: 0p=
+x; padding-top: 8px; font-family: -apple-system, system-ui, BlinkMacSystemF=
+ont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Ox=
+ygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji',=
+ 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sa=
+ns-serif;"> <div class=3D"h-0 opacity-0 text-transparent invisible overflow=
+-hidden w-0 max-h-[0]" style=3D"visibility: hidden; height: 0px; max-height=
+: 0; width: 0px; overflow: hidden; opacity: 0; mso-hide: all;" data-email-p=
+reheader=3D"true">Xem th=C3=AAm: C=E1=BB=A9 ng=E1=BB=A1 m=C3=ACnh gi=E1=BB=
+=8Fi, ho=C3=A1 ra =C4=91ang m=E1=BA=AFc &quot;b=E1=BA=ABy n=C4=83ng l=E1=BB=
+=B1c trung b=C3=ACnh&quot; =E2=80=94 HR=E2=80=A6</div> <div class=3D"h-0 op=
+acity-0 text-transparent invisible overflow-hidden w-0 max-h-[0]" style=3D"=
+visibility: hidden; height: 0px; max-height: 0; width: 0px; overflow: hidde=
+n; opacity: 0; mso-hide: all;"> =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+ =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 </div> <table role=3D"pres=
+entation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" w=
+idth=3D"512" align=3D"center" class=3D"mercado-container w-[512px] max-w-[5=
+12px] mx-auto my-0 p-0 " style=3D"-webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-lef=
+t: auto; margin-right: auto; margin-top: 0px; margin-bottom: 0px; width: 51=
+2px; max-width: 512px; padding: 0px;"> <tbody> <tr> <td style=3D"-webkit-te=
+xt-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt;"> <table role=3D"presentation" valign=3D"top" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" class=3D"bg-color=
+-background-container " style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-=
+color: #ffffff;"> <tbody> <tr> <td class=3D"text-center p-3" style=3D"-webk=
+it-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0p=
+t; mso-table-rspace: 0pt; padding: 24px; text-align: center;"> <table role=
+=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" class=3D"min-w-full" style=3D"-webkit-text-size-adjus=
+t: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; min-width: 100%;"> <tbody> <tr> <td align=3D"left" valign=3D"middle=
+" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href=3D"https://www.linkedin=
+.com/comm/feed/?lipi=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newslett=
+er_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6-LNIBt_w&amp;mi=
+dSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_newsletter_01-heade=
+r-0-home_glimmer_static_badging_with_count&amp;trkEmail=3Deml-email_series_=
+follow_newsletter_01-header-0-home_glimmer_static_badging_with_count-null-l=
+ijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-8e&amp;otpToken=3DMTM=
+wNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZD=
+UzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxO=
+WRkNDIzLDEsMQ%3D%3D" target=3D"_blank" class=3D"w-[84px]" style=3D"color: #=
+0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -web=
+kit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; width: 84px;"> <img=
+ class=3D"h-[37px] w-[101px]" alt=3D"LinkedIn" src=3D"https://static.licdn.=
+com/aero-v1/sc/h/2huuis1k3beio0p1e40la2gcs" data-test-header-static-badging=
+-img style=3D"outline: none; text-decoration: none; -ms-interpolation-mode:=
+ bicubic; height: 37px; width: 101px;" width=3D"101" height=3D"37"> </a> </=
+td> <td valign=3D"middle" align=3D"right" style=3D"-webkit-text-size-adjust=
+: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt;"> <table role=3D"presentation" valign=3D"top" border=3D"0" cellspaci=
+ng=3D"0" cellpadding=3D"0" width=3D"100%" data-test-header-profile style=3D=
+"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td align=3D"right" valign=
+=3D"middle" class=3D"w-[32px]" style=3D"-webkit-text-size-adjust: 100%; -ms=
+-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; widt=
+h: 32px;" width=3D"32"> <a href=3D"https://vn.linkedin.com/comm/in/long-v%C=
+5%A9-nguy%E1%BB%85n-a05825303?lipi=3Durn%3Ali%3Apage%3Aemail_email_series_f=
+ollow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6-=
+LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_newsl=
+etter_01-header-0-profile_glimmer&amp;trkEmail=3Deml-email_series_follow_ne=
+wsletter_01-header-0-profile_glimmer-null-lijrs5~mbeqmcto~8e-null-null&amp;=
+eid=3Dlijrs5-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDE=
+xYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mj=
+g4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_=
+blank" style=3D"color: #0a66c2; cursor: pointer; display: inline-block; tex=
+t-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 1=
+00%;"> <img alt=3D"Long V=C5=A9 Nguy=E1=BB=85n" src=3D"https://media.licdn.=
+com/dms/image/v2/D4D03AQHyG4HPaqTshw/profile-displayphoto-shrink_200_200/pr=
+ofile-displayphoto-shrink_200_200/0/1720006832590?e=3D2147483647&amp;v=3Dbe=
+ta&amp;t=3DMJ6f-S5ktNLhO4ttYOxnessfFo8T2e3KBneXWmCfTFg" class=3D"rounded-[1=
+00%] w-[32px] h-[32px]" style=3D"outline: none; text-decoration: none; -ms-=
+interpolation-mode: bicubic; height: 32px; width: 32px; border-radius: 100%=
+;" width=3D"32" height=3D"32"> </a> </td> </tr> </tbody> </table> </td> </t=
+r> </tbody> </table> </td> </tr> <tr> <td class=3D"px-0 pb-3" style=3D"-web=
+kit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; padding-left: 0px; padding-right: 0px; padding-b=
+ottom: 24px;"> <div> <table role=3D"presentation" valign=3D"top" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit-text=
+-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt;"> <tbody> <tr> <td data-test-id=3D"newsletter-entity-loc=
+kup" class=3D"px-3 pt-1" style=3D"-webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-le=
+ft: 24px; padding-right: 24px; padding-top: 8px;"> <table role=3D"presentat=
+ion" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=
+=3D"100%" class=3D"font-sans" style=3D"-webkit-text-size-adjust: 100%; -ms-=
+text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-=
+family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, '=
+Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Dr=
+oid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe =
+UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;"> <tbody> <tr> <=
+td valign=3D"top" class=3D"pr-1 w-6" style=3D"-webkit-text-size-adjust: 100=
+%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt=
+; width: 48px; padding-right: 8px;" width=3D"48"> <a href=3D"https://www.li=
+nkedin.com/comm/newsletters/7145967892788879361?lipi=3Durn%3Ali%3Apage%3Aem=
+ail_email_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;=
+midToken=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_s=
+eries_follow_newsletter_01-newsletter_entity_lockup-0-newsletter_entity_cta=
+&amp;trkEmail=3Deml-email_series_follow_newsletter_01-newsletter_entity_loc=
+kup-0-newsletter_entity_cta-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlij=
+rs5-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4=
+YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDg=
+yOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" st=
+yle=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-decorat=
+ion: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <i=
+mg class=3D"inline-block relative bg-color-entity-ghost-background w-6 h-6 =
+rounded-md" src=3D"https://media.licdn.com/dms/image/v2/D4E12AQFPveh6GS0I7A=
+/series-logo_image-shrink_100_100/series-logo_image-shrink_100_100/0/170781=
+0490511?e=3D2147483647&amp;v=3Dbeta&amp;t=3DJuD94V1ZutdnNVqqI1M_4K1AU3LYeys=
+XhE1APsBilDQ" alt=3D"Open VietnamWorks HR Insider " style=3D"outline: none;=
+ text-decoration: none; -ms-interpolation-mode: bicubic; position: relative=
+; display: inline-block; height: 48px; width: 48px; border-radius: 8px; bac=
+kground-color: #eae6df;" width=3D"48" height=3D"48"> </a> </td> <td valign=
+=3D"top" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <table role=3D"presentat=
+ion" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=
+=3D"100%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt;"> <a href=3D"https://www.linkedin.com/co=
+mm/newsletters/7145967892788879361?lipi=3Durn%3Ali%3Apage%3Aemail_email_ser=
+ies_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQ=
+HbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_=
+newsletter_01-newsletter_entity_lockup-0-newsletter_entity_cta&amp;trkEmail=
+=3Deml-email_series_follow_newsletter_01-newsletter_entity_lockup-0-newslet=
+ter_entity_cta-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-=
+8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllY=
+TY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0=
+NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" class=3D"no-und=
+erline" style=3D"color: #0a66c2; cursor: pointer; display: inline-block; te=
+xt-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: =
+100%; text-decoration-line: none;"> <div class=3D"pb-0.5" style=3D"padding-=
+bottom: 4px;"> <span class=3D"text-md font-bold text-color-text break-words=
+ leading-regular" style=3D"overflow-wrap: break-word; font-size: 16px; font=
+-weight: 600; line-height: 1.25; color: rgba(0, 0, 0, 0.9);"> VietnamWorks =
+HR Insider </span> </div> </a> </td> </tr> <tr> <td style=3D"-webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt;"> <a href=3D"https://www.linkedin.com/comm/newsletters/714=
+5967892788879361?lipi=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newslet=
+ter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6-LNIBt_w&amp;m=
+idSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_newsletter_01-news=
+letter_entity_lockup-0-newsletter_entity_cta&amp;trkEmail=3Deml-email_serie=
+s_follow_newsletter_01-newsletter_entity_lockup-0-newsletter_entity_cta-nul=
+l-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-8e&amp;otpToken=3D=
+MTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk=
+0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYm=
+YxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" class=3D"no-underline" style=3D"c=
+olor: #0a66c2; cursor: pointer; display: inline-block; text-decoration: non=
+e; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-decorat=
+ion-line: none;"> <span class=3D"text-xs text-color-text-low-emphasis leadi=
+ng-regular" style=3D"font-size: 12px; line-height: 1.25; color: rgba(0, 0, =
+0, 0.6);"> Trang tin t=E1=BB=A9c c=E1=BA=ADp nh=E1=BA=ADt nh=E1=BB=AFng xu =
+h=C6=B0=E1=BB=9Bng m=E1=BB=9Bi nh=E1=BA=A5t, cung c=E1=BA=A5p h=C3=A0ng tra=
+ng s=E1=BB=B1 nghi=E1=BB=87p cho ng=C6=B0=E1=BB=9Di lao =C4=91=E1=BB=99ng <=
+/span> </a> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </t=
+d> </tr> <tr data-test-id=3D"newsletter-content-preview"> <td class=3D"px-3=
+ pt-2" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-left: 24px; padding-=
+right: 24px; padding-top: 16px;"> <table role=3D"presentation" valign=3D"to=
+p" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D=
+"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class=3D"overflow-hidden=
+ " style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; overflow: hidden;"> <table role=
+=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr=
+> <td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href=3D"https://www.link=
+edin.com/comm/pulse/trust-issue-n%C6%A1i-c%C3%B4ng-s%E1%BB%9F-c%C3%A0ng-%C4=
+%91%E1%BB%81-ph%C3%B2ng-c%C3%B4-l%E1%BA%ADp-ch%C3%ADnh-m%C3%ACnh-bp7wc?lipi=
+=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newsletter_01%3BA4u7%2BfKwSI=
+WMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM=
+1&amp;trk=3Deml-email_series_follow_newsletter_01-newsletter_content_previe=
+w-0-headline_&amp;trkEmail=3Deml-email_series_follow_newsletter_01-newslett=
+er_content_preview-0-headline_-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3D=
+lijrs5-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmY=
+mM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZj=
+MDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank"=
+ class=3D"w-full" style=3D"color: #0a66c2; cursor: pointer; display: inline=
+-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%; width: 100%;"> <img class=3D"block w-full aspect-[744/400] =
+object-cover overflow-hidden" data-test-id=3D"newsletter-content-preview__c=
+over-image" alt=3D"Newsletter cover image" src=3D"https://media.licdn.com/d=
+ms/image/v2/D5612AQF8z3Ov1ouxGw/article-cover_image-shrink_600_2000/B56ZcVq=
+NHzGoAQ-/0/1748415075201?e=3D2147483647&amp;v=3Dbeta&amp;t=3DLJZwnEulYrPfrt=
+YxnH1uZYLYsWXHyYWQwKJczHgIejw" style=3D"outline: none; text-decoration: non=
+e; -ms-interpolation-mode: bicubic; display: block; aspect-ratio: 744/400; =
+width: 100%; overflow: hidden; object-fit: cover;"> </a> </td> </tr> <tr> <=
+td class=3D"py-2" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-ad=
+just: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 16px=
+; padding-bottom: 16px;"> <table role=3D"presentation" valign=3D"top" borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit=
+-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt;"> <tbody> <tr> <td style=3D"-webkit-text-size-adjus=
+t: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt;"> <a href=3D"https://www.linkedin.com/comm/pulse/trust-issue-n%C6%A=
+1i-c%C3%B4ng-s%E1%BB%9F-c%C3%A0ng-%C4%91%E1%BB%81-ph%C3%B2ng-c%C3%B4-l%E1%B=
+A%ADp-ch%C3%ADnh-m%C3%ACnh-bp7wc?lipi=3Durn%3Ali%3Apage%3Aemail_email_serie=
+s_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHb=
+K6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_ne=
+wsletter_01-newsletter_content_preview-0-title_&amp;trkEmail=3Deml-email_se=
+ries_follow_newsletter_01-newsletter_content_preview-0-title_-null-lijrs5~m=
+beqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZT=
+AxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmY=
+WY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIz=
+LDEsMQ%3D%3D" target=3D"_blank" class=3D"no-underline font-medium text-sm m=
+-0 text-system-gray-90" style=3D"cursor: pointer; display: inline-block; te=
+xt-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: =
+100%; margin: 0px; font-size: 14px; font-weight: 500; color: #282828; text-=
+decoration-line: none;"> <h2 class=3D"m-0 text-display-sm leading-regular t=
+ext-color-text font-bold font-sans" style=3D"margin: 0px; font-family: -app=
+le-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Ne=
+ue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', '=
+Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', =
+'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 24px; font-weight=
+: 600; line-height: 1.25; color: rgba(0, 0, 0, 0.9);"> Trust Issue n=C6=A1i=
+ c=C3=B4ng s=E1=BB=9F: c=C3=A0ng =C4=91=E1=BB=81 ph=C3=B2ng, c=C3=A0ng c=C3=
+=B4 l=E1=BA=ADp ch=C3=ADnh m=C3=ACnh </h2> </a> </td> </tr> <tr> <td style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt;"> <table role=3D"presentation" valign=3D=
+"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" data-=
+test-id=3D"newsletter-author-lockup-redesign" class=3D"mt-1 mb-2" style=3D"=
+-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt; margin-bottom: 16px; margin-top: 8px;"> <tbo=
+dy> <tr> <td valign=3D"middle" align=3D"left" class=3D"w-3" style=3D"-webki=
+t-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; width: 24px;" width=3D"24"> <a href=3D"https://www=
+.linkedin.com/comm/company/vietnamworks?lipi=3Durn%3Ali%3Apage%3Aemail_emai=
+l_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=
+=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_fo=
+llow_newsletter_01-newsletter_content_preview-0-author_&amp;trkEmail=3Deml-=
+email_series_follow_newsletter_01-newsletter_content_preview-0-author_-null=
+-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-8e&amp;otpToken=3DM=
+TMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0=
+ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmY=
+xOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" style=3D"color: #0a66c2; cursor: p=
+ointer; display: inline-block; text-decoration: none; -webkit-text-size-adj=
+ust: 100%; -ms-text-size-adjust: 100%;"> <img class=3D"inline-block relativ=
+e bg-color-entity-ghost-background w-4 h-4 align-middle" src=3D"https://med=
+ia.licdn.com/dms/image/v2/D560BAQGtFcRJ0sj1-A/company-logo_100_100/B56ZTtx2=
+vkGQAU-/0/1739156057752/vietnamworks_logo?e=3D2147483647&amp;v=3Dbeta&amp;t=
+=3DWJ_z1Ht0-U_CpFbzIpoHyPmFnXfvtcs0aLyaa0kiqqU" alt=3D"Author image" style=
+=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; =
+position: relative; display: inline-block; height: 32px; width: 32px; backg=
+round-color: #eae6df; vertical-align: middle;" width=3D"32" height=3D"32"> =
+</a> </td> <td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href=3D"https:/=
+/www.linkedin.com/comm/company/vietnamworks?lipi=3Durn%3Ali%3Apage%3Aemail_=
+email_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midT=
+oken=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_serie=
+s_follow_newsletter_01-newsletter_content_preview-0-author_&amp;trkEmail=3D=
+eml-email_series_follow_newsletter_01-newsletter_content_preview-0-author_-=
+null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-8e&amp;otpToken=
+=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1=
+Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTY=
+zYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" class=3D"no-underline ml-1" st=
+yle=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-decorat=
+ion: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; marg=
+in-left: 8px; text-decoration-line: none;"> <span class=3D"font-sans font-b=
+old text-sm mb-3 text-color-text-low-emphasis leading-regular" style=3D"mar=
+gin-bottom: 24px; font-family: -apple-system, system-ui, BlinkMacSystemFont=
+, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxyge=
+n Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'S=
+egoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-=
+serif; font-size: 14px; font-weight: 600; line-height: 1.25; color: rgba(0,=
+ 0, 0, 0.6);"> VietnamWorks </span> </a> </td> </tr> </tbody> </table> </td=
+> </tr> <tr> <td class=3D"pb-1" style=3D"-webkit-text-size-adjust: 100%; -m=
+s-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; pad=
+ding-bottom: 8px;"> <div class=3D"p-3 bg-color-surface-tint rounded-md font=
+-sans" data-test-id=3D"newsletter-cta-banner" style=3D"border-radius: 8px; =
+background-color: #f5f7f9; padding: 24px; font-family: -apple-system, syste=
+m-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans'=
+, Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoj=
+i', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande',=
+ Helvetica, Arial, sans-serif;"> <div class=3D"mb-1.5" style=3D"margin-bott=
+om: 12px;"> <span class=3D"text-md leading-regular font-bold text-color-tex=
+t" style=3D"font-size: 16px; font-weight: 600; line-height: 1.25; color: rg=
+ba(0, 0, 0, 0.9);"> Read this article on LinkedIn to join the conversation =
+</span> </div> <table role=3D"presentation" valign=3D"top" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" width=3D"100%" class=3D"email-button " dat=
+a-test-id=3D"email-button" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody=
+> <tr> <td valign=3D"middle" align=3D"left" style=3D"-webkit-text-size-adju=
+st: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt;"> <a href=3D"https://www.linkedin.com/comm/pulse/trust-issue-n%C6%=
+A1i-c%C3%B4ng-s%E1%BB%9F-c%C3%A0ng-%C4%91%E1%BB%81-ph%C3%B2ng-c%C3%B4-l%E1%=
+BA%ADp-ch%C3%ADnh-m%C3%ACnh-bp7wc?lipi=3Durn%3Ali%3Apage%3Aemail_email_seri=
+es_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQH=
+bK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_n=
+ewsletter_01-newsletter_content_preview-0-read_more_banner_cta_&amp;trkEmai=
+l=3Deml-email_series_follow_newsletter_01-newsletter_content_preview-0-read=
+_more_banner_cta_-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmc=
+to-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0Nz=
+llYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiN=
+jg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" aria-label=
+=3D"Open this article on LinkedIn" class=3D"align-top no-underline " style=
+=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-decoration=
+: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; vertica=
+l-align: top; text-decoration-line: none;"> <table role=3D"presentation" va=
+lign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"auto=
+" class=3D"border-separate " style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border=
+-collapse: separate;"> <tbody> <tr> <td class=3D"btn-sm btn-primary border-=
+color-brand button-link leading-regular !min-h-[auto] !shadow-none border-1=
+ border-solid" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: min-content;=
+ border-radius: 24px; padding-top: 7px; padding-bottom: 7px; padding-left: =
+16px; padding-right: 16px; text-align: center; font-size: 14px; font-weight=
+: 600; cursor: pointer; text-decoration-line: none; background-color: #0a66=
+c2; color: #ffffff; border-width: 1px; border-style: solid; border-color: #=
+0a66c2; line-height: 1.25; min-height: auto !important; box-shadow: 0 0 #00=
+00, 0 0 #0000, 0 0 #0000 !important;"> <a href=3D"https://www.linkedin.com/=
+comm/pulse/trust-issue-n%C6%A1i-c%C3%B4ng-s%E1%BB%9F-c%C3%A0ng-%C4%91%E1%BB=
+%81-ph%C3%B2ng-c%C3%B4-l%E1%BA%ADp-ch%C3%ADnh-m%C3%ACnh-bp7wc?lipi=3Durn%3A=
+li%3Apage%3Aemail_email_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79=
+NXw%3D%3D&amp;midToken=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=
+=3Deml-email_series_follow_newsletter_01-newsletter_content_preview-0-read_=
+more_banner_cta_&amp;trkEmail=3Deml-email_series_follow_newsletter_01-newsl=
+etter_content_preview-0-read_more_banner_cta_-null-lijrs5~mbeqmcto~8e-null-=
+null&amp;eid=3Dlijrs5-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMm=
+QwZmViNDExYWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmM=
+WUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" ta=
+rget=3D"_blank" tabindex=3D"-1" aria-hidden=3D"true" class=3D"no-underline"=
+ style=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-deco=
+ration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; t=
+ext-decoration-line: none;"> <span class=3D"no-underline text-white" style=
+=3D"color: #ffffff; text-decoration-line: none;"> Read on LinkedIn </span> =
+</a> </td> </tr> </tbody> </table> </a> </td> </tr> </tbody> </table> </div=
+> </td> </tr> <tr data-test-id=3D"newsletter-content-preview--content"> <td=
+ class=3D"font-sans text-md leading-open text-system-gray-90" style=3D"-web=
+kit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; font-family: -apple-system, system-ui, BlinkMacS=
+ystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxyge=
+n, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI E=
+moji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Ari=
+al, sans-serif; font-size: 16px; line-height: 1.5; color: #282828;"> <div d=
+ata-test-id=3D"publishing-text-block"> <blockquote class=3D"block my-3 mx-0=
+ py-0 pr-0 pl-1.5 leading-open not-italic text-cool-gray-80 text-lg font-bo=
+ld font-sans border-solid border-0 border-l-4 border-l-system-gray-80" data=
+-test-id=3D"publishing-text-block-blockquote" style=3D"margin-left: 0px; ma=
+rgin-right: 0px; margin-top: 24px; margin-bottom: 24px; display: block; bor=
+der-width: 0; border-left-width: 4px; border-style: solid; border-left-colo=
+r: #424242; padding-top: 0px; padding-bottom: 0px; padding-left: 12px; padd=
+ing-right: 0px; font-family: -apple-system, system-ui, BlinkMacSystemFont, =
+'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen =
+Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Seg=
+oe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-se=
+rif; font-size: 20px; font-weight: 600; font-style: normal; line-height: 1.=
+5; color: #38434f;"> <p class=3D"m-0 text-md leading-regular font-medium" s=
+tyle=3D"margin: 0px; font-size: 16px; font-weight: 500; line-height: 1.25;"=
+> <span class=3D"font-[700]" data-test-id=3D"little-text-block" style=3D"fo=
+nt-weight: 700;">Xem th=C3=AAm: </span><span class=3D"font-[700]" data-test=
+-id=3D"little-text-block" style=3D"font-weight: 700;"><a href=3D"https://ww=
+w.vietnamworks.com/hrinsider/cu-ngo-minh-gioi-hoa-ra-dang-mac-bay-nang-luc-=
+trung-binh.html?utm_source=3Dlinkedinexjs&amp;utm_medium=3Dtraffic&amp;utm_=
+campaign=3Djshrinsider2025" target=3D"_blank" class=3D"inline no-underline =
+cursor-pointer text-color-link font-bold" data-test-id=3D"publishing-text-b=
+lock-link" style=3D"text-decoration: none; -webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; display: inline; cursor: pointer; font-weight: =
+600; color: #0a66c2; text-decoration-line: none;">C=E1=BB=A9 ng=E1=BB=A1 m=
+=C3=ACnh gi=E1=BB=8Fi, ho=C3=A1 ra =C4=91ang m=E1=BA=AFc "b=E1=BA=ABy n=C4=
+=83ng l=E1=BB=B1c trung b=C3=ACnh"</a></span> </p> </blockquote> </div> <di=
+v data-test-id=3D"publishing-text-block"> <p class=3D"m-0 mt-1.5 text-md le=
+ading-open" style=3D"font-weight: 400; margin: 0px; margin-top: 12px; font-=
+size: 16px; line-height: 1.5;"> <span class=3D"font-[700]" data-test-id=3D"=
+little-text-block" style=3D"font-weight: 700;">=E2=80=94 HR Insider=E2=80=
+=94 </span><span class=3D"font-[700]" data-test-id=3D"little-text-block" st=
+yle=3D"font-weight: 700;"><a href=3D"https://www.vietnamworks.com/" target=
+=3D"_blank" class=3D"inline no-underline cursor-pointer text-color-link fon=
+t-bold" data-test-id=3D"publishing-text-block-link" style=3D"text-decoratio=
+n: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; displa=
+y: inline; cursor: pointer; font-weight: 600; color: #0a66c2; text-decorati=
+on-line: none;">VietnamWorks</a></span><span class=3D"font-[700]" data-test=
+-id=3D"little-text-block" style=3D"font-weight: 700;"> =E2=80=93 Website tu=
+y=E1=BB=83n d=E1=BB=A5ng tr=E1=BB=B1c tuy=E1=BA=BFn s=E1=BB=91 1 Vi=E1=BB=
+=87t Nam</span> </p> </div> <div data-test-id=3D"publishing-text-block"> <p=
+ class=3D"m-0 mt-1.5 text-md leading-open" style=3D"font-weight: 400; margi=
+n: 0px; margin-top: 12px; font-size: 16px; line-height: 1.5;"> <span class=
+=3D"italic" data-test-id=3D"little-text-block" style=3D"font-style: italic;=
+">Lo l=E1=BA=AFng b=E1=BB=8B ph=E1=BA=A3n b=E1=BB=99i, kh=C3=B3 tin t=C6=B0=
+=E1=BB=9Fng v=C3=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c,=E2=80=A6 l=C3=A0 nh=E1=
+=BB=AFng d=E1=BA=A5u hi=E1=BB=87u cho th=E1=BA=A5y b=E1=BA=A1n =C4=91ang c=
+=C3=B3 kh=E1=BA=A3 n=C4=83ng m=E1=BA=AFc ph=E1=BA=A3i h=E1=BB=99i ch=E1=BB=
+=A9ng Trust issue. V=E1=BA=ADy=C2=A0</span><span class=3D"italic" data-test=
+-id=3D"little-text-block" style=3D"font-style: italic;"><a href=3D"https://=
+www.vietnamworks.com/hrinsider/trust-issue-la-gi.html" target=3D"_blank" cl=
+ass=3D"inline no-underline cursor-pointer text-color-link font-bold" data-t=
+est-id=3D"publishing-text-block-link" style=3D"text-decoration: none; -webk=
+it-text-size-adjust: 100%; -ms-text-size-adjust: 100%; display: inline; cur=
+sor: pointer; font-weight: 600; color: #0a66c2; text-decoration-line: none;=
+">Trust issue l=C3=A0 g=C3=AC</a></span><span class=3D"italic" data-test-id=
+=3D"little-text-block" style=3D"font-style: italic;">? N=C3=B3 =E1=BA=A3nh =
+h=C6=B0=E1=BB=9Fng nh=C6=B0 th=E1=BA=BF n=C3=A0o =C4=91=E1=BA=BFn cu=E1=BB=
+=99c s=E1=BB=91ng c=E1=BB=A7a ch=C3=BAng ta?</span> </p> </div> <div data-t=
+est-id=3D"publishing-text-block"> <h3 class=3D"m-0 text-md text-system-gray=
+-90 pt-1 pb-0.5 leading-regular font-bold" data-test-id=3D"publishing-text-=
+block-h2" style=3D"margin: 0px; padding-bottom: 4px; padding-top: 8px; font=
+-size: 16px; font-weight: 600; line-height: 1.25; color: #282828;"> <span c=
+lass data-test-id=3D"little-text-block">Trust issue l=C3=A0 g=C3=AC?</span>=
+ </h3> </div> <div data-test-id=3D"publishing-text-block"> <p class=3D"m-0 =
+mt-1.5 text-md leading-open" style=3D"font-weight: 400; margin: 0px; margin=
+-top: 12px; font-size: 16px; line-height: 1.5;"> <span class data-test-id=
+=3D"little-text-block">Trust issue (h=E1=BB=99i ch=E1=BB=A9ng m=E1=BA=A5t l=
+=C3=B2ng tin) l=C3=A0 t=C3=ACnh tr=E1=BA=A1ng t=C3=A2m l=C3=BD khi=E1=BA=BF=
+n ch=C3=BAng ta g=E1=BA=B7p kh=C3=B3 kh=C4=83n trong vi=E1=BB=87c =C4=91=E1=
+=BA=B7t ni=E1=BB=81m tin v=C3=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c. H=E1=BB=99i=
+ ch=E1=BB=A9ng n=C3=A0y th=C6=B0=E1=BB=9Dng xu=E1=BA=A5t ph=C3=A1t t=E1=BB=
+=AB nh=E1=BB=AFng tr=E1=BA=A3i nghi=E1=BB=87m ti=C3=AAu c=E1=BB=B1c di=E1=
+=BB=85n ra trong qu=C3=A1 kh=E1=BB=A9, v=C3=AD d=E1=BB=A5 nh=C6=B0 b=E1=BB=
+=8B l=E1=BB=ABa d=E1=BB=91i, ph=E1=BA=A3n b=E1=BB=99i hay t=E1=BB=95n th=C6=
+=B0=C6=A1ng trong c=C3=A1c m=E1=BB=91i quan h=E1=BB=87.</span> </p> </div> =
+<div data-test-id=3D"publishing-text-block"> <p class=3D"m-0 mt-1.5 text-md=
+ leading-open" style=3D"font-weight: 400; margin: 0px; margin-top: 12px; fo=
+nt-size: 16px; line-height: 1.5;"> <span class data-test-id=3D"little-text-=
+block">Ng=C6=B0=E1=BB=9Di g=E1=BA=B7p ph=E1=BA=A3i h=E1=BB=99i ch=E1=BB=A9n=
+g m=E1=BA=A5t l=C3=B2ng tin th=C6=B0=E1=BB=9Dng c=C3=B3 c=E1=BA=A3m gi=C3=
+=A1c nghi ng=E1=BB=9D, lo l=E1=BA=AFng ho=E1=BA=B7c thi=E1=BA=BFu tin t=C6=
+=B0=E1=BB=9Fng v=C3=A0o s=E1=BB=B1 ch=C3=A2n th=C3=A0nh c=E1=BB=A7a ng=C6=
+=B0=E1=BB=9Di kh=C3=A1c, =C4=91i=E1=BB=81u n=C3=A0y g=C3=A2y kh=C3=B3 kh=C4=
+=83n trong vi=E1=BB=87c x=C3=A2y d=E1=BB=B1ng v=C3=A0 duy tr=C3=AC c=C3=A1c=
+ m=E1=BB=91i quan h=E1=BB=87 c=C3=A1 nh=C3=A2n c=C5=A9ng nh=C6=B0 trong c=
+=C3=B4ng vi=E1=BB=87c.</span> </p> </div> <div class=3D"pt-2" data-test-id=
+=3D"publishing-image-block" style=3D"padding-top: 16px;"> <figure class=3D"=
+m-0" style=3D"margin: 0px;"> <img class=3D"w-full block max-w-full" src=3D"=
+https://media.licdn.com/dms/image/v2/D5612AQEvUtMgKvTLoQ/article-inline_ima=
+ge-shrink_1000_1488/B56ZcVqmVEHoAQ-/0/1748415180075?e=3D2147483647&amp;v=3D=
+beta&amp;t=3DuKPRrZJJifBx5O6CvmXqMn8qG1CCLZbM95hH20XnExw" style=3D"outline:=
+ none; text-decoration: none; -ms-interpolation-mode: bicubic; display: blo=
+ck; width: 100%; max-width: 100%;"> <figcaption class=3D"pt-1 font-sans tex=
+t-center text-sm text-system-gray-60 leading-regular" data-test-id=3D"publi=
+shing-image-block-caption" style=3D"padding-top: 8px; text-align: center; f=
+ont-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Robot=
+o, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell,=
+ 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Se=
+goe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif; font-size: 1=
+4px; line-height: 1.25; color: #8c8c8c;"> <span class data-test-id=3D"littl=
+e-text-block">H=E1=BB=99i ch=E1=BB=A9ng Trust issue ng=C3=A0y c=C3=A0ng tr=
+=E1=BB=9F n=C3=AAn ph=E1=BB=95 bi=E1=BA=BFn</span> </figcaption> </figure> =
+</div> <div data-test-id=3D"publishing-text-block"> <h3 class=3D"m-0 text-m=
+d text-system-gray-90 pt-1 pb-0.5 leading-regular font-bold" data-test-id=
+=3D"publishing-text-block-h2" style=3D"margin: 0px; padding-bottom: 4px; pa=
+dding-top: 8px; font-size: 16px; font-weight: 600; line-height: 1.25; color=
+: #282828;"> <span class data-test-id=3D"little-text-block">Nguy=C3=AAn nh=
+=C3=A2n d=E1=BA=ABn =C4=91=E1=BA=BFn h=E1=BB=99i ch=E1=BB=A9ng Trust issue =
+l=C3=A0 g=C3=AC?</span> </h3> </div> <div data-test-id=3D"publishing-text-b=
+lock"> <p class=3D"m-0 mt-1.5 text-md leading-open" style=3D"font-weight: 4=
+00; margin: 0px; margin-top: 12px; font-size: 16px; line-height: 1.5;"> <sp=
+an class data-test-id=3D"little-text-block">Nh=C6=B0 =C4=91=C3=A3 n=C3=B3i =
+=E1=BB=9F tr=C3=AAn h=E1=BB=99i ch=E1=BB=A9ng Trust issue kh=C3=B4ng ph=E1=
+=BA=A3i t=E1=BB=B1 nhi=C3=AAn m=C3=A0 c=C3=B3, n=C3=B3 th=C6=B0=E1=BB=9Dng =
+xu=E1=BA=A5t ph=C3=A1t t=E1=BB=AB nh=E1=BB=AFng tr=E1=BA=A3i nghi=E1=BB=87m=
+ trong qu=C3=A1 kh=E1=BB=A9. =C4=90i=E1=BB=83n h=C3=ACnh nh=C6=B0:</span> <=
+/p> </div> <div data-test-id=3D"publishing-text-block"> <p class=3D"m-0 mt-=
+1.5 text-md leading-open" style=3D"font-weight: 400; margin: 0px; margin-to=
+p: 12px; font-size: 16px; line-height: 1.5;"> <span class data-test-id=3D"l=
+ittle-text-block"> <ul class=3D"block mt-2 mr-0 ml-3 p-0" data-test-id=3D"l=
+ittle-template-list-unordered" style=3D"margin-left: 24px; margin-right: 0p=
+x; margin-top: 16px; display: block; padding: 0px;"> <li class=3D"mt-1.5 ml=
+-2 text-md leading-open text-system-gray-90" style=3D"margin-left: 16px; ma=
+rgin-top: 12px; font-size: 16px; line-height: 1.5; color: #282828;"> <span =
+class=3D"font-[700]" data-test-id=3D"little-text-block" style=3D"font-weigh=
+t: 700;">Tr=E1=BA=A3i nghi=E1=BB=87m ti=C3=AAu c=E1=BB=B1c trong qu=C3=A1 k=
+h=E1=BB=A9: </span><span class data-test-id=3D"little-text-block">B=E1=BB=
+=8B ph=E1=BA=A3n b=E1=BB=99i, l=E1=BB=ABa d=E1=BB=91i, t=E1=BB=95n th=C6=B0=
+=C6=A1ng trong c=C3=A1c m=E1=BB=91i quan h=E1=BB=87 khi=E1=BA=BFn h=E1=BB=
+=8D m=E1=BA=A5t l=C3=B2ng tin v=C3=A0o ng=C6=B0=E1=BB=9Di kh=C3=A1c.</span>=
+ </li> <li class=3D"mt-1.5 ml-2 text-md leading-open text-system-gray-90" s=
+tyle=3D"margin-left: 16px; margin-top: 12px; font-size: 16px; line-height: =
+1.5; color: #282828;"> <span class=3D"font-[700]" data-test-id=3D"little-te=
+xt-block" style=3D"font-weight: 700;">S=E1=BB=91ng trong gia =C4=91=C3=ACnh=
+ ph=E1=BB=A9c t=E1=BA=A1p:</span><span class data-test-id=3D"little-text-bl=
+ock"> Th=C6=B0=E1=BB=9Dng xuy=C3=AAn x=E1=BA=A3y ra m=C3=A2u thu=E1=BA=ABn,=
+ thi=E1=BA=BFu tin t=C6=B0=E1=BB=9Fng ho=E1=BA=B7c s=E1=BB=B1 ph=E1=BA=A3n =
+b=E1=BB=99i gi=E1=BB=AFa c=C3=A1c th=C3=A0nh vi=C3=AAn. Ch=C3=ADnh =C4=91i=
+=E1=BB=81u n=C3=A0y =C4=91=C3=A3 h=C3=ACnh th=C3=A0nh n=C3=AAn c=E1=BA=A3m =
+gi=C3=A1c nghi ng=E1=BB=9D, thi=E1=BA=BFu tin t=C6=B0=E1=BB=9Fng ngay t=E1=
+=BB=AB nh=E1=BB=8F.</span> </li> <li class=3D"mt-1.5 ml-2 text-md leading-o=
+pen text-system-gray-90" style=3D"margin-left: 16px; margin-top: 12px; font=
+-size: 16px; line-height: 1.5; color: #282828;"> <span class=3D"font-[700]"=
+ data-test-id=3D"little-text-block" style=3D"font-weight: 700;">T=C3=ADnh c=
+=C3=A1ch nh=E1=BA=A1y c=E1=BA=A3m:</span><span class data-test-id=3D"little=
+-text-block"> Nh=E1=BB=AFng ng=C6=B0=E1=BB=9Di c=C3=B3 t=C3=ADnh qu=C3=A1 n=
+h=E1=BA=A1y c=E1=BA=A3m c=C5=A9ng r=E1=BA=A5t d=E1=BB=85 r=C6=A1i v=C3=A0o =
+tr=E1=BA=A1ng th=C3=A1i nghi ng=E1=BB=9D, thi=E1=BA=BFu l=C3=B2ng tin. B=E1=
+=BA=A1n th=C6=B0=E1=BB=9Dng xuy=C3=AAn c=E1=BA=A3m th=E1=BA=A5y lo l=E1=BA=
+=AFng, nghi ng=E1=BB=9D v=E1=BB=81 s=E1=BB=B1 ch=C3=A2n th=C3=A0nh c=E1=BB=
+=A7a =C4=91=E1=BB=91i ph=C6=B0=C6=A1ng.</span> </li> </ul> </span> </p> </d=
+iv> <span>...</span> </td> </tr> <tr> <td class=3D"pt-2 no-underline" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; padding-top: 16px; text-decoration-line:=
+ none;"> <table role=3D"presentation" valign=3D"top" border=3D"0" cellspaci=
+ng=3D"0" cellpadding=3D"0" width=3D"100%" class=3D"email-button series-cont=
+ent-preview__bottom-cta" data-test-id=3D"email-button" style=3D"-webkit-tex=
+t-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso=
+-table-rspace: 0pt;"> <tbody> <tr> <td valign=3D"middle" align=3D"left" sty=
+le=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt;"> <a href=3D"https://www.linkedin.com/=
+comm/pulse/trust-issue-n%C6%A1i-c%C3%B4ng-s%E1%BB%9F-c%C3%A0ng-%C4%91%E1%BB=
+%81-ph%C3%B2ng-c%C3%B4-l%E1%BA%ADp-ch%C3%ADnh-m%C3%ACnh-bp7wc?lipi=3Durn%3A=
+li%3Apage%3Aemail_email_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79=
+NXw%3D%3D&amp;midToken=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=
+=3Deml-email_series_follow_newsletter_01-newsletter_content_preview-0-readm=
+ore_button_&amp;trkEmail=3Deml-email_series_follow_newsletter_01-newsletter=
+_content_preview-0-readmore_button_-null-lijrs5~mbeqmcto~8e-null-null&amp;e=
+id=3Dlijrs5-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDEx=
+YWVmYmM4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg=
+4ZWZjMDgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_b=
+lank" aria-label=3D"Open VietnamWorks HR Insider on LinkedIn" class=3D"alig=
+n-top no-underline " style=3D"color: #0a66c2; cursor: pointer; display: inl=
+ine-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; vertical-align: top; text-decoration-line: none; width: =
+100%;"> <table role=3D"presentation" valign=3D"top" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" width=3D"100%" class=3D"border-separate " style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; border-collapse: separate; width: 100%;"=
+> <tbody> <tr> <td class=3D"btn-md btn-secondary-emphasis border-color-bran=
+d button-link leading-regular !min-h-[auto] !shadow-none border-1 border-so=
+lid font-sans" data-test-id=3D"newsletter-content-preview-redesign-bottom-c=
+ta" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; height: min-content; border-rad=
+ius: 24px; padding-top: 12px; padding-bottom: 12px; padding-left: 24px; pad=
+ding-right: 24px; text-align: center; font-size: 16px; font-weight: 600; cu=
+rsor: pointer; text-decoration-line: none; background-color: rgba(0, 0, 0, =
+0); color: #0a66c2; border-width: 1px; border-style: solid; border-color: #=
+0a66c2; font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe U=
+I', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', C=
+antarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Em=
+oji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif; lin=
+e-height: 1.25; min-height: auto !important; box-shadow: 0 0 #0000, 0 0 #00=
+00, 0 0 #0000 !important;"> <a href=3D"https://www.linkedin.com/comm/pulse/=
+trust-issue-n%C6%A1i-c%C3%B4ng-s%E1%BB%9F-c%C3%A0ng-%C4%91%E1%BB%81-ph%C3%B=
+2ng-c%C3%B4-l%E1%BA%ADp-ch%C3%ADnh-m%C3%ACnh-bp7wc?lipi=3Durn%3Ali%3Apage%3=
+Aemail_email_series_follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&a=
+mp;midToken=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-emai=
+l_series_follow_newsletter_01-newsletter_content_preview-0-readmore_button_=
+&amp;trkEmail=3Deml-email_series_follow_newsletter_01-newsletter_content_pr=
+eview-0-readmore_button_-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5=
+-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM=
+5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOW=
+FkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" tabin=
+dex=3D"-1" aria-hidden=3D"true" class=3D"no-underline" style=3D"color: #0a6=
+6c2; cursor: pointer; display: inline-block; text-decoration: none; -webkit=
+-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-decoration-line: =
+none; width: 100%;"> <span class=3D"no-underline text-color-brand" style=3D=
+"color: #0a66c2; text-decoration-line: none;"> Keep reading on LinkedIn </s=
+pan> </a> </td> </tr> </tbody> </table> </a> </td> </tr> </tbody> </table> =
+</td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> </t=
+body> </table> </td> </tr> </tbody> </table> </div> </td> </tr> <tr> <td cl=
+ass=3D"bg-color-background-canvas p-3" style=3D"-webkit-text-size-adjust: 1=
+00%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; background-color: #f3f2f0; padding: 24px;"> <table role=3D"presentation=
+" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"=
+100%" class=3D"text-xs" style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: =
+12px;"> <tbody> <tr> <td class=3D"pb-1 m-0" data-test-id=3D"email-footer__i=
+ntended" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-botto=
+m: 8px;"> This email was intended for Long V=C5=A9 Nguy=E1=BB=85n (Student =
+at Hanoi University of Industry) </td> </tr> <tr> <td class=3D"pb-1 m-0" st=
+yle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tabl=
+e-lspace: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-bottom: 8px;"> <=
+a href=3D"https://www.linkedin.com/help/linkedin/answer/4788?lang=3Den&amp;=
+lipi=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newsletter_01%3BA4u7%2Bf=
+KwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6-LNIBt_w&amp;midSig=3D2yS8PkXbF=
+1MrM1&amp;trk=3Deml-email_series_follow_newsletter_01-SecurityHelp-0-footer=
+glimmer&amp;trkEmail=3Deml-email_series_follow_newsletter_01-SecurityHelp-0=
+-footerglimmer-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-=
+8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllY=
+TY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0=
+NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" class=3D"text-i=
+nherit underline" style=3D"cursor: pointer; display: inline-block; text-dec=
+oration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; =
+color: inherit; text-decoration-line: underline;">Learn why we included thi=
+s.</a> </td> </tr> <tr> <td class=3D"pb-1 m-0" style=3D"-webkit-text-size-a=
+djust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; margin: 0px; padding-bottom: 8px;">You are receiving LinkedIn n=
+otification emails. Others can see that you are a subscriber.</td> </tr> <t=
+r> <td class=3D"pb-1 m-0" style=3D"-webkit-text-size-adjust: 100%; -ms-text=
+-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0=
+px; padding-bottom: 8px;"> <a href=3D"https://www.linkedin.com/series-notif=
+ications/?action=3Dunsubscribe&amp;memberToken=3DADoAAE2K2WUBPbi49kSWr7_Q7T=
+ngAg4JjzeSf5s&amp;newsletterId=3D7145967892788879361&amp;newsletterTitle=3D=
+VietnamWorks HR Insider &amp;lipi=3Durn%3Ali%3Apage%3Aemail_email_series_fo=
+llow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6-L=
+NIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;ek=3Demail_series_follow_newsletter_=
+01&amp;e=3Dlijrs5-mbeqmcto-8e&amp;eid=3Dlijrs5-mbeqmcto-8e&amp;m=3Dunsubscr=
+ibe&amp;ts=3DfooterGlimmer&amp;li=3D0&amp;t=3Dplh" target=3D"_blank" class=
+=3D"text-inherit underline" style=3D"cursor: pointer; display: inline-block=
+; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st: 100%; color: inherit; text-decoration-line: underline;">Unsubscribe</a>=
+ =C2=A0=C2=A0=C2=B7=C2=A0=C2=A0 <a href=3D"https://www.linkedin.com/help/li=
+nkedin/answer/67?lang=3Den&amp;lipi=3Durn%3Ali%3Apage%3Aemail_email_series_=
+follow_newsletter_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6=
+-LNIBt_w&amp;midSig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_news=
+letter_01-help-0-footerglimmer&amp;trkEmail=3Deml-email_series_follow_newsl=
+etter_01-help-0-footerglimmer-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dl=
+ijrs5-mbeqmcto-8e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYm=
+M4YmM5ZDQ0NzllYTY4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjM=
+DgyOWFkZDZiNjg0NDJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" =
+data-test-help-link class=3D"text-inherit underline" style=3D"cursor: point=
+er; display: inline-block; text-decoration: none; -webkit-text-size-adjust:=
+ 100%; -ms-text-size-adjust: 100%; color: inherit; text-decoration-line: un=
+derline;">Help</a> </td> </tr> <tr> <td class=3D"pb-1" style=3D"-webkit-tex=
+t-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso=
+-table-rspace: 0pt; padding-bottom: 8px;"> <a href=3D"https://www.linkedin.=
+com/comm/feed/?lipi=3Durn%3Ali%3Apage%3Aemail_email_series_follow_newslette=
+r_01%3BA4u7%2BfKwSIWMp2scz79NXw%3D%3D&amp;midToken=3DAQHbK6-LNIBt_w&amp;mid=
+Sig=3D2yS8PkXbF1MrM1&amp;trk=3Deml-email_series_follow_newsletter_01-footer=
+-0-logoGlimmer&amp;trkEmail=3Deml-email_series_follow_newsletter_01-footer-=
+0-logoGlimmer-null-lijrs5~mbeqmcto~8e-null-null&amp;eid=3Dlijrs5-mbeqmcto-8=
+e&amp;otpToken=3DMTMwNjFlZTAxYjJhY2NjNmIxMmQwZmViNDExYWVmYmM4YmM5ZDQ0NzllYT=
+Y4NjYyN2JjZjA1Njk0ZDUzNTVmYWY1ZDBkNmU5NjFmMWUzZjg2Mjg4ZWZjMDgyOWFkZDZiNjg0N=
+DJhODIzYzgwOTYzYmYxOWRkNDIzLDEsMQ%3D%3D" target=3D"_blank" style=3D"color: =
+#0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -we=
+bkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img src=3D"http=
+s://static.licdn.com/aero-v1/sc/h/9ehe6n39fa07dc5edzv0rla4e" alt=3D"LinkedI=
+n" class=3D"block h-[14px] w-[56px] image-rendering-crisp" style=3D"outline=
+: none; text-decoration: none; image-rendering: -moz-crisp-edges; image-ren=
+dering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; image-r=
+endering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; display: b=
+lock; height: 14px; width: 56px;" width=3D"56" height=3D"14"> </a> </td> </=
+tr> <tr> <td data-test-copyright-text style=3D"-webkit-text-size-adjust: 10=
+0%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0p=
+t;"> =C2=A9 2025 LinkedIn Corporation, 1&zwnj;000 West Maude Avenue, Sunnyv=
+ale, CA 94085. <span data-test-trademarks-text> LinkedIn and the LinkedIn l=
+ogo are registered trademarks of LinkedIn. </span> </td> </tr> </tbody> </t=
+able> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <img alt =
+role=3D"presentation" src=3D"https://www.linkedin.com/emimp/ip_YkdscWNuTTFM=
+VzFpWlhGdFkzUnZMVGhsOlpXMWhhV3hmYzJWeWFXVnpYMlp2Ykd4dmQxOXVaWGR6YkdWMGRHVnl=
+YekF4OmRYSnVPbXhwT214cGJtdGxaRWx1UVhKMGFXTnNaVG8zTXpNek16Z3pPRFUzTWpJeE5qTX=
+lNREF4.gif" style=3D"outline: none; text-decoration: none; -ms-interpolatio=
+n-mode: bicubic; width: 1px; height: 1px;" width=3D"1" height=3D"1"> </body=
+> </html>
+------=_Part_9196048_1732716.1748847468459--
+

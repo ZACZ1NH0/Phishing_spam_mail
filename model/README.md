@@ -8,7 +8,7 @@ Simple Flask REST API để phân loại email thành **Normal** hoặc **Phishi
 - `test_request.py`: Script test API với file `.eml`.
 - `email1.eml`, `email2.eml`: File email mẫu để test.
 
-## Link tải model (file lớn, tải về rồi đặt cùng thư mục với `app.py`)
+## Link tải model (file lớn, tải về rồi đặt cùng thư mục với `api.py`)
 
 https://drive.google.com/drive/folders/1q5z5_Uj48GuXP8WcXXQpQSTPnnqNFxG5?usp=sharing
 

@@ -1,0 +1,170 @@
+Delivered-To: nguyenlongvu768@gmail.com
+Received: by 2002:a05:7022:a97:b0:9a:f40a:49ab with SMTP id dd23csp1728236dlb;
+        Wed, 21 May 2025 23:44:52 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGaFlJEUMpHaMo4H7ONH5TV4/cTcHW3lSwd1VuXm5BOtNh7Usoq6V3714xa9oGtUgzbXByD
+X-Received: by 2002:a05:6000:4305:b0:3a3:7987:945e with SMTP id ffacd0b85a97d-3a3798794f1mr8771253f8f.56.1747896292132;
+        Wed, 21 May 2025 23:44:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1747896292; cv=none;
+        d=google.com; s=arc-20240605;
+        b=cBfzMAnG67+p5MWmVirnLQIvjpyCf4vaBUpLr/E3F+p2/lz5SkKTsYId5Z71fM6c+E
+         Xa9qh+YX76gkKhftdcNLdCLd0xj7/TXMAuecre8GFL4XtDFTTyPMqvDJw6Y3aSjT+T3A
+         SQykBaRk8RTiNhzMdXxsWEZDZJWChqgOzm7NAj6XeB7eUSkNNyNlu0VCnmzEkJTf/kNb
+         wJK+jBkQZ+99vNFOkRZBy2A7zlOXDiftz4f92YMLV7RsZvLvDL5cpRhI36W9C8YcZ6hU
+         FGnatt4TXTyhSSZfE96akHxhQpcxRHDBsA9M5Y1PFNi/1jVZsW9E8g7zu1dylfMuPyHJ
+         SBhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:bimi-selector:mime-version:subject:message-id:to:from
+         :date:dkim-signature:dkim-signature;
+        bh=la0l8Vv3Wc23s3QJJAW5CvCXYiOuVhEWPD/F9RYqlUw=;
+        fh=FSKqZnrklSGGJ4GGMPZutcBYfVAzb/qNpIGqOXVmJxU=;
+        b=aykR47IiPKgKg1Vo9FOH+zTZzbUVERxa3NGhNbWOiEPA0qwHbh7XcwEWXD1izQPD4i
+         4zX/q2QM/PfxlkE8jAb0s+hzB9cf9SHkyPxhLkYA0c1GQhgCJAFW93zoYn4X7WCVtooM
+         vpilgsGaeI/3tg3Yi7I2J+IbsZ+lR8BHwmB2ehnUdwNVsdF1exicNhrKiMjRLq/K/Hko
+         BaZ1Nb+Y1/ySAUsism77UAgmQYq8DiCWeWcmjk2L8zY5QCKaxSk1/73Y41MyMaRVDxU1
+         ewYDhD/tKST2KBSUZEfnkRY4acEh04/t1UOTB5i3ES0tdTrixOX1JNM3yM16yNmWF18W
+         Jwhg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@jetbrains.com header.s=zkgsaqiift4rcbn6jvpkg25sgiase5fg header.b="Rk2jP/za";
+       dkim=pass header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn header.b=UA4uotcF;
+       spf=pass (google.com: domain of 01020196f6bcd11b-c6f574e2-9e2d-4551-9391-bfbaf5b84767-000000@mailer.jetbrains.com designates 69.169.229.161 as permitted sender) smtp.mailfrom=01020196f6bcd11b-c6f574e2-9e2d-4551-9391-bfbaf5b84767-000000@mailer.jetbrains.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=jetbrains.com
+Return-Path: <01020196f6bcd11b-c6f574e2-9e2d-4551-9391-bfbaf5b84767-000000@mailer.jetbrains.com>
+Received: from b229-161.smtp-out.eu-west-1.amazonses.com (b229-161.smtp-out.eu-west-1.amazonses.com. [69.169.229.161])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-3a35ca7fbcdsi11092490f8f.418.2025.05.21.23.44.51
+        for <nguyenlongvu768@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 21 May 2025 23:44:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01020196f6bcd11b-c6f574e2-9e2d-4551-9391-bfbaf5b84767-000000@mailer.jetbrains.com designates 69.169.229.161 as permitted sender) client-ip=69.169.229.161;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@jetbrains.com header.s=zkgsaqiift4rcbn6jvpkg25sgiase5fg header.b="Rk2jP/za";
+       dkim=pass header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn header.b=UA4uotcF;
+       spf=pass (google.com: domain of 01020196f6bcd11b-c6f574e2-9e2d-4551-9391-bfbaf5b84767-000000@mailer.jetbrains.com designates 69.169.229.161 as permitted sender) smtp.mailfrom=01020196f6bcd11b-c6f574e2-9e2d-4551-9391-bfbaf5b84767-000000@mailer.jetbrains.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=jetbrains.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zkgsaqiift4rcbn6jvpkg25sgiase5fg; d=jetbrains.com; t=1747896291;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=heKJLFi5ISm3AEsrZiYG7DB9yvzxIvKGS7AGrbElcTE=;
+	b=Rk2jP/zaGSmJdey5pGokVFOmxAljQTdl15gf2j7h9DNjcr2i8QNedX2UjNF+Bo9L
+	z1Bbx4MkgVcOOycHVIyn2A91Tnuo4fSgcPUZP6WumnYVv787cMeMaduizGaUF4PBD32
+	5AsL2ef4Y0SlE1AJdnUa7rKaa6yXfseFiGU3Ftt8=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn; d=amazonses.com; t=1747896291;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=heKJLFi5ISm3AEsrZiYG7DB9yvzxIvKGS7AGrbElcTE=;
+	b=UA4uotcFyp4dPTa3WvTwuNut/0mRcjOLVGyxOTwMmTxjHT1xjNqiwP4YmFuaPWxv
+	iG//LGboI3cyZRtvh5636UTKm/cL3Gf5NPnmxMxlnvApWexAAppQaV/VM+3SfcPR0QK
+	X/3GnHd7M2fi2oQV46v25l3o8IJGKSuFJe0xevgE=
+Date: Thu, 22 May 2025 06:44:51 +0000
+From: JetBrains Account <no_reply@jetbrains.com>
+To: nguyenlongvu768@gmail.com
+Message-ID: <01020196f6bcd11b-c6f574e2-9e2d-4551-9391-bfbaf5b84767-000000@eu-west-1.amazonses.com>
+Subject: Develop smarter with JetBrains tools
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_45637_1332159247.1747896291208"
+BIMI-Selector: v=BIMI1;s=main;
+X-Auto-Response-Suppress: OOF, DR, RN, NRN, AutoReply
+X-JETBRAINS-MESSAGE-ID: 0001DC4FEA49CD04AEE0A4EAC82BB5C2F57
+Feedback-ID: ::1.eu-west-1.K6LWIgPGRxjLgtEMceertZJEgVBGmuh0N+qjhP3uBkQ=:AmazonSES
+X-SES-Outgoing: 2025.05.22-69.169.229.161
+
+------=_Part_45637_1332159247.1747896291208
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hello Long V=C5=A9,
+
+Thank you for choosing JetBrains development tools!
+
+We have prepared some useful information to help you apply the great functi=
+onalities of our tools to your daily development, and assist you to better =
+manage your licenses.
+Product Technical Support
+
+We have prepared an online resource for each of our products to help you de=
+velop using our tools, including Tech support portal [ https://www.jetbrain=
+s.com/support ], Community Forums [ https://intellij-support.jetbrains.com/=
+hc/en-us/community/topics/ ], Plug-in Repository [ https://plugins.jetbrain=
+s.com/ ], Webinars [ https://www.jetbrains.com/support/webinars/ ], Product=
+ demos [ https://www.youtube.com/user/JetBrainsTV ], and more. If you have =
+any questions regarding our products, please reply to this email or submit =
+your request [ https://www.jetbrains.com/support/ ] at the "Support Home" o=
+f the corresponding product.
+License Management
+
+With JetBrains Account system [ https://account.jetbrains.com/licenses/ ], =
+you can manage all your licenses and purchase details under one account. If=
+ you have licenses in separate accounts, we can help you merge them. If you=
+ need any help, please feel free to reply to this email.
+
+Learn how to deliver and activate IDE or .NET tool licenses [ https://www.j=
+etbrains.com/store/post-purchase/ ]
+Technological developments
+
+JetBrains tools combine the most popular and modern technologies. We also m=
+ake available a range of blogs, newsletters, tutorials and other learning r=
+esources on a regular basis, to help you adopt these technologies and effec=
+tively use them together with JetBrains tools. You can subscribe to:
+- Monthly Newsletter [ https://www.jetbrains.com/newsletter/ ]: Have JetBra=
+ins Newsletter delivered directly to your inbox each month.
+- Company Blog [ https://blog.jetbrains.com/ ]: Receive information about t=
+he most up-to-date JetBrains company news and specific product updates.
+
+
+Yours truly,
+The JetBrains Team
+https://www.jetbrains.com
+The Drive to Develop
+------=_Part_45637_1332159247.1747896291208
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <body><p>Hello Long V=C5=A9,</p>
+<p>Thank you for choosing JetBrains development tools!</p>
+<p>We have prepared some useful information to help you apply the great fun=
+ctionalities of our tools to your daily development, and assist you to bett=
+er manage your licenses.</p>
+<h3 id=3D"product-technical-support">Product Technical Support</h3>
+<p>We have prepared an online resource for each of our products to help you=
+ develop using our tools, including <a href=3D"https://www.jetbrains.com/su=
+pport">Tech support portal</a>, <a href=3D"https://intellij-support.jetbrai=
+ns.com/hc/en-us/community/topics/">Community Forums</a>, <a href=3D"https:/=
+/plugins.jetbrains.com/">Plug-in Repository</a>, <a href=3D"https://www.jet=
+brains.com/support/webinars/">Webinars</a>, <a href=3D"https://www.youtube.=
+com/user/JetBrainsTV">Product demos</a>, and more. If you have any question=
+s regarding our products, please reply to this email or <a href=3D"https://=
+www.jetbrains.com/support/">submit your request</a> at the "Support Home" o=
+f the corresponding product.</p>
+<h3 id=3D"license-management">License Management</h3>
+<p>With <a href=3D"https://account.jetbrains.com/licenses/">JetBrains Accou=
+nt system</a>, you can manage all your licenses and purchase details under =
+one account. If you have licenses in separate accounts, we can help you mer=
+ge them. If you need any help, please feel free to reply to this email.</p>
+<p><a href=3D"https://www.jetbrains.com/store/post-purchase/">Learn how to =
+deliver and activate IDE or .NET tool licenses</a></p>
+<h3 id=3D"technological-developments">Technological developments</h3>
+<p>JetBrains tools combine the most popular and modern technologies. We als=
+o make available a range of blogs, newsletters, tutorials and other learnin=
+g resources on a regular basis, to help you adopt these technologies and ef=
+fectively use them together with JetBrains tools. You can subscribe to:</p>
+<ul>
+<li><a href=3D"https://www.jetbrains.com/newsletter/">Monthly Newsletter</a=
+>: Have JetBrains Newsletter delivered directly to your inbox each month.</=
+li>
+<li><a href=3D"https://blog.jetbrains.com/">Company Blog</a>: Receive infor=
+mation about the most up-to-date JetBrains company news and specific produc=
+t updates.</li>
+</ul>
+<p>Yours truly,
+<br />The JetBrains Team
+<br /><a href=3D"https://www.jetbrains.com">https://www.jetbrains.com</a>
+<br />The Drive to Develop</p>
+</body>
+</html><img src=3D"https://account.jetbrains.com/services/email/track-opene=
+d.gif?trackingCode=3D0085CCFBC413A42A2E6A5DEA5CF874CF6448E1B3E005DF3FC4B1C7=
+8B05463BFA5C0B1699C0B3BCDFEC71618653D652D92CB21555EC3C0D766D1F596BE84B8EAEE=
+2" alt=3D""/>
+------=_Part_45637_1332159247.1747896291208--

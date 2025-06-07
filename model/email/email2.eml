@@ -1,0 +1,1406 @@
+Delivered-To: nguyenlongvu768@gmail.com
+Received: by 2002:a05:7022:b9c:b0:9a:f40a:49ab with SMTP id cy28csp760790dlb;
+        Thu, 8 May 2025 14:05:52 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHZNWa8J7v0jx5FoqCDA+4cqExeXuStAxt0GFyOmtpjMSo9FyOqMN+vWG2YhvtwdycysEzl
+X-Received: by 2002:a05:600c:a00a:b0:43c:fa24:873e with SMTP id 5b1f17b1804b1-442d6d371b4mr7967605e9.13.1746738352513;
+        Thu, 08 May 2025 14:05:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746738352; cv=none;
+        d=google.com; s=arc-20240605;
+        b=PKcyY2zKfmWgCNtAF2HDU852m34Rl+42LtdmrZvprSfDe7sKxCbrDfe8iSKGnbsJSK
+         n09T7OTexW2QB+kY8bqccWcIpmF1s+r7uK9jtB0Ae5yd3mbEOFlLo5TSHD+S244zf9GW
+         3F4vynT7sezG+2HUkFv0kidqZIFa3bA83GfTYAUYoEfqN9d8r7Zsiq3CCXLLiC63rZJL
+         k2bhBpC7+pdXiMmQrs/1nozYeBwIZyemavV2XdehtVRbAOuYRwWM/Nf9kXXRagG7dikD
+         fEzxD9DL3Wd3dOozVH45L3je590GG1Y7T8jhA7kORNHKJ44opTTCmioP9rohebPABcHW
+         K4hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:mime-version:to:reply-to:from:subject:date:message-id
+         :dkim-signature;
+        bh=MlF1WZ6kybaQC2+4zBVa1VdeEN47p3HRULLZPqnXhaE=;
+        fh=FSKqZnrklSGGJ4GGMPZutcBYfVAzb/qNpIGqOXVmJxU=;
+        b=iDfkLqdio2zMcdsb4/vsf4bRAdA72tJIPjNrhm/Riz+c3n6jlbERkT0gG50WFkzoyf
+         d9e9sO3EFtPJNhDPdzRnlN+UaRaTNmBzq0XYTKQv8mpd/mVgt81nxG7bRtZ8CVIFjWai
+         V3Sbze7jHiAZ9q03yp+Pz0VGWIOboCtYGgwRAE3WGKWcmAzbOimXRGVA5t0PGo/KBcvP
+         s0gq7jzAjaU+k/wCwXoNelPm3DiMAsT3dYHh0NornBD04FqXNOo/1VUmPIuxLzNrhMkA
+         BEAqdyQ+EXwslsCO1+RglPr2HY1OkEcLWVgd5+kvklA0T5k8fAF1P6ALh0ROeBrxI10c
+         4C4w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn header.b=euxyVIPv;
+       spf=pass (google.com: domain of 01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000@eu-west-1.amazonses.com designates 54.240.3.18 as permitted sender) smtp.mailfrom=01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000@eu-west-1.amazonses.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=mazii.net
+Return-Path: <01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000@eu-west-1.amazonses.com>
+Received: from a3-18.smtp-out.eu-west-1.amazonses.com (a3-18.smtp-out.eu-west-1.amazonses.com. [54.240.3.18])
+        by mx.google.com with ESMTPS id 5b1f17b1804b1-442cd3c03f0si25930485e9.176.2025.05.08.14.05.52
+        for <nguyenlongvu768@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 08 May 2025 14:05:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000@eu-west-1.amazonses.com designates 54.240.3.18 as permitted sender) client-ip=54.240.3.18;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn header.b=euxyVIPv;
+       spf=pass (google.com: domain of 01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000@eu-west-1.amazonses.com designates 54.240.3.18 as permitted sender) smtp.mailfrom=01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000@eu-west-1.amazonses.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=mazii.net
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn; d=amazonses.com; t=1746738351;
+	h=Message-ID:Date:Subject:From:Reply-To:To:MIME-Version:Content-Type:Feedback-ID;
+	bh=QjA9iB+YvYIxAqTz4JWkAV2Av0OMwxPlUZRMMrwmOVc=;
+	b=euxyVIPvO9C8+bCA3Q+Z8yaZpfkhLjjGM+aQvg/siMkv8ZWDs+UhB515DG6YG4DC
+	lYsQh56lOhiMIBEKxUOA6H9qjbcdS25110P7HeIsi0nk0u4fHImBrCr5lU5Aio27UtH
+	fUCvrlO1DK/N9W3usVU8LAJ+s/xXzX2ndOgncWhc=
+Message-ID: <01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000@eu-west-1.amazonses.com>
+Date: Thu, 8 May 2025 21:05:51 +0000
+Subject: =?utf-8?Q?Kh=C3=B4ng?= tra
+ =?utf-8?Q?t=E1=BB=AB_=C4=91i=E1=BB=83n_=C4=91=E1=BB=93ng_ngh?=
+ =?utf-8?Q?=C4=A9a_v=E1=BB=9Bi_vi=E1=BB=87c_kh=C3=B4ng_h=E1=BB=8D?=
+ =?utf-8?Q?c_b=C3=A0i_=F0=9F=98=94?=
+From: Mazii <support@mazii.net>
+Reply-To: Mazii <support@mazii.net>
+To: nguyenlongvu768@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1746738347_a6a4176ed72127a3756b46006b6cd26c_=_"
+X-Mailer-Hash: k9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO
+X-Mail-Content-ID: 15
+X-Language: vi
+Feedback-ID: ::1.eu-west-1.k+4nz58FNKl4YqbpgrNzLZyFOTa702oJdvymUaPitQc=:AmazonSES
+X-SES-Outgoing: 2025.05.08-54.240.3.18
+
+--_=_swift_1746738347_a6a4176ed72127a3756b46006b6cd26c_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+
+    <title></title>
+    <link rel=3D"shortcut icon" hre=
+f=3D"https://email-tracking-assets.benchmarkemail.com/images/favicon.png">=
+
+
+    <meta name=3D"googlebot" content=3D"noindex">
+    <meta name=3D=
+"ROBOTS" content=3D"NOINDEX, NOFOLLOW">
+
+    <meta content=3D"width=3Dd=
+evice-width, initial-scale=3D1.0" name=3D"viewport">
+    <style type=3D"t=
+ext/css">
+
+        /*** BMEMBF Start ***/
+
+        /* CMS V4 Editor=
+ Test */
+
+        [name=3DbmeMainBody]{min-height:1000px;}
+
+       =
+ @media  only screen and (max-width: 480px){table.blk, table.tblText, .bmeH=
+older, .bmeHolder1, table.bmeMainColumn{width:100% !important;} }
+
+    =
+    @media  only screen and (max-width: 480px){.bmeImageCard table.bmeCapti=
+onTable td.tblCell{padding:0px 20px 20px 20px !important;} }
+
+        @=
+media  only screen and (max-width: 480px){.bmeImageCard table.bmeCaptionTab=
+le.bmeCaptionTableMobileTop td.tblCell{padding:20px 20px 0 20px !important;=
+} }
+
+        @media  only screen and (max-width: 480px){table.bmeCaptio=
+nTable td.tblCell{padding:10px !important;} }
+
+        @media  only scr=
+een and (max-width: 480px){table.tblGtr{ padding-bottom:20px !important;} }=
+
+
+        @media  only screen and (max-width: 480px){td.blk_container, =
+.blk_parent, .bmeLeftColumn, .bmeRightColumn, .bmeColumn1, .bmeColumn2, .bm=
+eColumn3, .bmeBody{display:table !important;max-width:600px !important;widt=
+h:100% !important;} }
+
+        @media  only screen and (max-width: 480p=
+x){table.container-table, .bmeheadertext, .container-table { width: 95% !im=
+portant; } }
+
+        @media  only screen and (max-width: 480px){.mobil=
+e-footer, .mobile-footer a{ font-size: 13px !important; line-height: 18px !=
+important; } .mobile-footer{ text-align: center !important; } table.share-t=
+bl { padding-bottom: 15px; width: 100% !important; } table.share-tbl td { d=
+isplay: block !important; text-align: center !important; width: 100% !impor=
+tant; } }
+
+        @media  only screen and (max-width: 480px){td.bmeSha=
+reTD, td.bmeSocialTD{width: 100% !important; } }
+
+        @media  only =
+screen and (max-width: 480px){td.tdBoxedTextBorder{width: auto !important;}=
+ }
+
+        @media  only screen and (max-width: 480px){th.tdBoxedTextBo=
+rder{width: auto !important;} }
+
+        @media  only screen and (max-w=
+idth: 480px){table.blk, table[name=3DtblText], .bmeHolder, .bmeHolder1, tab=
+le[name=3DbmeMainColumn]{width:100% !important;} }
+
+        @media  onl=
+y screen and (max-width: 480px){.bmeImageCard table.bmeCaptionTable td[name=
+=3DtblCell]{padding:0px 20px 20px 20px !important;} }
+
+        @media  =
+only screen and (max-width: 480px){.bmeImageCard table.bmeCaptionTable.bmeC=
+aptionTableMobileTop td[name=3DtblCell]{padding:20px 20px 0 20px !important=
+;} }
+
+        @media  only screen and (max-width: 480px){table.bmeCapti=
+onTable td[name=3DtblCell]{padding:10px !important;} }
+
+        @media =
+ only screen and (max-width: 480px){table[name=3DtblGtr]{ padding-bottom:20=
+px !important;} }
+
+        @media  only screen and (max-width: 480px){t=
+d.blk_container, .blk_parent, [name=3DbmeLeftColumn], [name=3DbmeRightColum=
+n], [name=3DbmeColumn1], [name=3DbmeColumn2], [name=3DbmeColumn3], [name=3D=
+bmeBody]{display:table !important;max-width:600px !important;width:100% !im=
+portant;} }
+
+        @media  only screen and (max-width: 480px){table[c=
+lass=3Dcontainer-table], .bmeheadertext, .container-table { width: 95% !imp=
+ortant; } }
+
+        @media  only screen and (max-width: 480px){.mobile=
+-footer, .mobile-footer a{ font-size: 13px !important; line-height: 18px !i=
+mportant; } .mobile-footer{ text-align: center !important; } table[class=3D=
+"share-tbl"] { padding-bottom: 15px; width: 100% !important; } table[class=
+=3D"share-tbl"] td { display: block !important; text-align: center !importa=
+nt; width: 100% !important; } }
+
+        @media  only screen and (max-w=
+idth: 480px){td[name=3DbmeShareTD], td[name=3DbmeSocialTD]{width: 100% !imp=
+ortant; } }
+
+        @media  only screen and (max-width: 480px){td[name=
+=3DtdBoxedTextBorder]{width: auto !important;} }
+
+        @media  only =
+screen and (max-width: 480px){th[name=3DtdBoxedTextBorder]{width: auto !imp=
+ortant;} }
+
+        @media  only screen and (max-width: 480px){.bmeImag=
+eCard table.bmeImageTable{height: auto !important; width:100% !important; p=
+adding:20px !important;clear:both; float:left !important; border-collapse: =
+separate;} }
+
+        @media  only screen and (max-width: 480px){.bmeMb=
+lInline table.bmeImageTable{height: auto !important; width:100% !important;=
+ padding:10px !important;clear:both;} }
+
+        @media  only screen an=
+d (max-width: 480px){.bmeMblInline table.bmeCaptionTable{width:100% !import=
+ant; clear:both;} }
+
+        @media  only screen and (max-width: 480px)=
+{table.bmeImageTable{height: auto !important; width:100% !important; paddin=
+g:10px !important;clear:both; } }
+
+        @media  only screen and (max=
+-width: 480px){table.bmeCaptionTable{width:100% !important;  clear:both;} }=
+
+
+        @media  only screen and (max-width: 480px){table.bmeImageCont=
+ainer{width:100% !important; clear:both; float:left !important;} }
+
+   =
+     @media  only screen and (max-width: 480px){table.bmeImageTable td{padd=
+ing:0px !important; height: auto; } }
+
+        @media  only screen and =
+(max-width: 480px){img.mobile-img-large{width:100% !important; height:auto =
+!important;} }
+
+        @media  only screen and (max-width: 480px){img.=
+bmeRSSImage{max-width:320px; height:auto !important;} }
+
+        @media=
+  only screen and (min-width: 640px){img.bmeRSSImage{max-width:600px !impor=
+tant; height:auto !important;} }
+
+        @media  only screen and (max-=
+width: 480px){.trMargin img{height:10px;} }
+
+        @media  only scree=
+n and (max-width: 480px){div.bmefooter, div.bmeheader{ display:block !impor=
+tant;} }
+
+        @media  only screen and (max-width: 480px){.tdPart{ w=
+idth:100% !important; clear:both; float:left !important; } }
+
+        @=
+media  only screen and (max-width: 480px){table.blk_parent1, table.tblPart =
+{width: 100% !important; } }
+
+        @media  only screen and (max-widt=
+h: 480px){.tblLine{min-width: 100% !important;} }
+
+        @media  only=
+ screen and (max-width: 480px){.bmeMblCenter img { margin: 0 auto; } }
+=
+
+        @media  only screen and (max-width: 480px){.bmeMblCenter, .bmeMb=
+lCenter div, .bmeMblCenter span  { text-align: center !important; text-alig=
+n: -webkit-center !important; } }
+
+        @media  only screen and (max=
+-width: 480px){.bmeNoBr br, .bmeImageGutterRow, .bmeMblStackCenter .bmeShar=
+eItem .tdMblHide { display: none !important; } }
+
+        @media  only =
+screen and (max-width: 480px){.bmeMblInline table.bmeImageTable, .bmeMblInl=
+ine table.bmeCaptionTable, .bmeMblInline { clear: none !important; width:50=
+% !important; } }
+
+        @media  only screen and (max-width: 480px){.=
+bmeMblInlineHide, .bmeShareItem .trMargin { display: none !important; } }=
+
+
+        @media  only screen and (max-width: 480px){.bmeMblInline tabl=
+e.bmeImageTable img, .bmeMblShareCenter.tblContainer.mblSocialContain, .bme=
+MblFollowCenter.tblContainer.mblSocialContain{width: 100% !important; } }=
+
+
+        @media  only screen and (max-width: 480px){.bmeMblStack> .bme=
+ShareItem{width: 100% !important; clear: both !important;} }
+
+        @=
+media  only screen and (max-width: 480px){.bmeShareItem{padding-top: 10px !=
+important;} }
+
+        @media  only screen and (max-width: 480px){.tdPa=
+rt.bmeMblStackCenter, .bmeMblStackCenter .bmeFollowItemIcon {padding:0px !i=
+mportant; text-align: center !important;} }
+
+        @media  only scree=
+n and (max-width: 480px){.bmeMblStackCenter> .bmeShareItem{width: 100% !imp=
+ortant;} }
+
+        @media  only screen and (max-width: 480px){ td.bmeM=
+blCenter {border: 0 none transparent !important;} }
+
+        @media  on=
+ly screen and (max-width: 480px){.bmeLinkTable.tdPart td{padding-left:0px !=
+important; padding-right:0px !important; border:0px none transparent !impor=
+tant;padding-bottom:15px !important;height: auto !important;} }
+
+      =
+  @media  only screen and (max-width: 480px){.tdMblHide{width:10px !importa=
+nt;} }
+
+        @media  only screen and (max-width: 480px){.bmeShareIte=
+mBtn{display:table !important;} }
+
+        @media  only screen and (max=
+-width: 480px){.bmeMblStack td {text-align: left !important;} }
+
+      =
+  @media  only screen and (max-width: 480px){.bmeMblStack .bmeFollowItem{cl=
+ear:both !important; padding-top: 10px !important;} }
+
+        @media  =
+only screen and (max-width: 480px){.bmeMblStackCenter .bmeFollowItemText{pa=
+dding-left: 5px !important;} }
+
+        @media  only screen and (max-wi=
+dth: 480px){.bmeMblStackCenter .bmeFollowItem{clear:both !important;align-s=
+elf:center; float:none !important; padding-top:10px;margin: 0 auto;} }
+=
+
+        @media  only screen and (max-width: 480px){
+
+            .td=
+Part> table{width:100% !important;}
+
+        }
+
+        @media  onl=
+y screen and (max-width: 480px){.tdPart>table.bmeLinkContainer{ width:auto =
+!important; } }
+
+        @media  only screen and (max-width: 480px){.td=
+Part.mblStackCenter>table.bmeLinkContainer{ width:100% !important;} }
+
+=
+        .blk_parent:first-child, .blk_parent{float:left;}
+
+        .blk=
+_parent:last-child{float:right;}
+
+        /*** BMEMBF END ***/
+
+   =
+ </style>
+
+</head>
+<body topmargin=3D"0" leftmargin=3D"0" style=3D"he=
+ight: 100% !important; margin: 0; padding: 0; width: 100% !important;min-wi=
+dth: 100%;">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" name=3D"bmeMainBody" style=3D"background-color: #e6e6e8;" bgcolo=
+r=3D"#e6e6e8"><tbody><tr><td width=3D"100%" valign=3D"top" align=3D"center"=
+>
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" nam=
+e=3D"bmeMainColumnParentTable"><tbody><tr><td name=3D"bmeMainColumnParent" =
+style=3D"border-collapse: separate;">
+                        <table name=
+=3D"bmeMainColumn" class=3D"bmeHolder bmeMainColumn" style=3D"max-width: 60=
+0px; overflow: visible;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" a=
+lign=3D"center">    <tbody><tr id=3D"section_1" class=3D"flexible-section" =
+data-columns=3D"1" data-section-type=3D"bmePreHeader"><td width=3D"100%" cl=
+ass=3D"blk_container bmeHolder" name=3D"bmePreHeader" valign=3D"top" align=
+=3D"center" bgcolor=3D"#e6e6e8" style=3D"background-color: rgb(230, 230, 23=
+2); color: rgb(102, 102, 102);   "></td></tr> <tr><td width=3D"100%" class=
+=3D"bmeHolder" valign=3D"top" align=3D"center" name=3D"bmeMainContentParent=
+" style=3D"border-color: rgb(128, 128, 128); border-radius: 5px; border-col=
+lapse: separate; border-spacing: 0px;">
+                                 =
+   <table name=3D"bmeMainContent" style=3D"border-radius: 5px; border-colla=
+pse: separate;border-spacing: 0px; overflow: hidden;" width=3D"100%" cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center"> <tbody><tr id=
+=3D"section_2" class=3D"flexible-section" data-columns=3D"1"><td width=3D"1=
+00%" class=3D"blk_container bmeHolder" name=3D"bmeHeader" valign=3D"top" al=
+ign=3D"center" bgcolor=3D"#ffffff" style=3D"background-color: rgb(255, 255,=
+ 255);   ">
+                                                <div id=3D"dv=
+_1" class=3D"blk_wrapper" style=3D"">
+                                   =
+                 <table width=3D"600" cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" class=3D"blk" name=3D"blk_image"><tbody><tr><td>
+            =
+                                                    <table width=3D"100%" c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tbody><tr><td align=3D"cen=
+ter" class=3D"bmeImage" style=3D"border-collapse: collapse; padding: 0px;">=
+<img src=3D"https://images.benchmarkemail.com/client1461456/image16433848.p=
+ng" class=3D"mobile-img-large" width=3D"600" style=3D"max-width: 600px; dis=
+play: block; border-radius: 0px;" alt=3D"{image_1}" data-radius=3D"0" borde=
+r=3D"0"></td></tr></tbody>
+                                              =
+                  </table></td></tr></tbody>
+                            =
+                        </table></div><div id=3D"dv_4" class=3D"blk_wrapper=
+" style=3D"">
+                                                    <table =
+class=3D"blk" name=3D"blk_text" width=3D"600" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D""><tbody><tr><td>
+                          =
+                                      <table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" width=3D"100%" class=3D"bmeContainerRow"><tbody><tr><th=
+ valign=3D"top" align=3D"center" class=3D"tdPart" style=3D"">
+           =
+                                                                 <table nam=
+e=3D"tblText" style=3D"float: left;" align=3D"left" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"tblText" width=3D"600"><tbody><tr><td na=
+me=3D"tblCell" style=3D"padding: 20px 15px; font-size: 14px; font-weight: 4=
+00; font-family: Arial, Helvetica, sans-serif; color: rgb(56, 56, 56); text=
+-align: left; word-break: break-word;" align=3D"left" valign=3D"top" class=
+=3D"tblCell"><div style=3D"line-height: 150%;">
+                         =
+                                                                   <p style=
+=3D"text-align: center; margin-top: 0px; margin-bottom: 0px; line-height: 1=
+50%;"><span style=3D"font-size: 30px;"><strong>Mazii nh=E1=BB=9B b=E1=BA=
+=A1n</strong></span></p>
+                                                =
+                                        </div></td></tr></tbody>
+        =
+                                                                    </table=
+></th></tr></tbody>
+                                                     =
+           </table></td></tr></tbody>
+                                   =
+                 </table></div><div id=3D"dv_6" class=3D"blk_wrapper" style=
+=3D"">
+                                                    <table class=
+=3D"blk" name=3D"blk_text" width=3D"600" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D""><tbody><tr><td>
+                               =
+                                 <table cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" width=3D"100%" class=3D"bmeContainerRow"><tbody><tr><th valig=
+n=3D"top" align=3D"center" class=3D"tdPart" style=3D"background-color: rgb(=
+255, 255, 255);">
+                                                       =
+                     <table name=3D"tblText" style=3D"float: left; backgrou=
+nd-color: rgb(255, 255, 255);" align=3D"left" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"tblText" width=3D"600"><tbody><tr><td name=3D"=
+tblCell" style=3D"padding: 0px 15px; font-size: 14px; font-weight: 400; fon=
+t-family: Arial, Helvetica, sans-serif; color: rgb(56, 56, 56); text-align:=
+ left; word-break: break-word;" align=3D"left" valign=3D"top" class=3D"tblC=
+ell"><div style=3D"line-height: 150%;">
+                                 =
+                                                           <p style=3D"text=
+-align: center; margin-top: 0px; margin-bottom: 0px;"><span style=3D"font-s=
+ize: 17px;">=C4=90=C3=A3 7 ng=C3=A0y r=E1=BB=93i b=E1=BA=A1n kh=C3=B4ng gh=
+=C3=A9 th=C4=83m Mazii</span></p>
+                                       =
+                                                     <p style=3D"text-align=
+: center; margin-top: 0px; margin-bottom: 0px;"><span style=3D"font-size: 1=
+7px;">Quay l=E1=BA=A1i =C4=91=E1=BB=83 h=E1=BB=8Dc nh=C3=A9!</span></p>
+ =
+                                                                           =
+            </div></td></tr></tbody>
+                                    =
+                                        </table></th></tr></tbody>
+      =
+                                                          </table></td></tr=
+></tbody>
+                                                    </table></d=
+iv><div id=3D"dv_2" class=3D"blk_wrapper">
+                              =
+                      <table width=3D"600" cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" class=3D"blk" name=3D"blk_button" style=3D""><tbody><tr><t=
+d width=3D"20"></td><td align=3D"center">
+                               =
+                                 <table class=3D"tblContainer" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%"><tbody><tr><td height=
+=3D"20"></td></tr><tr><td align=3D"center">
+                             =
+                                               <table cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" class=3D"bmeButton" align=3D"center" style=3D"b=
+order-collapse: separate;"><tbody><tr><td style=3D"border-radius: 50px; bor=
+der-width: 0px; border-style: none; border-color: transparent; background-c=
+olor: rgb(62, 103, 214); text-align: center; font-family: Arial, Helvetica,=
+ sans-serif; font-size: 19px; padding: 15px 40px; font-weight: bold; word-b=
+reak: break-word;" class=3D"bmeButtonText"><span style=3D"font-family: Aria=
+l, Verdana; font-size: 19px; color: rgb(255, 255, 255);"><a style=3D"color:=
+#FFFFFF;text-decoration:none;" target=3D"_blank" href=3D"https://mazii.page=
+.link/vn" data-link-type=3D"web" draggable=3D"false">V=C3=80O APP TH=C3=
+=94I!</a></span></td></tr></tbody>
+                                      =
+                                      </table></td></tr><tr><td height=3D"2=
+0"></td></tr></tbody>
+                                                   =
+             </table></td><td width=3D"20"></td></tr></tbody>
+           =
+                                         </table></div></td></tr>  <tr id=
+=3D"section_4" class=3D"flexible-section" data-columns=3D"1"><td width=3D"1=
+00%" class=3D"blk_container bmeHolder" name=3D"bmePreFooter" valign=3D"top"=
+ align=3D"center" bgcolor=3D"#ffffff" style=3D"background-color: rgb(255, 2=
+55, 255);   ">
+
+                                                <div id=
+=3D"dv_26" class=3D"blk_wrapper">
+                                       =
+             <table width=3D"600" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" class=3D"blk" name=3D"blk_social_follow" style=3D"background-color:=
+ rgb(24, 71, 173);"><tbody><tr><td class=3D"tblCellMain" align=3D"center" s=
+tyle=3D"padding-top:15px; padding-bottom:15px; padding-left:20px; padding-r=
+ight:20px;">
+                                                            =
+    <table class=3D"tblContainer mblSocialContain" cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0" align=3D"center" style=3D"text-align:center;"><tbo=
+dy><tr><td class=3D"tdItemContainer">
+                                   =
+                                         <table cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" class=3D"mblSocialContain" style=3D"table-layout: aut=
+o;"><tbody><tr><td valign=3D"top" name=3D"bmeSocialTD" class=3D"bmeSocialTD=
+"></td><td align=3D"left" valign=3D"top">
+                               =
+                                                         <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" class=3D"bmeFollowItem" type=3D"faceb=
+ook" style=3D"float: left; display: block;" align=3D"left"><tbody><tr><td a=
+lign=3D"left" class=3D"bmeFollowItemIcon" gutter=3D"20" width=3D"24" style=
+=3D"padding-right:20px;height:55px;"><a href=3D"/c/l?u=3D11241A7D&e=3D1823A=
+DC&c=3D164CD0&t=3D1&l=3D84DB85F1&email=3DuLhn7ZZogRRxOfrdhWIhDwi72yrq%2BZfs=
+&seq=3D1" target=3D"_blank" style=3D"display: inline-block;background-color=
+: rgb(22, 167, 224);border-radius: 28px;border-style: none; border-width: 0=
+px; border-color: rgb(0, 0, 238);"><img src=3D"https://ui.benchmarkemail.co=
+m/images/editor/socialicons/fb_btn.png" alt=3D"Facebook" style=3D"display: =
+block; max-width: 114px;" border=3D"0" width=3D"57" height=3D"57"></a></td>=
+</tr></tbody>
+                                                           =
+                             </table></td><td align=3D"left" valign=3D"top"=
+>
+                                                                       =
+                 <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" cl=
+ass=3D"bmeFollowItem" type=3D"youtube" style=3D"float: left; display: block=
+;" align=3D"left"><tbody><tr><td align=3D"left" class=3D"bmeFollowItemIcon"=
+ gutter=3D"20" width=3D"24" style=3D"padding-right:20px;height:55px;"><a hr=
+ef=3D"/c/l?u=3D11241A7E&e=3D1823ADC&c=3D164CD0&t=3D1&l=3D84DB85F1&email=3Du=
+Lhn7ZZogRRxOfrdhWIhDwi72yrq%2BZfs&seq=3D1" target=3D"_blank" style=3D"displ=
+ay: inline-block;background-color: rgb(22, 167, 224);border-radius: 28px;bo=
+rder-style: none; border-width: 0px; border-color: rgb(0, 0, 238);"><img sr=
+c=3D"https://ui.benchmarkemail.com/images/editor/socialicons/yt_btn.png" al=
+t=3D"YouTube" style=3D"display: block; max-width: 114px;" border=3D"0" widt=
+h=3D"57" height=3D"57"></a></td></tr></tbody>
+                           =
+                                                             </table></td><=
+td align=3D"left" valign=3D"top">
+                                       =
+                                                 <table cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" class=3D"bmeFollowItem" type=3D"instagram" st=
+yle=3D"float: left; display: block;" align=3D"left"><tbody><tr><td align=3D=
+"left" class=3D"bmeFollowItemIcon" gutter=3D"20" width=3D"24" style=3D"padd=
+ing-right:20px;height:55px;"><a href=3D"/c/l?u=3D11241A7F&e=3D1823ADC&c=3D1=
+64CD0&t=3D1&l=3D84DB85F1&email=3DuLhn7ZZogRRxOfrdhWIhDwi72yrq%2BZfs&seq=3D1=
+" target=3D"_blank" style=3D"display: inline-block;background-color: rgb(22=
+, 167, 224);border-radius: 28px;border-style: none; border-width: 0px; bord=
+er-color: rgb(0, 0, 238);"><img src=3D"https://ui.benchmarkemail.com/images=
+/editor/socialicons/in_btn.png" alt=3D"Instagram" style=3D"display: block; =
+max-width: 114px;" border=3D"0" width=3D"57" height=3D"57"></a></td></tr></=
+tbody>
+                                                                  =
+                      </table></td><td align=3D"left" valign=3D"top">
+   =
+                                                                           =
+          <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"=
+bmeFollowItem" type=3D"website" style=3D"float: left; display: block;" alig=
+n=3D"left"><tbody><tr><td align=3D"left" class=3D"bmeFollowItemIcon" gutter=
+=3D"20" width=3D"24" style=3D"height:55px;"><a href=3D"#" style=3D"display:=
+ inline-block;background-color: rgb(22, 167, 224);border-radius: 28px;borde=
+r-style: none; border-width: 0px; border-color: rgb(0, 0, 238);" target=3D"=
+_blank"><img src=3D"https://ui.benchmarkemail.com/images/editor/socialicons=
+/wb_btn.png" alt=3D"Website" style=3D"display: block; max-width: 114px;" bo=
+rder=3D"0" width=3D"57" height=3D"57"></a></td></tr></tbody>
+            =
+                                                                           =
+ </table></td></tr></tbody>
+                                             =
+                               </table></td></tr></tbody>
+               =
+                                                 </table></td></tr></tbody>=
+
+                                                    </table></div></td><=
+/tr> </tbody>
+                                    </table> </td></tr>  <t=
+r id=3D"section_5" class=3D"flexible-section" data-columns=3D"1" data-secti=
+on-type=3D"bmeFooter"> <td width=3D"100%" class=3D"blk_container bmeHolder"=
+ name=3D"bmeFooter" valign=3D"top" align=3D"center" bgcolor=3D"#e6e6e8" sty=
+le=3D"background-color: rgb(230, 230, 232); color: rgb(102, 102, 102);"> <d=
+iv id=3D"dv_17" class=3D"blk_wrapper" style=3D""> <table width=3D"600" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"blk" name=3D"blk_foot=
+er"> <tbody> <tr> <td name=3D"tblCell" class=3D"tblCell" style=3D"padding: =
+20px; word-break: break-word;" valign=3D"top" align=3D"left"> <table cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"> <tbody> <tr> <td=
+ name=3D"bmeBadgeText" style=3D"text-align:left; word-break: break-word;" a=
+lign=3D"left"><span id=3D"spnFooterText" style=3D"font-family: Arial, Helve=
+tica, sans-serif; font-weight: normal; font-size: 11px; line-height: 140%;"=
+>If you want to stop receiving promotional emails, please click</span><br><=
+span style=3D"font-family: Arial, Helvetica, sans-serif; font-weight: norma=
+l; font-size: 11px; line-height: 140%;"><a class=3D"bmefootertext" target=
+=3D"_new" href=3D"https://eupgroup.net/chinh-sach-bao-mat" style=3D"color:i=
+nherit;">Privacy Policy</a> | <a class=3D"bmefootertext" target=3D"_new" hr=
+ef=3D"https://eupgroup.net/gioi-thieu" style=3D"color:inherit;">Contact us<=
+/a> | <a class=3D"bmefootertext" target=3D"_new" href=3D"?token=3Dbmd1eWVub=
+G9uZ3Z1NzY4QGdtYWlsLmNvbQ=3D=3D" style=3D"color:inherit;">Unsubscribe</a><b=
+r></span> </td> </tr> <tr> <td name=3D"bmeBadgeImage" style=3D"text-align:l=
+eft;padding-top:20px;" align=3D"left"> <a href=3D"https://eupgroup.net/" ta=
+rget=3D"_new"> <img src=3D"https://eupgroup.net/images/logo.png" width=3D"1=
+00px" border=3D"0"> </a> </td> </tr> </tbody> </table> </td> </tr> </tbody>=
+ </table> </div> </td> </tr> </tbody>
+                        </table></t=
+d></tr></tbody>
+            </table></td></tr></tbody>
+</table>
+<!-- =
+Test Path -->
+
+<!-- /Test Path -->
+
+</body></html>
+
+
+--_=_swift_1746738347_a6a4176ed72127a3756b46006b6cd26c_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title></title>
+<link rel=3D"shortcut icon" href=3D"https://email-tracking-assets.benchmark=
+email.com/images/favicon.png">
+<meta name=3D"googlebot" content=3D"noindex">
+<meta name=3D"ROBOTS" content=3D"NOINDEX, NOFOLLOW">
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewpor=
+t">
+<style type=3D"text/css">
+
+        /*** BMEMBF Start ***/
+
+        /* CMS V4 Editor Test */
+
+        [name=3DbmeMainBody]{min-height:1000px;}
+
+        @media  only screen and (max-width: 480px){table.blk, table.tblText=
+, .bmeHolder, .bmeHolder1, table.bmeMainColumn{width:100% !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeImageCard table.bmeC=
+aptionTable td.tblCell{padding:0px 20px 20px 20px !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeImageCard table.bmeC=
+aptionTable.bmeCaptionTableMobileTop td.tblCell{padding:20px 20px 0 20px !i=
+mportant;} }
+
+        @media  only screen and (max-width: 480px){table.bmeCaptionTable td=
+.tblCell{padding:10px !important;} }
+
+        @media  only screen and (max-width: 480px){table.tblGtr{ padding-bo=
+ttom:20px !important;} }
+
+        @media  only screen and (max-width: 480px){td.blk_container, .blk_p=
+arent, .bmeLeftColumn, .bmeRightColumn, .bmeColumn1, .bmeColumn2, .bmeColum=
+n3, .bmeBody{display:table !important;max-width:600px !important;width:100%=
+ !important;} }
+
+        @media  only screen and (max-width: 480px){table.container-table, .=
+bmeheadertext, .container-table { width: 95% !important; } }
+
+        @media  only screen and (max-width: 480px){.mobile-footer, .mobile-=
+footer a{ font-size: 13px !important; line-height: 18px !important; } .mobi=
+le-footer{ text-align: center !important; } table.share-tbl { padding-botto=
+m: 15px; width: 100% !important; } table.share-tbl td { display: block !imp=
+ortant; text-align: center !important; width: 100% !important; } }
+
+        @media  only screen and (max-width: 480px){td.bmeShareTD, td.bmeSoc=
+ialTD{width: 100% !important; } }
+
+        @media  only screen and (max-width: 480px){td.tdBoxedTextBorder{wid=
+th: auto !important;} }
+
+        @media  only screen and (max-width: 480px){th.tdBoxedTextBorder{wid=
+th: auto !important;} }
+
+
+
+        @media  only screen and (max-width: 480px){table.blk, table[name=3D=
+tblText], .bmeHolder, .bmeHolder1, table[name=3DbmeMainColumn]{width:100% !=
+important;} }
+
+        @media  only screen and (max-width: 480px){.bmeImageCard table.bmeC=
+aptionTable td[name=3DtblCell]{padding:0px 20px 20px 20px !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeImageCard table.bmeC=
+aptionTable.bmeCaptionTableMobileTop td[name=3DtblCell]{padding:20px 20px 0=
+ 20px !important;} }
+
+        @media  only screen and (max-width: 480px){table.bmeCaptionTable td=
+[name=3DtblCell]{padding:10px !important;} }
+
+        @media  only screen and (max-width: 480px){table[name=3DtblGtr]{ pa=
+dding-bottom:20px !important;} }
+
+        @media  only screen and (max-width: 480px){td.blk_container, .blk_p=
+arent, [name=3DbmeLeftColumn], [name=3DbmeRightColumn], [name=3DbmeColumn1]=
+, [name=3DbmeColumn2], [name=3DbmeColumn3], [name=3DbmeBody]{display:table =
+!important;max-width:600px !important;width:100% !important;} }
+
+        @media  only screen and (max-width: 480px){table[class=3Dcontainer-=
+table], .bmeheadertext, .container-table { width: 95% !important; } }
+
+        @media  only screen and (max-width: 480px){.mobile-footer, .mobile-=
+footer a{ font-size: 13px !important; line-height: 18px !important; } .mobi=
+le-footer{ text-align: center !important; } table[class=3D"share-tbl"] { pa=
+dding-bottom: 15px; width: 100% !important; } table[class=3D"share-tbl"] td=
+ { display: block !important; text-align: center !important; width: 100% !i=
+mportant; } }
+
+        @media  only screen and (max-width: 480px){td[name=3DbmeShareTD], t=
+d[name=3DbmeSocialTD]{width: 100% !important; } }
+
+        @media  only screen and (max-width: 480px){td[name=3DtdBoxedTextBor=
+der]{width: auto !important;} }
+
+        @media  only screen and (max-width: 480px){th[name=3DtdBoxedTextBor=
+der]{width: auto !important;} }
+
+
+
+        @media  only screen and (max-width: 480px){.bmeImageCard table.bmeI=
+mageTable{height: auto !important; width:100% !important; padding:20px !imp=
+ortant;clear:both; float:left !important; border-collapse: separate;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblInline table.bmeI=
+mageTable{height: auto !important; width:100% !important; padding:10px !imp=
+ortant;clear:both;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblInline table.bmeC=
+aptionTable{width:100% !important; clear:both;} }
+
+        @media  only screen and (max-width: 480px){table.bmeImageTable{heig=
+ht: auto !important; width:100% !important; padding:10px !important;clear:b=
+oth; } }
+
+        @media  only screen and (max-width: 480px){table.bmeCaptionTable{wi=
+dth:100% !important;  clear:both;} }
+
+        @media  only screen and (max-width: 480px){table.bmeImageContainer{=
+width:100% !important; clear:both; float:left !important;} }
+
+        @media  only screen and (max-width: 480px){table.bmeImageTable td{p=
+adding:0px !important; height: auto; } }
+
+        @media  only screen and (max-width: 480px){img.mobile-img-large{wid=
+th:100% !important; height:auto !important;} }
+
+        @media  only screen and (max-width: 480px){img.bmeRSSImage{max-widt=
+h:320px; height:auto !important;} }
+
+        @media  only screen and (min-width: 640px){img.bmeRSSImage{max-widt=
+h:600px !important; height:auto !important;} }
+
+        @media  only screen and (max-width: 480px){.trMargin img{height:10p=
+x;} }
+
+        @media  only screen and (max-width: 480px){div.bmefooter, div.bmehe=
+ader{ display:block !important;} }
+
+        @media  only screen and (max-width: 480px){.tdPart{ width:100% !imp=
+ortant; clear:both; float:left !important; } }
+
+        @media  only screen and (max-width: 480px){table.blk_parent1, table=
+.tblPart {width: 100% !important; } }
+
+        @media  only screen and (max-width: 480px){.tblLine{min-width: 100%=
+ !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblCenter img { marg=
+in: 0 auto; } }
+
+        @media  only screen and (max-width: 480px){.bmeMblCenter, .bmeMblCe=
+nter div, .bmeMblCenter span  { text-align: center !important; text-align: =
+-webkit-center !important; } }
+
+        @media  only screen and (max-width: 480px){.bmeNoBr br, .bmeImageGu=
+tterRow, .bmeMblStackCenter .bmeShareItem .tdMblHide { display: none !impor=
+tant; } }
+
+        @media  only screen and (max-width: 480px){.bmeMblInline table.bmeI=
+mageTable, .bmeMblInline table.bmeCaptionTable, .bmeMblInline { clear: none=
+ !important; width:50% !important; } }
+
+        @media  only screen and (max-width: 480px){.bmeMblInlineHide, .bmeS=
+hareItem .trMargin { display: none !important; } }
+
+        @media  only screen and (max-width: 480px){.bmeMblInline table.bmeI=
+mageTable img, .bmeMblShareCenter.tblContainer.mblSocialContain, .bmeMblFol=
+lowCenter.tblContainer.mblSocialContain{width: 100% !important; } }
+
+        @media  only screen and (max-width: 480px){.bmeMblStack> .bmeShareI=
+tem{width: 100% !important; clear: both !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeShareItem{padding-to=
+p: 10px !important;} }
+
+        @media  only screen and (max-width: 480px){.tdPart.bmeMblStackCente=
+r, .bmeMblStackCenter .bmeFollowItemIcon {padding:0px !important; text-alig=
+n: center !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblStackCenter> .bme=
+ShareItem{width: 100% !important;} }
+
+        @media  only screen and (max-width: 480px){ td.bmeMblCenter {border=
+: 0 none transparent !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeLinkTable.tdPart td{=
+padding-left:0px !important; padding-right:0px !important; border:0px none =
+transparent !important;padding-bottom:15px !important;height: auto !importa=
+nt;} }
+
+        @media  only screen and (max-width: 480px){.tdMblHide{width:10px !i=
+mportant;} }
+
+        @media  only screen and (max-width: 480px){.bmeShareItemBtn{display=
+:table !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblStack td {text-al=
+ign: left !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblStack .bmeFollowI=
+tem{clear:both !important; padding-top: 10px !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblStackCenter .bmeF=
+ollowItemText{padding-left: 5px !important;} }
+
+        @media  only screen and (max-width: 480px){.bmeMblStackCenter .bmeF=
+ollowItem{clear:both !important;align-self:center; float:none !important; p=
+adding-top:10px;margin: 0 auto;} }
+
+        @media  only screen and (max-width: 480px){
+
+            .tdPart> table{width:100% !important;}
+
+        }
+
+        @media  only screen and (max-width: 480px){.tdPart>table.bmeLinkCon=
+tainer{ width:auto !important; } }
+
+        @media  only screen and (max-width: 480px){.tdPart.mblStackCenter>t=
+able.bmeLinkContainer{ width:100% !important;} }
+
+        .blk_parent:first-child, .blk_parent{float:left;}
+
+        .blk_parent:last-child{float:right;}
+
+        /*** BMEMBF END ***/
+
+    </style>
+</head>
+<body topmargin=3D"0" leftmargin=3D"0" style=3D"font-family: -apple-system,=
+ BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'App=
+le Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-bo=
+x; background-color: #f8fafc; color: #74787e; hyphens: auto; line-height: 1=
+.4; -moz-hyphens: auto; -ms-word-break: break-all; -webkit-hyphens: auto; -=
+webkit-text-size-adjust: none; word-break: break-word; height: 100% !import=
+ant; margin: 0; padding: 0; width: 100% !important; min-width: 100%;">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" name=
+=3D"bmeMainBody" style=3D"font-family: -apple-system, BlinkMacSystemFont, '=
+Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Sego=
+e UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; min-height: 1000px;=
+ background-color: #e6e6e8;" bgcolor=3D"#e6e6e8"><tbody style=3D"font-famil=
+y: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,=
+ sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-=
+sizing: border-box;"><tr><td width=3D"100%" valign=3D"top" align=3D"center"=
+ style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot=
+o, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Se=
+goe UI Symbol'; box-sizing: border-box;">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" name=3D=
+"bmeMainColumnParentTable" style=3D"font-family: -apple-system, BlinkMacSys=
+temFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emo=
+ji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"><tbody s=
+tyle=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,=
+ Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Sego=
+e UI Symbol'; box-sizing: border-box;"><tr><td name=3D"bmeMainColumnParent"=
+ style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot=
+o, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Se=
+goe UI Symbol'; box-sizing: border-box; border-collapse: separate;">
+                        <table name=3D"bmeMainColumn" class=3D"bmeHolder bm=
+eMainColumn" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Sego=
+e UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI=
+ Emoji', 'Segoe UI Symbol'; box-sizing: border-box; max-width: 600px; overf=
+low: visible;" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"ce=
+nter"><tbody style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Sego=
+e UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI=
+ Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+<tr id=3D"section_1" class=3D"flexible-section" data-columns=3D"1" data-sec=
+tion-type=3D"bmePreHeader"><td width=3D"100%" class=3D"blk_container bmeHol=
+der" name=3D"bmePreHeader" valign=3D"top" align=3D"center" bgcolor=3D"#e6e6=
+e8" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ro=
+boto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', =
+'Segoe UI Symbol'; box-sizing: border-box; background-color: rgb(230, 230, =
+232); color: rgb(102, 102, 102);"></td></tr>
+<tr><td width=3D"100%" class=3D"bmeHolder" valign=3D"top" align=3D"center" =
+name=3D"bmeMainContentParent" style=3D"font-family: -apple-system, BlinkMac=
+SystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color =
+Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; border=
+-color: rgb(128, 128, 128); border-radius: 5px; border-collapse: separate; =
+border-spacing: 0px;">
+                                    <table name=3D"bmeMainContent" style=3D=
+"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvet=
+ica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Sy=
+mbol'; box-sizing: border-box; border-radius: 5px; border-collapse: separat=
+e; border-spacing: 0px; overflow: hidden;" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" align=3D"center"><tbody style=3D"font-famil=
+y: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,=
+ sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-=
+sizing: border-box;">
+<tr id=3D"section_2" class=3D"flexible-section" data-columns=3D"1"><td widt=
+h=3D"100%" class=3D"blk_container bmeHolder" name=3D"bmeHeader" valign=3D"t=
+op" align=3D"center" bgcolor=3D"#ffffff" style=3D"font-family: -apple-syste=
+m, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'A=
+pple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-=
+box; background-color: rgb(255, 255, 255);">
+                                                <div id=3D"dv_1" class=3D"b=
+lk_wrapper" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe=
+ UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI =
+Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                    <table width=3D"600" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"blk" name=3D"blk_im=
+age" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', R=
+oboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',=
+ 'Segoe UI Symbol'; box-sizing: border-box;"><tbody style=3D"font-family: -=
+apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, san=
+s-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizi=
+ng: border-box;"><tr><td style=3D"font-family: -apple-system, BlinkMacSyste=
+mFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                <table widt=
+h=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"font-f=
+amily: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Ar=
+ial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; =
+box-sizing: border-box;"><tbody style=3D"font-family: -apple-system, BlinkM=
+acSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Colo=
+r Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"><tr=
+><td align=3D"center" class=3D"bmeImage" style=3D"font-family: -apple-syste=
+m, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'A=
+pple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-=
+box; border-collapse: collapse; padding: 0px;"><img src=3D"https://images.b=
+enchmarkemail.com/client1461456/image16433848.png" class=3D"mobile-img-larg=
+e" width=3D"600" style=3D"font-family: -apple-system, BlinkMacSystemFont, '=
+Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Sego=
+e UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; max-width: 600px; d=
+isplay: block; border-radius: 0px;" alt=3D"{image_1}" data-radius=3D"0" bor=
+der=3D"0"></td></tr></tbody></table>
+</td></tr></tbody></table>
+</div>
+<div id=3D"dv_4" class=3D"blk_wrapper" style=3D"font-family: -apple-system,=
+ BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'App=
+le Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-bo=
+x;">
+                                                    <table class=3D"blk" na=
+me=3D"blk_text" width=3D"600" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ro=
+boto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', =
+'Segoe UI Symbol'; box-sizing: border-box;"><tbody style=3D"font-family: -a=
+pple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans=
+-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizin=
+g: border-box;"><tr><td style=3D"font-family: -apple-system, BlinkMacSystem=
+Font, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji'=
+, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                <table cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"bmeCon=
+tainerRow" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe =
+UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI E=
+moji', 'Segoe UI Symbol'; box-sizing: border-box;"><tbody style=3D"font-fam=
+ily: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Aria=
+l, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; bo=
+x-sizing: border-box;"><tr><th valign=3D"top" align=3D"center" class=3D"tdP=
+art" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', R=
+oboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',=
+ 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                           =
+ <table name=3D"tblText" style=3D"font-family: -apple-system, BlinkMacSyste=
+mFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; float: left=
+;" align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"tblText" width=3D"600"><tbody style=3D"font-family: -apple-system, BlinkMa=
+cSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color=
+ Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"><tr>=
+<td name=3D"tblCell" style=3D"box-sizing: border-box; padding: 20px 15px; f=
+ont-size: 14px; font-weight: 400; font-family: Arial, Helvetica, sans-serif=
+; color: rgb(56, 56, 56); text-align: left; word-break: break-word;" align=
+=3D"left" valign=3D"top" class=3D"tblCell"><div style=3D"font-family: -appl=
+e-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-se=
+rif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: =
+border-box; line-height: 150%;">
+                                                                           =
+                 <p style=3D"font-family: -apple-system, BlinkMacSystemFont=
+, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'S=
+egoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3d4852; =
+font-size: 16px; text-align: center; margin-top: 0px; margin-bottom: 0px; l=
+ine-height: 150%;"><span style=3D"font-family: -apple-system, BlinkMacSyste=
+mFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; font-size: =
+30px;"><strong style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Se=
+goe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe =
+UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">Mazii nh=E1=BB=9B b=
+=E1=BA=A1n</strong></span></p>
+                                                                           =
+             </div></td></tr></tbody></table>
+</th></tr></tbody></table>
+</td></tr></tbody></table>
+</div>
+<div id=3D"dv_6" class=3D"blk_wrapper" style=3D"font-family: -apple-system,=
+ BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'App=
+le Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-bo=
+x;">
+                                                    <table class=3D"blk" na=
+me=3D"blk_text" width=3D"600" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ro=
+boto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', =
+'Segoe UI Symbol'; box-sizing: border-box;"><tbody style=3D"font-family: -a=
+pple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans=
+-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizin=
+g: border-box;"><tr><td style=3D"font-family: -apple-system, BlinkMacSystem=
+Font, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji'=
+, 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                <table cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"bmeCon=
+tainerRow" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe =
+UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI E=
+moji', 'Segoe UI Symbol'; box-sizing: border-box;"><tbody style=3D"font-fam=
+ily: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Aria=
+l, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; bo=
+x-sizing: border-box;"><tr><th valign=3D"top" align=3D"center" class=3D"tdP=
+art" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', R=
+oboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',=
+ 'Segoe UI Symbol'; box-sizing: border-box; background-color: rgb(255, 255,=
+ 255);">
+                                                                           =
+ <table name=3D"tblText" style=3D"font-family: -apple-system, BlinkMacSyste=
+mFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; float: left=
+; background-color: rgb(255, 255, 255);" align=3D"left" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"tblText" width=3D"600"><tbody style=
+=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Hel=
+vetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI=
+ Symbol'; box-sizing: border-box;"><tr><td name=3D"tblCell" style=3D"box-si=
+zing: border-box; padding: 0px 15px; font-size: 14px; font-weight: 400; fon=
+t-family: Arial, Helvetica, sans-serif; color: rgb(56, 56, 56); text-align:=
+ left; word-break: break-word;" align=3D"left" valign=3D"top" class=3D"tblC=
+ell"><div style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe U=
+I', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Em=
+oji', 'Segoe UI Symbol'; box-sizing: border-box; line-height: 150%;">
+                                                                           =
+                 <p style=3D"font-family: -apple-system, BlinkMacSystemFont=
+, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'S=
+egoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3d4852; =
+font-size: 16px; line-height: 1.5em; text-align: center; margin-top: 0px; m=
+argin-bottom: 0px;"><span style=3D"font-family: -apple-system, BlinkMacSyst=
+emFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoj=
+i', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; font-size:=
+ 17px;">=C4=90=C3=A3 7 ng=C3=A0y r=E1=BB=93i b=E1=BA=A1n kh=C3=B4ng gh=C3=
+=A9 th=C4=83m Mazii</span></p>
+                                                                           =
+                 <p style=3D"font-family: -apple-system, BlinkMacSystemFont=
+, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'S=
+egoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3d4852; =
+font-size: 16px; line-height: 1.5em; text-align: center; margin-top: 0px; m=
+argin-bottom: 0px;"><span style=3D"font-family: -apple-system, BlinkMacSyst=
+emFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoj=
+i', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; font-size:=
+ 17px;">Quay l=E1=BA=A1i =C4=91=E1=BB=83 h=E1=BB=8Dc nh=C3=A9!</span></p>
+                                                                           =
+             </div></td></tr></tbody></table>
+</th></tr></tbody></table>
+</td></tr></tbody></table>
+</div>
+<div id=3D"dv_2" class=3D"blk_wrapper" style=3D"font-family: -apple-system,=
+ BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'App=
+le Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-bo=
+x;">
+                                                    <table width=3D"600" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"blk" name=3D"blk_bu=
+tton" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', =
+Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'=
+, 'Segoe UI Symbol'; box-sizing: border-box;"><tbody style=3D"font-family: =
+-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sa=
+ns-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-siz=
+ing: border-box;"><tr>
+<td width=3D"20" style=3D"font-family: -apple-system, BlinkMacSystemFont, '=
+Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Sego=
+e UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"></td>
+<td align=3D"center" style=3D"font-family: -apple-system, BlinkMacSystemFon=
+t, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', '=
+Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                <table clas=
+s=3D"tblContainer" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"100%" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe U=
+I', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Em=
+oji', 'Segoe UI Symbol'; box-sizing: border-box;"><tbody style=3D"font-fami=
+ly: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial=
+, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box=
+-sizing: border-box;">
+<tr><td height=3D"20" style=3D"font-family: -apple-system, BlinkMacSystemFo=
+nt, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', =
+'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"></td></tr>
+<tr><td align=3D"center" style=3D"font-family: -apple-system, BlinkMacSyste=
+mFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji=
+', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                           =
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"bmeButton=
+" align=3D"center" style=3D"font-family: -apple-system, BlinkMacSystemFont,=
+ 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Se=
+goe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; border-collapse: =
+separate;"><tbody style=3D"font-family: -apple-system, BlinkMacSystemFont, =
+'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Seg=
+oe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"><tr><td style=3D"=
+box-sizing: border-box; border-radius: 50px; border-width: 0px; border-styl=
+e: none; border-color: transparent; background-color: rgb(62, 103, 214); te=
+xt-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 19p=
+x; padding: 15px 40px; font-weight: bold; word-break: break-word;" class=3D=
+"bmeButtonText"><span style=3D"box-sizing: border-box; font-family: Arial, =
+Verdana; font-size: 19px; color: rgb(255, 255, 255);"><a style=3D"font-fami=
+ly: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial=
+, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box=
+-sizing: border-box; color: #FFFFFF; text-decoration: none;" target=3D"_bla=
+nk" href=3D"https://5rve2bms.r.eu-west-1.awstrack.me/L0/https:%2F%2Fadmin2.=
+mazii.net%2Fcustom-tracking-route%2Fn%3Fl=3Dhttps%253A%252F%252Fmazii.page.=
+link%252Fvn%26h=3Dk9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO/1/01020196b1b80e78-fbdde=
+855-daa8-494a-8333-0d43486cb5f8-000000/eGdsL95ecjs2uczhI_p1NtLCiPg=3D425" d=
+ata-link-type=3D"web" draggable=3D"false">V=C3=80O APP TH=C3=94I!</a></span=
+></td></tr></tbody></table>
+</td></tr>
+<tr><td height=3D"20" style=3D"font-family: -apple-system, BlinkMacSystemFo=
+nt, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', =
+'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"></td></tr>
+</tbody></table>
+</td>
+<td width=3D"20" style=3D"font-family: -apple-system, BlinkMacSystemFont, '=
+Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Sego=
+e UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"></td>
+</tr></tbody></table>
+</div>
+</td></tr>
+<tr id=3D"section_4" class=3D"flexible-section" data-columns=3D"1"><td widt=
+h=3D"100%" class=3D"blk_container bmeHolder" name=3D"bmePreFooter" valign=
+=3D"top" align=3D"center" bgcolor=3D"#ffffff" style=3D"font-family: -apple-=
+system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-seri=
+f, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: bo=
+rder-box; background-color: rgb(255, 255, 255);">
+
+                                                <div id=3D"dv_26" class=3D"=
+blk_wrapper" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Sego=
+e UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI=
+ Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                    <table width=3D"600" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"blk" name=3D"blk_so=
+cial_follow" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Sego=
+e UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI=
+ Emoji', 'Segoe UI Symbol'; box-sizing: border-box; background-color: rgb(2=
+4, 71, 173);"><tbody style=3D"font-family: -apple-system, BlinkMacSystemFon=
+t, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', '=
+Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"><tr><td class=
+=3D"tblCellMain" align=3D"center" style=3D"font-family: -apple-system, Blin=
+kMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Co=
+lor Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; pa=
+dding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 2=
+0px;">
+                                                                <table clas=
+s=3D"tblContainer mblSocialContain" cellspacing=3D"0" cellpadding=3D"0" bor=
+der=3D"0" align=3D"center" style=3D"font-family: -apple-system, BlinkMacSys=
+temFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emo=
+ji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; text-alig=
+n: center;"><tbody style=3D"font-family: -apple-system, BlinkMacSystemFont,=
+ 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Se=
+goe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"><tr><td class=3D=
+"tdItemContainer" style=3D"font-family: -apple-system, BlinkMacSystemFont, =
+'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Seg=
+oe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                           =
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"mblSocial=
+Contain" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI=
+', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emo=
+ji', 'Segoe UI Symbol'; box-sizing: border-box; table-layout: auto;"><tbody=
+ style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot=
+o, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Se=
+goe UI Symbol'; box-sizing: border-box;"><tr>
+<td valign=3D"top" name=3D"bmeSocialTD" class=3D"bmeSocialTD" style=3D"font=
+-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, =
+Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'=
+; box-sizing: border-box;"></td>
+<td align=3D"left" valign=3D"top" style=3D"font-family: -apple-system, Blin=
+kMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Co=
+lor Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                           =
+             <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=
+=3D"bmeFollowItem" type=3D"facebook" style=3D"font-family: -apple-system, B=
+linkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple=
+ Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;=
+ float: left; display: block;" align=3D"left"><tbody style=3D"font-family: =
+-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sa=
+ns-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-siz=
+ing: border-box;"><tr><td align=3D"left" class=3D"bmeFollowItemIcon" gutter=
+=3D"20" width=3D"24" style=3D"font-family: -apple-system, BlinkMacSystemFon=
+t, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', '=
+Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; padding-right: =
+20px; height: 55px;"><a href=3D"https://5rve2bms.r.eu-west-1.awstrack.me/L0=
+/https:%2F%2Fadmin2.mazii.net%2Fcustom-tracking-route%2Fn%3Fl=3D%252Fc%252F=
+l%253Fu%253D11241A7D%2526e%253D1823ADC%2526c%253D164CD0%2526t%253D1%2526l%2=
+53D84DB85F1%2526email%253DuLhn7ZZogRRxOfrdhWIhDwi72yrq%25252BZfs%2526seq%25=
+3D1%26h=3Dk9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO/1/01020196b1b80e78-fbdde855-daa8=
+-494a-8333-0d43486cb5f8-000000/NRiBtK0MU8YdyRwZJq8Bmyjhgzc=3D425" target=3D=
+"_blank" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI=
+', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emo=
+ji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3869d4; display: in=
+line-block; background-color: rgb(22, 167, 224); border-radius: 28px; borde=
+r-style: none; border-width: 0px; border-color: rgb(0, 0, 238);"><img src=
+=3D"https://ui.benchmarkemail.com/images/editor/socialicons/fb_btn.png" alt=
+=3D"Facebook" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Seg=
+oe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe U=
+I Emoji', 'Segoe UI Symbol'; box-sizing: border-box; border: none; display:=
+ block; max-width: 114px;" border=3D"0" width=3D"57" height=3D"57"></a></td=
+></tr></tbody></table>
+</td>
+<td align=3D"left" valign=3D"top" style=3D"font-family: -apple-system, Blin=
+kMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Co=
+lor Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                           =
+             <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=
+=3D"bmeFollowItem" type=3D"youtube" style=3D"font-family: -apple-system, Bl=
+inkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple =
+Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; =
+float: left; display: block;" align=3D"left"><tbody style=3D"font-family: -=
+apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, san=
+s-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizi=
+ng: border-box;"><tr><td align=3D"left" class=3D"bmeFollowItemIcon" gutter=
+=3D"20" width=3D"24" style=3D"font-family: -apple-system, BlinkMacSystemFon=
+t, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', '=
+Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; padding-right: =
+20px; height: 55px;"><a href=3D"https://5rve2bms.r.eu-west-1.awstrack.me/L0=
+/https:%2F%2Fadmin2.mazii.net%2Fcustom-tracking-route%2Fn%3Fl=3D%252Fc%252F=
+l%253Fu%253D11241A7E%2526e%253D1823ADC%2526c%253D164CD0%2526t%253D1%2526l%2=
+53D84DB85F1%2526email%253DuLhn7ZZogRRxOfrdhWIhDwi72yrq%25252BZfs%2526seq%25=
+3D1%26h=3Dk9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO/1/01020196b1b80e78-fbdde855-daa8=
+-494a-8333-0d43486cb5f8-000000/2AttAZv4gX9RbpVf0vbmqyO0bKc=3D425" target=3D=
+"_blank" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI=
+', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emo=
+ji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3869d4; display: in=
+line-block; background-color: rgb(22, 167, 224); border-radius: 28px; borde=
+r-style: none; border-width: 0px; border-color: rgb(0, 0, 238);"><img src=
+=3D"https://ui.benchmarkemail.com/images/editor/socialicons/yt_btn.png" alt=
+=3D"YouTube" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Sego=
+e UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI=
+ Emoji', 'Segoe UI Symbol'; box-sizing: border-box; border: none; display: =
+block; max-width: 114px;" border=3D"0" width=3D"57" height=3D"57"></a></td>=
+</tr></tbody></table>
+</td>
+<td align=3D"left" valign=3D"top" style=3D"font-family: -apple-system, Blin=
+kMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Co=
+lor Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                           =
+             <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=
+=3D"bmeFollowItem" type=3D"instagram" style=3D"font-family: -apple-system, =
+BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Appl=
+e Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box=
+; float: left; display: block;" align=3D"left"><tbody style=3D"font-family:=
+ -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, s=
+ans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-si=
+zing: border-box;"><tr><td align=3D"left" class=3D"bmeFollowItemIcon" gutte=
+r=3D"20" width=3D"24" style=3D"font-family: -apple-system, BlinkMacSystemFo=
+nt, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', =
+'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; padding-right:=
+ 20px; height: 55px;"><a href=3D"https://5rve2bms.r.eu-west-1.awstrack.me/L=
+0/https:%2F%2Fadmin2.mazii.net%2Fcustom-tracking-route%2Fn%3Fl=3D%252Fc%252=
+Fl%253Fu%253D11241A7F%2526e%253D1823ADC%2526c%253D164CD0%2526t%253D1%2526l%=
+253D84DB85F1%2526email%253DuLhn7ZZogRRxOfrdhWIhDwi72yrq%25252BZfs%2526seq%2=
+53D1%26h=3Dk9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO/1/01020196b1b80e78-fbdde855-daa=
+8-494a-8333-0d43486cb5f8-000000/bq8nFT6xLbipKUmlTMhyNhzGEKI=3D425" target=
+=3D"_blank" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe=
+ UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI =
+Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: #3869d4; display:=
+ inline-block; background-color: rgb(22, 167, 224); border-radius: 28px; bo=
+rder-style: none; border-width: 0px; border-color: rgb(0, 0, 238);"><img sr=
+c=3D"https://ui.benchmarkemail.com/images/editor/socialicons/in_btn.png" al=
+t=3D"Instagram" style=3D"font-family: -apple-system, BlinkMacSystemFont, 'S=
+egoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe=
+ UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; border: none; displa=
+y: block; max-width: 114px;" border=3D"0" width=3D"57" height=3D"57"></a></=
+td></tr></tbody></table>
+</td>
+<td align=3D"left" valign=3D"top" style=3D"font-family: -apple-system, Blin=
+kMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Co=
+lor Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box;">
+                                                                           =
+             <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=
+=3D"bmeFollowItem" type=3D"website" style=3D"font-family: -apple-system, Bl=
+inkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple =
+Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; =
+float: left; display: block;" align=3D"left"><tbody style=3D"font-family: -=
+apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, san=
+s-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizi=
+ng: border-box;"><tr><td align=3D"left" class=3D"bmeFollowItemIcon" gutter=
+=3D"20" width=3D"24" style=3D"font-family: -apple-system, BlinkMacSystemFon=
+t, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', '=
+Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; height: 55px;">=
+<a href=3D"https://5rve2bms.r.eu-west-1.awstrack.me/L0/https:%2F%2Fadmin2.m=
+azii.net%2Fcustom-tracking-route%2Fn%3Fl=3D%2523%26h=3Dk9wzzDDoAW3iMJeBDORS=
+kU1vvbwo2rTO/1/01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000=
+/QXbadbTx5XhkQlmH_vP3ceiU8KE=3D425" style=3D"font-family: -apple-system, Bl=
+inkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple =
+Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; =
+color: #3869d4; display: inline-block; background-color: rgb(22, 167, 224);=
+ border-radius: 28px; border-style: none; border-width: 0px; border-color: =
+rgb(0, 0, 238);" target=3D"_blank"><img src=3D"https://ui.benchmarkemail.co=
+m/images/editor/socialicons/wb_btn.png" alt=3D"Website" style=3D"font-famil=
+y: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,=
+ sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-=
+sizing: border-box; border: none; display: block; max-width: 114px;" border=
+=3D"0" width=3D"57" height=3D"57"></a></td></tr></tbody></table>
+</td>
+</tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</div>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr id=3D"section_5" class=3D"flexible-section" data-columns=3D"1" data-sec=
+tion-type=3D"bmeFooter">
+<td width=3D"100%" class=3D"blk_container bmeHolder" name=3D"bmeFooter" val=
+ign=3D"top" align=3D"center" bgcolor=3D"#e6e6e8" style=3D"font-family: -app=
+le-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-s=
+erif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing:=
+ border-box; background-color: rgb(230, 230, 232); color: rgb(102, 102, 102=
+);"> <div id=3D"dv_17" class=3D"blk_wrapper" style=3D"font-family: -apple-s=
+ystem, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif=
+, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: bor=
+der-box;"> <table width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" class=3D"blk" name=3D"blk_footer" style=3D"font-family: -apple-syste=
+m, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'A=
+pple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-=
+box;"><tbody style=3D"font-family: -apple-system, BlinkMacSystemFont, 'Sego=
+e UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI=
+ Emoji', 'Segoe UI Symbol'; box-sizing: border-box;"><tr>
+<td name=3D"tblCell" class=3D"tblCell" style=3D"font-family: -apple-system,=
+ BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'App=
+le Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-bo=
+x; padding: 20px; word-break: break-word;" valign=3D"top" align=3D"left"> <=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" style=
+=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Hel=
+vetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI=
+ Symbol'; box-sizing: border-box;"><tbody style=3D"font-family: -apple-syst=
+em, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, '=
+Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border=
+-box;">
+<tr>
+<td name=3D"bmeBadgeText" style=3D"font-family: -apple-system, BlinkMacSyst=
+emFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoj=
+i', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; text-align=
+: left; word-break: break-word;" align=3D"left">
+<span id=3D"spnFooterText" style=3D"box-sizing: border-box; font-family: Ar=
+ial, Helvetica, sans-serif; font-weight: normal; font-size: 11px; line-heig=
+ht: 140%;">If you want to stop receiving promotional emails, please click</=
+span><br><span style=3D"box-sizing: border-box; font-family: Arial, Helveti=
+ca, sans-serif; font-weight: normal; font-size: 11px; line-height: 140%;"><=
+a class=3D"bmefootertext" target=3D"_new" href=3D"https://5rve2bms.r.eu-wes=
+t-1.awstrack.me/L0/https:%2F%2Fadmin2.mazii.net%2Fcustom-tracking-route%2Fn=
+%3Fl=3Dhttps%253A%252F%252Feupgroup.net%252Fchinh-sach-bao-mat%26h=3Dk9wzzD=
+DoAW3iMJeBDORSkU1vvbwo2rTO/1/01020196b1b80e78-fbdde855-daa8-494a-8333-0d434=
+86cb5f8-000000/O0r3JDZca1nGfnH8oVp8MFSwNzE=3D425" style=3D"font-family: -ap=
+ple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-=
+serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing=
+: border-box; color: inherit;">Privacy Policy</a> | <a class=3D"bmefooterte=
+xt" target=3D"_new" href=3D"https://5rve2bms.r.eu-west-1.awstrack.me/L0/htt=
+ps:%2F%2Fadmin2.mazii.net%2Fcustom-tracking-route%2Fn%3Fl=3Dhttps%253A%252F=
+%252Feupgroup.net%252Fgioi-thieu%26h=3Dk9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO/1/0=
+1020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000/IHiTPgk-HR5O0oU=
+Je88QaQDDZvU=3D425" style=3D"font-family: -apple-system, BlinkMacSystemFont=
+, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'S=
+egoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; color: inherit;"=
+>Contact us</a> | <a class=3D"bmefootertext" target=3D"_new" href=3D"https:=
+//5rve2bms.r.eu-west-1.awstrack.me/L0/https:%2F%2Fadmin2.mazii.net%2Fcustom=
+-tracking-route%2Fn%3Fl=3D%253Ftoken%253Dbmd1eWVubG9uZ3Z1NzY4QGdtYWlsLmNvbQ=
+%253D%253D%26h=3Dk9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO/1/01020196b1b80e78-fbdde8=
+55-daa8-494a-8333-0d43486cb5f8-000000/3NvbucUW6LFUkBbU0KKdZgIseLI=3D425" st=
+yle=3D"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, =
+Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe=
+ UI Symbol'; box-sizing: border-box; color: inherit;">Unsubscribe</a><br></=
+span> </td> </tr>
+<tr>
+<td name=3D"bmeBadgeImage" style=3D"font-family: -apple-system, BlinkMacSys=
+temFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emo=
+ji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-box; text-alig=
+n: left; padding-top: 20px;" align=3D"left"> <a href=3D"https://5rve2bms.r.=
+eu-west-1.awstrack.me/L0/https:%2F%2Fadmin2.mazii.net%2Fcustom-tracking-rou=
+te%2Fn%3Fl=3Dhttps%253A%252F%252Feupgroup.net%252F%26h=3Dk9wzzDDoAW3iMJeBDO=
+RSkU1vvbwo2rTO/1/01020196b1b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-0000=
+00/E4UBlVRDnTDKSAUe4Ijg8D7-UJg=3D425" target=3D"_new" style=3D"font-family:=
+ -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, s=
+ans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-si=
+zing: border-box; color: #3869d4;"> <img src=3D"https://eupgroup.net/images=
+/logo.png" width=3D"100px" border=3D"0" style=3D"font-family: -apple-system=
+, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Ap=
+ple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; box-sizing: border-b=
+ox; max-width: 100%; border: none;"></a> </td> </tr>
+</tbody></table>
+</td> </tr></tbody></table>
+</div> </td> </tr>
+</tbody></table>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<!-- Test Path --><!-- /Test Path -->
+<img alt=3D"" src=3D"https://5rve2bms.r.eu-west-1.awstrack.me/I0/01020196b1=
+b80e78-fbdde855-daa8-494a-8333-0d43486cb5f8-000000/pQsuzXU3KZsABAyoLl0zRsGO=
+lJA=3D425" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html><img border=3D0 width=3D1 alt=3D"" height=3D1 src=3D"https://admin2.=
+mazii.net/custom-tracking-route/t/k9wzzDDoAW3iMJeBDORSkU1vvbwo2rTO" />
+
+--_=_swift_1746738347_a6a4176ed72127a3756b46006b6cd26c_=_--
